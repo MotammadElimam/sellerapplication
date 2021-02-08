@@ -31,7 +31,7 @@ class _BodyState extends State<Body> {
             background: Container(
               padding: EdgeInsets.symmetric(horizontal: 20),
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: Colors.red[100],
                 borderRadius: BorderRadius.circular(15),
               ),
               child: Row(
