@@ -1,17 +1,17 @@
-import 'package:BuyerApplication/components/rounded_button.dart';
-import 'package:BuyerApplication/constants.dart';
-import 'package:BuyerApplication/models/Wishlist.dart';
-import 'package:BuyerApplication/models/wishlist_item.dart';
+import 'package:sellerapplication/components/rounded_button.dart';
+import 'package:sellerapplication/constants.dart';
+import 'package:sellerapplication/models/Wishlist.dart';
+import 'package:sellerapplication/models/wishlist_item.dart';
 import 'package:flutter/material.dart';
-import 'package:BuyerApplication/models/cart_item.dart';
-import 'package:BuyerApplication/components/buttons/primary_button.dart';
-import 'package:BuyerApplication/models/Product.dart';
+import 'package:sellerapplication/models/cart_item.dart';
+import 'package:sellerapplication/components/buttons/primary_button.dart';
+import 'package:sellerapplication/models/Product.dart';
 import 'package:provider/provider.dart';
-import 'package:BuyerApplication/controllers/ProductProvider.dart';
-import 'package:BuyerApplication/size_config.dart';
-import 'package:BuyerApplication/screens/details/components/product_description.dart';
-import 'package:BuyerApplication/screens/details/components/top_rounded_container.dart';
-import 'package:BuyerApplication/screens/details/components/product_images.dart';
+import 'package:sellerapplication/controllers/ProductProvider.dart';
+import 'package:sellerapplication/size_config.dart';
+import 'package:sellerapplication/screens/details/components/product_description.dart';
+import 'package:sellerapplication/screens/details/components/top_rounded_container.dart';
+import 'package:sellerapplication/screens/details/components/product_images.dart';
 
 class Body extends StatefulWidget {
   final Product product;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'package:BuyerApplication/constants.dart';
+import 'package:sellerapplication/constants.dart';
 
 class ProfileMenu extends StatelessWidget {
   const ProfileMenu({

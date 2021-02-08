@@ -1,10 +1,10 @@
-import 'package:BuyerApplication/models/wishlist_item.dart';
-import 'package:BuyerApplication/screens/wishlist/wishlist_screen.dart';
+import 'package:sellerapplication/models/wishlist_item.dart';
+import 'package:sellerapplication/screens/wishlist/wishlist_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:BuyerApplication/screens/home/components/icon_btn_with_counter.dart';
-import 'package:BuyerApplication/screens/home/components/search_field.dart';
-import 'package:BuyerApplication/size_config.dart';
-import 'package:BuyerApplication/screens/cart/cart_screen.dart';
+import 'package:sellerapplication/screens/home/components/icon_btn_with_counter.dart';
+import 'package:sellerapplication/screens/home/components/search_field.dart';
+import 'package:sellerapplication/size_config.dart';
+import 'package:sellerapplication/screens/cart/cart_screen.dart';
 
 class HomeHeader extends StatelessWidget {
   const HomeHeader({

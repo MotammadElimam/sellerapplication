@@ -1,8 +1,8 @@
-import 'package:BuyerApplication/models/Wishlist.dart';
-import 'package:BuyerApplication/models/wishlist_item.dart';
+import 'package:sellerapplication/models/Wishlist.dart';
+import 'package:sellerapplication/models/wishlist_item.dart';
 import 'package:flutter/material.dart';
-import 'package:BuyerApplication/models/Cart.dart';
-import 'package:BuyerApplication/models/cart_item.dart';
+import 'package:sellerapplication/models/Cart.dart';
+import 'package:sellerapplication/models/cart_item.dart';
 import 'package:supercharged/supercharged.dart';
 
 class ProductProvider extends ChangeNotifier {

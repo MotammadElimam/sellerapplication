@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:BuyerApplication/models/wishlist_item.dart';
-import 'package:BuyerApplication/constants.dart';
-import 'package:BuyerApplication/size_config.dart';
+import 'package:sellerapplication/models/wishlist_item.dart';
+import 'package:sellerapplication/constants.dart';
+import 'package:sellerapplication/size_config.dart';
 
 
 // ignore: must_be_immutable

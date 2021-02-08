@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:BuyerApplication/controllers/ProductProvider.dart';
+import 'package:sellerapplication/controllers/ProductProvider.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:BuyerApplication/size_config.dart';
-import 'package:BuyerApplication/screens/wishlist/components/wishlist_card.dart';
+import 'package:sellerapplication/size_config.dart';
+import 'package:sellerapplication/screens/wishlist/components/wishlist_card.dart';
 import 'package:provider/provider.dart';
 
 

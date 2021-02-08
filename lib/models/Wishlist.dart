@@ -1,4 +1,4 @@
-import 'package:BuyerApplication/models/wishlist_item.dart';
+import 'package:sellerapplication/models/wishlist_item.dart';
 
 class Wishlist {
   List<Wishlistitem> wishlistitems = <Wishlistitem>[];

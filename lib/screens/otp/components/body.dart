@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:BuyerApplication/constants.dart';
-import 'package:BuyerApplication/size_config.dart';
-import 'package:BuyerApplication/screens/otp/components/otp_form.dart';
+import 'package:sellerapplication/constants.dart';
+import 'package:sellerapplication/size_config.dart';
+import 'package:sellerapplication/screens/otp/components/otp_form.dart';
 
 class Body extends StatelessWidget {
   @override

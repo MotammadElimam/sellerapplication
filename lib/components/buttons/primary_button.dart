@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:BuyerApplication/size_config.dart';
+import 'package:sellerapplication/size_config.dart';
 
 import '../../constants.dart';
 

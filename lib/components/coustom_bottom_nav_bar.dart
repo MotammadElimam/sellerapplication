@@ -1,12 +1,12 @@
 
-import 'package:BuyerApplication/screens/balance_page/BalancePage.dart';
-import 'package:BuyerApplication/screens/wishlist/wishlist_screen.dart';
+import 'package:sellerapplication/screens/balance_page/BalancePage.dart';
+import 'package:sellerapplication/screens/wishlist/wishlist_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:BuyerApplication/screens/home/home_screen.dart';
-import 'package:BuyerApplication/screens/profile/profile_screen.dart';
-import 'package:BuyerApplication/constants.dart';
-import 'package:BuyerApplication/enums.dart';
+import 'package:sellerapplication/screens/home/home_screen.dart';
+import 'package:sellerapplication/screens/profile/profile_screen.dart';
+import 'package:sellerapplication/constants.dart';
+import 'package:sellerapplication/enums.dart';
 
 class CustomBottomNavBar extends StatelessWidget {
   const CustomBottomNavBar({

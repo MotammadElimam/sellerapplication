@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:BuyerApplication/size_config.dart';
-import 'package:BuyerApplication/screens/otp/components/body.dart';
+import 'package:sellerapplication/size_config.dart';
+import 'package:sellerapplication/screens/otp/components/body.dart';
 
 class OtpScreen extends StatelessWidget {
   static String routeName = "/otp";

@@ -1,12 +1,12 @@
-import 'package:BuyerApplication/components/buttons/primary_button.dart';
-import 'package:BuyerApplication/controllers/databasehelper.dart';
-import 'package:BuyerApplication/screens/home/home_screen.dart';
+import 'package:sellerapplication/components/buttons/primary_button.dart';
+import 'package:sellerapplication/controllers/databasehelper.dart';
+import 'package:sellerapplication/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:BuyerApplication/components/custom_surfix_icon.dart';
-import 'package:BuyerApplication/components/form_error.dart';
-import 'package:BuyerApplication/constants.dart';
-import 'package:BuyerApplication/screens/forgot_password/forgot_password_screen.dart';
-import 'package:BuyerApplication/size_config.dart';
+import 'package:sellerapplication/components/custom_surfix_icon.dart';
+import 'package:sellerapplication/components/form_error.dart';
+import 'package:sellerapplication/constants.dart';
+import 'package:sellerapplication/screens/forgot_password/forgot_password_screen.dart';
+import 'package:sellerapplication/size_config.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 

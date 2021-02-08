@@ -1,4 +1,4 @@
-import 'package:BuyerApplication/models/Product.dart';
+import 'package:sellerapplication/models/Product.dart';
 
 
 class CartItem {

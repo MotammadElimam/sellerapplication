@@ -1,4 +1,4 @@
-import 'package:BuyerApplication/size_config.dart';
+import 'package:sellerapplication/size_config.dart';
 import 'package:flutter/material.dart';
 
 

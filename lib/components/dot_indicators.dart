@@ -1,4 +1,4 @@
-import 'package:BuyerApplication/constants.dart';
+import 'package:sellerapplication/constants.dart';
 import 'package:flutter/material.dart';
 
 import '../size_config.dart';

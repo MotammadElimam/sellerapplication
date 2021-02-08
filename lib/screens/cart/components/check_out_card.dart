@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:BuyerApplication/components/buttons/primary_button.dart';
+import 'package:sellerapplication/components/buttons/primary_button.dart';
 import 'package:provider/provider.dart';
-import 'package:BuyerApplication/controllers/ProductProvider.dart';
-import 'package:BuyerApplication/constants.dart';
-import 'package:BuyerApplication/size_config.dart';
+import 'package:sellerapplication/controllers/ProductProvider.dart';
+import 'package:sellerapplication/constants.dart';
+import 'package:sellerapplication/size_config.dart';
 import 'package:supercharged/supercharged.dart';
 
 
