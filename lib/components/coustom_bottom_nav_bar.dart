@@ -65,9 +65,19 @@ class CustomBottomNavBar extends StatelessWidget {
               ),
               IconButton(
                 icon: SvgPicture.asset(
-                  "assets/icons/order.svg",
-                  width: 40,
-                  height: 40,
+                  "assets/icons/User Icon.svg",
+                  color: MenuState.profile == selectedMenu
+                      ? kPrimaryColor
+                      : inActiveIconColor,
+                ),
+                onPressed: () =>
+                    Navigator.pushNamed(context, ProfileScreen.routeName),
+              ),
+              IconButton(
+                icon: SvgPicture.asset(
+                  "assets/icons/wallet1.svg",
+                  width: 25,
+                  height: 25,
                   fit: BoxFit.contain,
                   color: MenuState.wallet == selectedMenu
                       ? kPrimaryColor
