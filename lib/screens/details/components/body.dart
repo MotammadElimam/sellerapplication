@@ -99,56 +99,25 @@ class _BodyState extends State<Body> {
                                 top: getProportionateScreenWidth(15),
                               ),
                               child: Column(children: [
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    // increment button
-                                    RoundedButton(
-                                      press: () {
-                                        setState(() {
-                                          numOfItems++;
-                                        });
-                                      },
-                                      iconData: Icons.add,
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          horizontal: kDefaultPadding),
-                                      child: Text(
-                                          numOfItems.toString().padLeft(2, "0"),
-                                          style: kSubHeadTextStyle),
-                                    ),
-                                    // decrement buuton
-                                    RoundedButton(
-                                      press: () {
-                                        if (numOfItems > 1)
-                                          setState(() {
-                                            numOfItems--;
-                                          });
-                                      },
-                                      iconData: Icons.remove,
-                                    ),
-                                  ],
-                                ),
-                                PrimaryButton(
-                                  text: providerbody.cart.cartItems
-                                          .contains(_cartItem)
-                                      ? "Added To Cart"
-                                      : "Add To Cart",
-                                  press: () {
-                                    _addTocart();
-                                  },
-                                ),
+                                // PrimaryButton(
+                                //   text: providerbody.cart.cartItems
+                                //           .contains(_cartItem)
+                                //       ? "Added To Cart"
+                                //       : "Add To Cart",
+                                //   press: () {
+                                //     _addTocart();
+                                //   },
+                                // ),
                                 SizedBox(height: 15),
-                                PrimaryButton(
-                                  text: providerbody.wishlist.wishlistitems
-                                          .contains(_wishlistitem)
-                                      ? "Added To Wishlist"
-                                      : "Add To wishlist",
-                                  press: () {
-                                    _addToWishlist();
-                                  },
-                                ),
+                                // PrimaryButton(
+                                //   text: providerbody.wishlist.wishlistitems
+                                //           .contains(_wishlistitem)
+                                //       ? "Added To Wishlist"
+                                //       : "Add To wishlist",
+                                //   press: () {
+                                //     _addToWishlist();
+                                //   },
+                                // ),
                               ])),
                         ),
                       ],
