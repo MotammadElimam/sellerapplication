@@ -1,8 +1,8 @@
-import 'package:BuyerApplication/screens/home/home_screen.dart';
+import 'package:sellerapplication/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:BuyerApplication/routes.dart';
-import 'package:BuyerApplication/theme.dart';
-import 'package:BuyerApplication/screens/splash/splash_scrreen.dart';
+import 'package:sellerapplication/routes.dart';
+import 'package:sellerapplication/theme.dart';
+import 'package:sellerapplication/screens/splash/splash_scrreen.dart';
 import 'package:provider/provider.dart';
 import 'controllers/ProductProvider.dart';
 
