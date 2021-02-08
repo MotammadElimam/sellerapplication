@@ -1,4 +1,4 @@
-import 'package:BuyerApplication/screens/profile/setting.dart';
+import 'package:sellerapplication/screens/profile/setting.dart';
 import 'package:flutter/material.dart';
 
 import 'profile_menu.dart';

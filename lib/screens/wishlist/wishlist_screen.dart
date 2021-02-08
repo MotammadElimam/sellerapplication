@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:sellerapplication/components/coustom_bottom_nav_bar.dart';
+import 'package:sellerapplication/enums.dart';
 import 'package:sellerapplication/screens/wishlist/components/body.dart';
 
 
@@ -10,6 +12,7 @@ class WishListScreen extends StatelessWidget {
     return Scaffold(
       appBar: buildAppBar(context),
       body: Body(),
+       bottomNavigationBar: CustomBottomNavBar(selectedMenu: MenuState.wishlist),
     );
   }
 

@@ -52,7 +52,9 @@ class CustomBottomNavBar extends StatelessWidget {
               ),
               IconButton(
                 icon: SvgPicture.asset(
-                  "assets/icons/Heart Icon.svg",
+                  "assets/icons/order.svg",
+                   width: 40,
+                  height: 40,
                   color: MenuState.wishlist == selectedMenu
                       ? kPrimaryColor
                       : inActiveIconColor,
@@ -63,9 +65,9 @@ class CustomBottomNavBar extends StatelessWidget {
               ),
               IconButton(
                 icon: SvgPicture.asset(
-                  "assets/icons/wallet1.svg",
-                  width: 25,
-                  height: 25,
+                  "assets/icons/order.svg",
+                  width: 40,
+                  height: 40,
                   fit: BoxFit.contain,
                   color: MenuState.wallet == selectedMenu
                       ? kPrimaryColor
