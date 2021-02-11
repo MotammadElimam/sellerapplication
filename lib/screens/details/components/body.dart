@@ -1,10 +1,6 @@
-import 'package:sellerapplication/components/rounded_button.dart';
-import 'package:sellerapplication/constants.dart';
-import 'package:sellerapplication/models/Wishlist.dart';
 import 'package:sellerapplication/models/wishlist_item.dart';
 import 'package:flutter/material.dart';
 import 'package:sellerapplication/models/cart_item.dart';
-import 'package:sellerapplication/components/buttons/primary_button.dart';
 import 'package:sellerapplication/models/Product.dart';
 import 'package:provider/provider.dart';
 import 'package:sellerapplication/controllers/ProductProvider.dart';
@@ -23,52 +19,52 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
-  CartItem _cartItem;
-  int numOfItems = 1;
-  Wishlistitem _wishlistitem;
-  @override
-  void initState() {
-    super.initState();
-    _cartItem = CartItem.fromData(product: widget.product, quantity: 1);
-    _wishlistitem = Wishlistitem.fromData(product: widget.product);
-  }
+  // CartItem _cartItem;
+  // int numOfItems = 1;
+  // Wishlistitem _wishlistitem;
+   @override
+  // void initState() {
+  //   super.initState();
+  //   _cartItem = CartItem.fromData(product: widget.product, quantity: 1);
+  //   _wishlistitem = Wishlistitem.fromData(product: widget.product);
+ // }
 
-  void _addTocart() {
-    CartItem added;
-    try {
-      added = Provider.of<ProductProvider>(context, listen: false)
-          .cart
-          .cartItems
-          .firstWhere((element) => element.product.id == widget.product.id);
-    } catch (e) {
-      print(e);
-    }
-    if (added == null) {
-      Provider.of<ProductProvider>(context, listen: false).addToCart(_cartItem);
-    } else {
-      Provider.of<ProductProvider>(context, listen: false)
-          .removeFromCart(_cartItem);
-    }
-  }
+  // void _addTocart() {
+  //   CartItem added;
+  //   try {
+  //     added = Provider.of<ProductProvider>(context, listen: false)
+  //         .cart
+  //         .cartItems
+  //         .firstWhere((element) => element.product.id == widget.product.id);
+  //   } catch (e) {
+  //     print(e);
+  //   }
+  //   if (added == null) {
+  //     Provider.of<ProductProvider>(context, listen: false).addToCart(_cartItem);
+  //   } else {
+  //     Provider.of<ProductProvider>(context, listen: false)
+  //         .removeFromCart(_cartItem);
+  //   }
+  // }
 
-  void _addToWishlist() {
-    Wishlistitem addedtowishlist;
-    try {
-      addedtowishlist = Provider.of<ProductProvider>(context, listen: false)
-          .wishlist
-          .wishlistitems
-          .firstWhere((element) => element.product.id == widget.product.id);
-    } catch (e) {
-      print(e);
-    }
-    if (addedtowishlist == null) {
-      Provider.of<ProductProvider>(context, listen: false)
-          .addToWishlist(_wishlistitem);
-    }
-    /*else{
-    Provider.of<ProductProvider>(context, listen: false).removeFromCart(_wishlistitem);
-   }*/
-  }
+  // void _addToWishlist() {
+  //   Wishlistitem addedtowishlist;
+  //   try {
+  //     addedtowishlist = Provider.of<ProductProvider>(context, listen: false)
+  //         .wishlist
+  //         .wishlistitems
+  //         .firstWhere((element) => element.product.id == widget.product.id);
+  //   } catch (e) {
+  //     print(e);
+  //   }
+  //   if (addedtowishlist == null) {
+  //     Provider.of<ProductProvider>(context, listen: false)
+  //         .addToWishlist(_wishlistitem);
+  //   }
+    // else{
+    // Provider.of<ProductProvider>(context, listen: false).removeFromCart(_wishlistitem);
+ //  }
+  //}
 
   @override
   Widget build(BuildContext context) {

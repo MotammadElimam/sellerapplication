@@ -1,4 +1,3 @@
-import 'package:sellerapplication/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:sellerapplication/routes.dart';
 import 'package:sellerapplication/theme.dart';

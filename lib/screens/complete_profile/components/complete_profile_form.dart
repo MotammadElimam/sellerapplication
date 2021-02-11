@@ -7,7 +7,6 @@ import 'package:sellerapplication/components/custom_surfix_icon.dart';
 import 'package:sellerapplication/components/form_error.dart';
 import 'package:sellerapplication/constants.dart';
 import 'package:sellerapplication/size_config.dart';
-import 'package:sellerapplication/screens/otp/otp_screen.dart';
 import 'package:provider/provider.dart';
 
 

@@ -5,7 +5,6 @@ import 'package:provider/provider.dart';
 import 'package:sellerapplication/controllers/ProductProvider.dart';
 import 'package:sellerapplication/constants.dart';
 import 'package:sellerapplication/size_config.dart';
-import 'package:supercharged/supercharged.dart';
 
 
 class CheckoutCard extends StatelessWidget {
