@@ -19,6 +19,11 @@ class ProductProvider extends ChangeNotifier {
   String lastName;
   String phoneNumber;
   String adress;
+
+
+
+  String productName , description;
+  List<String> images;
   
   
 

@@ -1,6 +1,6 @@
-import 'package:sellerapplication/models/wishlist_item.dart';
+//import 'package:sellerapplication/models/wishlist_item.dart';
 import 'package:flutter/material.dart';
-import 'package:sellerapplication/models/cart_item.dart';
+//import 'package:sellerapplication/models/cart_item.dart';
 import 'package:sellerapplication/models/Product.dart';
 import 'package:provider/provider.dart';
 import 'package:sellerapplication/controllers/ProductProvider.dart';

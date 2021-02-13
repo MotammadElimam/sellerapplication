@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:sellerapplication/screens/addproduct/add_product_screen.dart';
 import 'package:sellerapplication/screens/balance_page/balancePage.dart';
 import 'package:sellerapplication/screens/profile/profile_screen.dart';
 import 'package:sellerapplication/screens/profile/setting.dart';
@@ -30,4 +31,5 @@ final Map<String, WidgetBuilder> routes = {
   ProfileScreen.routeName:(context) => ProfileScreen(),
   BalancePage.routeName:(context) => BalancePage(),
   SettingsPage.routeName:(context)=>SettingsPage(),
+  AddProductScreen.routeName:(context)=>AddProductScreen(),
 };

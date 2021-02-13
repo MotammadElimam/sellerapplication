@@ -2,20 +2,20 @@ import 'package:flutter/material.dart';
 
 class Product {
   int id;
-  String title, description;
+  String productName, description;
   List<String> images;
   List<Color> colors;
   double rating, price;
-  bool isFavourite, isPopular;
+  //bool isFavourite, isPopular;
 
   Product({
     this.id,
     this.images,
     this.colors,
     this.rating = 0.0,
-    this.isFavourite = false,
-    this.isPopular = false,
-    this.title,
+    // this.isFavourite = false,
+    // this.isPopular = false,
+    this.productName,
     this.price,
     this.description,
   });
@@ -38,12 +38,12 @@ List<Product> demoProducts = [
       Color(0xFFDECB9C),
       Colors.white,
     ],
-    title: "Wireless Controller for PS4™",
+    productName: "Wireless Controller for PS4™",
     price: 64.99,
     description: description,
     rating: 4.8,
-    isFavourite: true,
-    isPopular: true,
+    // isFavourite: true,
+    // isPopular: true,
   ),
   Product(
     id: 2,
@@ -56,11 +56,11 @@ List<Product> demoProducts = [
       Color(0xFFDECB9C),
       Colors.white,
     ],
-    title: "Nike Sport White - Man Pant",
+    productName: "Nike Sport White - Man Pant",
     price: 50.5,
     description: description,
     rating: 4.1,
-    isPopular: true,
+    // isPopular: true,
   ),
   Product(
     id: 3,
@@ -73,12 +73,12 @@ List<Product> demoProducts = [
       Color(0xFFDECB9C),
       Colors.white,
     ],
-    title: "Gloves XC Omega - Polygon",
+    productName: "Gloves XC Omega - Polygon",
     price: 36.55,
     description: description,
     rating: 4.1,
-    isFavourite: true,
-    isPopular: true,
+    // isFavourite: true,
+    // isPopular: true,
   ),
   Product(
     id: 4,
@@ -91,11 +91,11 @@ List<Product> demoProducts = [
       Color(0xFFDECB9C),
       Colors.white,
     ],
-    title: "Logitech Head",
+    productName: "Logitech Head",
     price: 20.20,
     description: description,
-    rating: 4.1,
-    isFavourite: true,
+    // rating: 4.1,
+    // // isFavourite: true,
   ),
 ];
 
