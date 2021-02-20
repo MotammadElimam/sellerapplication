@@ -8,6 +8,8 @@ import 'package:sellerapplication/components/form_error.dart';
 import 'package:sellerapplication/constants.dart';
 import 'package:sellerapplication/size_config.dart';
 import 'package:provider/provider.dart';
+import 'package:image_picker/image_picker.dart';
+import 'dart:io';
 
 
 
@@ -17,6 +19,8 @@ class AddProductForm extends StatefulWidget {
 }
 
 class _AddProductFormState extends State<AddProductForm> {
+  File _image;
+  final picker = ImagePicker();
   DatabaseHelper databaseHelper = new DatabaseHelper();
   String msgStatus = '';
   final _formKey = GlobalKey<FormState>();
@@ -24,7 +28,7 @@ class _AddProductFormState extends State<AddProductForm> {
   int id; 
   String productName , description , adress;
   double price;
-  List<String> images;
+
 
   void addError({String error}) {
     if (!errors.contains(error))
@@ -38,6 +42,18 @@ class _AddProductFormState extends State<AddProductForm> {
       setState(() {
         errors.remove(error);
       });
+  }
+
+  // This funcion will helps you to pick and Image from Gallery
+  _pickImageFromGallery() async {
+    PickedFile pickedFile =
+        await picker.getImage(source: ImageSource.gallery, imageQuality: 50);
+
+    File image = File(pickedFile.path);
+
+    setState(() {
+      _image = image;
+    });
   }
 
   // _onpress(){
@@ -75,46 +91,25 @@ class _AddProductFormState extends State<AddProductForm> {
           SizedBox(height: getProportionateScreenHeight(30)),
           buildDescriptionFromField(),
           SizedBox(height: getProportionateScreenHeight(30)),
+            PrimaryButton(
+            text: "pick Product",
+                  press: () {
+              _pickImageFromGallery();
+            }
+          ),
           FormError(errors: errors),
           SizedBox(height: getProportionateScreenHeight(40)),
           PrimaryButton(
             text: "Add Product",
                   press: () {
-              //_onpress();
+
+               databaseHelper.addData(productName , price,  description  , _image);
             }
           )],
       ),
     );
   }
 
-  TextFormField buildAddressFormField() {
-    return TextFormField(
-      onSaved: (newValue) => Provider.of<ProductProvider>(context, listen: false).adress=newValue,
-      onChanged: (value) {
-        if (value.isNotEmpty) {
-        //  removeError(error: kAddressNullError);
-          Provider.of<ProductProvider>(context, listen: false).adress=value;
-        }
-        return null;
-      },
-      // validator: (value) {
-      //   if (value.isEmpty) {
-      //     addError(error: kAddressNullError);
-      //     return "";
-      //   }
-      //   return null;
-      // },
-      decoration: InputDecoration(
-        labelText: "Address",
-        hintText: "Enter your address",
-        // If  you are using latest version of flutter then lable text and hint text shown like this
-        // if you r using flutter less then 1.20.* then maybe this is not working properly
-        floatingLabelBehavior: FloatingLabelBehavior.always,
-        suffixIcon:
-            CustomSurffixIcon(svgIcon: "assets/icons/Location point.svg"),
-      ),
-    );
-  }
 
   TextFormField buildDescriptionFromField() {
     return TextFormField(

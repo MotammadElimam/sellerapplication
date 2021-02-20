@@ -1,5 +1,6 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'dart:io';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class DatabaseHelper{
@@ -105,9 +106,20 @@ class DatabaseHelper{
       print('Response status : ${response.statusCode}');
       print('Response body : ${response.body}');
     });
-  }
+  }*/
 
-  void addData(String name , String price) async {
+  String getFileBase64(File image) {
+  if (image != null) {
+    List<int> bytes = image.readAsBytesSync();
+    String base64Image = base64Encode(bytes);
+    return base64Image;
+  }
+  return null;
+}
+
+
+
+  void addData(String name , double price , String desc ,File image) async {
     final prefs = await SharedPreferences.getInstance();
     final key = 'token';
     final value = prefs.get(key ) ?? 0;
@@ -120,7 +132,9 @@ class DatabaseHelper{
         },
         body: {
           "name": "$name",
-          "price" : "$price"
+          "price" : "$price",
+          "desc" : "$desc",
+          "image": getFileBase64(image)
         }).then((response){
       print('Response status : ${response.statusCode}');
       print('Response body : ${response.body}');
@@ -146,7 +160,7 @@ class DatabaseHelper{
       print('Response status : ${response.statusCode}');
       print('Response body : ${response.body}');
     });
-  }*/
+  }
 
 
 
