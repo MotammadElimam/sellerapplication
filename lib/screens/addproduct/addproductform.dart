@@ -9,9 +9,8 @@ import 'package:sellerapplication/constants.dart';
 import 'package:sellerapplication/size_config.dart';
 import 'package:provider/provider.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:http/http.dart' as http;
 import 'dart:io';
-
-
 
 class AddProductForm extends StatefulWidget {
   @override
@@ -19,16 +18,17 @@ class AddProductForm extends StatefulWidget {
 }
 
 class _AddProductFormState extends State<AddProductForm> {
-  File _image;
-  final picker = ImagePicker();
   DatabaseHelper databaseHelper = new DatabaseHelper();
+
+  PickedFile _image;
+  final ImagePicker _picker = ImagePicker();
+
   String msgStatus = '';
   final _formKey = GlobalKey<FormState>();
   final List<String> errors = [];
-  int id; 
-  String productName , description , adress;
+  int id;
+  String productName, description, adress;
   double price;
-
 
   void addError({String error}) {
     if (!errors.contains(error))
@@ -45,19 +45,9 @@ class _AddProductFormState extends State<AddProductForm> {
   }
 
   // This funcion will helps you to pick and Image from Gallery
-  _pickImageFromGallery() async {
-    PickedFile pickedFile =
-        await picker.getImage(source: ImageSource.gallery, imageQuality: 50);
-
-    File image = File(pickedFile.path);
-
-    setState(() {
-      _image = image;
-    });
-  }
-
+  
   // _onpress(){
-  //   setState(() {             
+  //   setState(() {
   //             if (_formKey.currentState.validate()) {
   //              databaseHelper.registerData(
   //                Provider.of<ProductProvider>(context, listen: false).email,
@@ -91,39 +81,39 @@ class _AddProductFormState extends State<AddProductForm> {
           SizedBox(height: getProportionateScreenHeight(30)),
           buildDescriptionFromField(),
           SizedBox(height: getProportionateScreenHeight(30)),
-            PrimaryButton(
-            text: "pick Product",
-                  press: () {
-              _pickImageFromGallery();
-            }
-          ),
+          PrimaryButton(
+              text: "pick Product",
+              press: () {
+                _pickImage();
+              }),
           FormError(errors: errors),
           SizedBox(height: getProportionateScreenHeight(40)),
           PrimaryButton(
-            text: "Add Product",
-                  press: () {
-
-               databaseHelper.addData(productName , price,  description  , _image);
-            }
-          )],
+              text: "Add Product",
+              press: () {
+                // databaseHelper.addData(productName, price, description, _image);
+              })
+        ],
       ),
     );
   }
 
-
   TextFormField buildDescriptionFromField() {
     return TextFormField(
-      onSaved: (newValue) =>Provider.of<ProductProvider>(context, listen: false).description=newValue,
+      onSaved: (newValue) =>
+          Provider.of<ProductProvider>(context, listen: false).description =
+              newValue,
       onChanged: (value) {
         if (value.isNotEmpty) {
-        //  removeError(error: kPhoneNumberNullError);
-          Provider.of<ProductProvider>(context, listen: false).description=value;
+          //  removeError(error: kPhoneNumberNullError);
+          Provider.of<ProductProvider>(context, listen: false).description =
+              value;
         }
         return null;
       },
       validator: (value) {
         if (value.isEmpty) {
-        //  addError(error: kPhoneNumberNullError);
+          //  addError(error: kPhoneNumberNullError);
           return "";
         }
         return null;
@@ -141,12 +131,15 @@ class _AddProductFormState extends State<AddProductForm> {
 
   TextFormField buildPriceFormField() {
     return TextFormField(
-        keyboardType: TextInputType.phone,
-      onSaved: (newValue) => Provider.of<ProductProvider>(context, listen: false).price=double.parse(newValue),
+      keyboardType: TextInputType.phone,
+      onSaved: (newValue) =>
+          Provider.of<ProductProvider>(context, listen: false).price =
+              double.parse(newValue),
       onChanged: (value) {
         if (value.isNotEmpty) {
           //removeError(error: kNamelNullError);
-           Provider.of<ProductProvider>(context, listen: false).price=double.parse(value);
+          Provider.of<ProductProvider>(context, listen: false).price =
+              double.parse(value);
         }
         return null;
       },
@@ -163,11 +156,14 @@ class _AddProductFormState extends State<AddProductForm> {
 
   TextFormField buildProductNameFormField() {
     return TextFormField(
-    onSaved: (newValue) => Provider.of<ProductProvider>(context, listen: false).productName=newValue,
+      onSaved: (newValue) =>
+          Provider.of<ProductProvider>(context, listen: false).productName =
+              newValue,
       onChanged: (value) {
         if (value.isNotEmpty) {
           removeError(error: kNamelNullError);
-           Provider.of<ProductProvider>(context, listen: false).productName=value;
+          Provider.of<ProductProvider>(context, listen: false).productName =
+              value;
         }
         return null;
       },
@@ -189,31 +185,93 @@ class _AddProductFormState extends State<AddProductForm> {
     );
   }
 
-
-  void _showDialog(){
+  void _showDialog() {
     showDialog(
-        context:context ,
-        builder:(BuildContext context){
+        context: context,
+        builder: (BuildContext context) {
           return AlertDialog(
             title: new Text('Failed'),
-            content:  new Text('Check your email or password'),
+            content: new Text('Check your email or password'),
             actions: <Widget>[
               new RaisedButton(
-
                 child: new Text(
                   'Close',
                 ),
-
-                onPressed: (){
+                onPressed: () {
                   Navigator.of(context).pop();
                 },
-
               ),
             ],
           );
-        }
-    );
+        });
+  }
+
+  Future<String> uploadImage(filepath, url) async {
+    var request = http.MultipartRequest('POST', Uri.parse(url));
+    request.files.add(await http.MultipartFile.fromPath('image', filepath));
+    var res = await request.send();
+    return res.reasonPhrase;
+  }
+
+
+
+
+  Future<void> retriveLostData() async {
+    final LostData response = await _picker.getLostData();
+    if (response.isEmpty) {
+      return;
+    }
+    if (response.file != null) {
+      setState(() {
+        _image = response.file;
+      });
+    } else {
+      print('Retrieve error ' + response.exception.code);
+    }
+  }
+
+
+
+
+   Widget _previewImage() {
+    if (_image != null) {
+      return Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Image.file(File(_image.path)),
+            SizedBox(
+              height: 20,
+            ),
+            RaisedButton(
+              onPressed: () async {
+                var res = await uploadImage(_image.path, databaseHelper.serverUrl);
+                print(res);
+              },
+              child: const Text('Upload'),
+            )
+          ],
+        ),
+      );
+    } else {
+      return const Text(
+        'You have not yet picked an image.',
+        textAlign: TextAlign.center,
+      );
+    }
+  }
+
+
+
+
+  void _pickImage() async {
+    try {
+      final pickedFile = await _picker.getImage(source: ImageSource.gallery);
+      setState(() {
+        _image = pickedFile;
+      });
+    } catch (e) {
+      print("Image picker error " + e);
+    }
   }
 }
-
- 
