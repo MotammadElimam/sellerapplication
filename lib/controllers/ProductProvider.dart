@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:image_picker/image_picker.dart';
 import 'package:sellerapplication/models/Wishlist.dart';
 import 'package:sellerapplication/models/wishlist_item.dart';
 import 'package:flutter/material.dart';
@@ -23,8 +26,9 @@ class ProductProvider extends ChangeNotifier {
 
 
   String productName , description;
-  List<String> images;
-  
+  File image;
+  final picker = ImagePicker();
+
   
 
   addToCart(CartItem cartItem) {
@@ -70,4 +74,20 @@ class ProductProvider extends ChangeNotifier {
     price = cart.cartItems.sumByDouble((c) => c.getTotalPrice());
   }
 
+
+Future getImage() async {
+    final imageFilePath = await picker.getImage(source: ImageSource.gallery);
+
+    
+      if (imageFilePath != null) {
+        image = File(imageFilePath.path);
+      } else {
+        print('No image selected.');
+      }
+  }
+
+
+
 }
+
+

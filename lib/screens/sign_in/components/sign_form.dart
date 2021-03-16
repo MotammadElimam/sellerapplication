@@ -47,6 +47,7 @@ read() async {
     final prefs = await SharedPreferences.getInstance();
     final key = 'token';
     final value = prefs.get(key ) ?? 0;
+    print(value);
     if(value != '0'){
      Navigator.pushNamed(context, HomeScreen.routeName);
     }

@@ -11,6 +11,8 @@ import 'package:provider/provider.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:http/http.dart' as http;
 import 'dart:io';
+import 'dart:convert';
+
 
 class AddProductForm extends StatefulWidget {
   @override
@@ -20,8 +22,8 @@ class AddProductForm extends StatefulWidget {
 class _AddProductFormState extends State<AddProductForm> {
   DatabaseHelper databaseHelper = new DatabaseHelper();
 
-  PickedFile _image;
-  final ImagePicker _picker = ImagePicker();
+  File _image;
+  final picker = ImagePicker();
 
   String msgStatus = '';
   final _formKey = GlobalKey<FormState>();
@@ -45,29 +47,27 @@ class _AddProductFormState extends State<AddProductForm> {
   }
 
   // This funcion will helps you to pick and Image from Gallery
-  
-  // _onpress(){
-  //   setState(() {
-  //             if (_formKey.currentState.validate()) {
-  //              databaseHelper.registerData(
-  //                Provider.of<ProductProvider>(context, listen: false).email,
-  //                Provider.of<ProductProvider>(context, listen: false).password,
-  //                Provider.of<ProductProvider>(context, listen: false).confirmPassword,
-  //                Provider.of<ProductProvider>(context, listen: false).firstName,
-  //                Provider.of<ProductProvider>(context, listen: false).lastName,
-  //                Provider.of<ProductProvider>(context, listen: false).phoneNumber,
-  //                Provider.of<ProductProvider>(context, listen: false).adress,
-  //                ).whenComplete((){
-  //               if(databaseHelper.status){
-  //               _showDialog();
-  //               msgStatus = 'Check email or password';
-  //               }else{
-  //               Navigator.pushNamed(context, HomeScreen.routeName);
-  //                  }
-  //       });
-  //     }
-  //      });
-  // }
+
+  _onpress(){
+    setState(() {
+               databaseHelper.addData(
+                 Provider.of<ProductProvider>(context, listen: false).productName,
+                 Provider.of<ProductProvider>(context, listen: false).price,
+                 Provider.of<ProductProvider>(context, listen: false).description,
+                 Provider.of<ProductProvider>(context, listen: false).image,
+                 
+                 );
+      
+       });
+  }
+
+   getImage(){
+    setState(() {
+              
+                 Provider.of<ProductProvider>(context, listen: false).getImage();
+      
+       });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -84,14 +84,14 @@ class _AddProductFormState extends State<AddProductForm> {
           PrimaryButton(
               text: "pick Product",
               press: () {
-                _pickImage();
+                getImage();
               }),
           FormError(errors: errors),
           SizedBox(height: getProportionateScreenHeight(40)),
           PrimaryButton(
               text: "Add Product",
               press: () {
-                // databaseHelper.addData(productName, price, description, _image);
+                _onpress();
               })
         ],
       ),
@@ -185,93 +185,15 @@ class _AddProductFormState extends State<AddProductForm> {
     );
   }
 
-  void _showDialog() {
-    showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return AlertDialog(
-            title: new Text('Failed'),
-            content: new Text('Check your email or password'),
-            actions: <Widget>[
-              new RaisedButton(
-                child: new Text(
-                  'Close',
-                ),
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-              ),
-            ],
-          );
-        });
-  }
+  // Future getImage() async {
+  //   final imageFilePath = await picker.getImage(source: ImageSource.gallery);
 
-  Future<String> uploadImage(filepath, url) async {
-    var request = http.MultipartRequest('POST', Uri.parse(url));
-    request.files.add(await http.MultipartFile.fromPath('image', filepath));
-    var res = await request.send();
-    return res.reasonPhrase;
-  }
-
-
-
-
-  Future<void> retriveLostData() async {
-    final LostData response = await _picker.getLostData();
-    if (response.isEmpty) {
-      return;
-    }
-    if (response.file != null) {
-      setState(() {
-        _image = response.file;
-      });
-    } else {
-      print('Retrieve error ' + response.exception.code);
-    }
-  }
-
-
-
-
-   Widget _previewImage() {
-    if (_image != null) {
-      return Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Image.file(File(_image.path)),
-            SizedBox(
-              height: 20,
-            ),
-            RaisedButton(
-              onPressed: () async {
-                var res = await uploadImage(_image.path, databaseHelper.serverUrl);
-                print(res);
-              },
-              child: const Text('Upload'),
-            )
-          ],
-        ),
-      );
-    } else {
-      return const Text(
-        'You have not yet picked an image.',
-        textAlign: TextAlign.center,
-      );
-    }
-  }
-
-
-
-
-  void _pickImage() async {
-    try {
-      final pickedFile = await _picker.getImage(source: ImageSource.gallery);
-      setState(() {
-        _image = pickedFile;
-      });
-    } catch (e) {
-      print("Image picker error " + e);
-    }
-  }
+  //   setState(() {
+  //     if (imageFilePath != null) {
+  //       _image = File(imageFilePath.path);
+  //     } else {
+  //       print('No image selected.');
+  //     }
+  //   });
+  // }
 }
