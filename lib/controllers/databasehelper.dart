@@ -33,6 +33,7 @@ class DatabaseHelper {
     }
   }
 
+
   registerData(
       String email,
       String password,
@@ -68,7 +69,7 @@ class DatabaseHelper {
     }
   }
 
-  /*Future<List> getData() async{
+  Future<List> getData() async{
 
     final prefs = await SharedPreferences.getInstance();
     final key = 'token';
@@ -83,29 +84,29 @@ class DatabaseHelper {
     return json.decode(response.body);
   }
 
-  void deleteData(int id) async {
-    final prefs = await SharedPreferences.getInstance();
-    final key = 'token';
-    final value = prefs.get(key ) ?? 0;
+//   void deleteData(int id) async {
+//     final prefs = await SharedPreferences.getInstance();
+//     final key = 'token';
+//     final value = prefs.get(key ) ?? 0;
 
-    String myUrl = "$serverUrl/products/$id";
-    http.delete(myUrl,
-        headers: {
-          'Accept':'application/json',
-          'Authorization' : 'Bearer $value'
-    } ).then((response){
-      print('Response status : ${response.statusCode}');
-      print('Response body : ${response.body}');
-    });
-  }*/
+//     String myUrl = "$serverUrl/products/$id";
+//     http.delete(myUrl,
+//         headers: {
+//           'Accept':'application/json',
+//           'Authorization' : 'Bearer $value'
+//     } ).then((response){
+//       print('Response status : ${response.statusCode}');
+//       print('Response body : ${response.body}');
+//     });
+//   }*/
 
-//   void getFileBase64(File image) {
-//     final bytes = Io.File("").readAsBytesSync();
-//   if (image != null) {
-//     String img64 = base64Encode(bytes);
-//     print(img64.substring(0, 100));
-//   }
-// }
+// //   void getFileBase64(File image) {
+// //     final bytes = Io.File("").readAsBytesSync();
+// //   if (image != null) {
+// //     String img64 = base64Encode(bytes);
+// //     print(img64.substring(0, 100));
+// //   }
+// // }
 
  String getFileBase64(File image) {
   if (image != null) {
