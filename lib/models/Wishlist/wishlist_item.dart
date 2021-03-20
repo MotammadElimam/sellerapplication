@@ -1,4 +1,4 @@
-import 'package:sellerapplication/models/Product.dart';
+import 'package:sellerapplication/models/Product/Product.dart';
 
 
 class Wishlistitem {

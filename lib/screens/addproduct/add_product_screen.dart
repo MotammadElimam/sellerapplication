@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sellerapplication/screens/addproduct/body.dart';
+import 'package:sellerapplication/screens/addproduct/components/body.dart';
 
 
 
@@ -9,7 +9,7 @@ class AddProductScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sign Up'),
+        title: Text('Add Product'),
       ),
       body: Body(),
     );

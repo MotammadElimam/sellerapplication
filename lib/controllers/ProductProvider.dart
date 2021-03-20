@@ -1,17 +1,20 @@
 import 'dart:io';
 
 import 'package:image_picker/image_picker.dart';
-import 'package:sellerapplication/models/Wishlist.dart';
-import 'package:sellerapplication/models/wishlist_item.dart';
+import 'package:sellerapplication/models/Product/Product.dart';
+import 'package:sellerapplication/models/Product/product_item.dart';
+import 'package:sellerapplication/models/Wishlist/Wishlist.dart';
+import 'package:sellerapplication/models/Wishlist/wishlist_item.dart';
 import 'package:flutter/material.dart';
-import 'package:sellerapplication/models/Cart.dart';
-import 'package:sellerapplication/models/cart_item.dart';
+import 'package:sellerapplication/models/Cart/Cart.dart';
+import 'package:sellerapplication/models/Cart/cart_item.dart';
 import 'package:supercharged/supercharged.dart';
 
 class ProductProvider extends ChangeNotifier {
   double price = 0.0;
   Cart cart = Cart();
   Wishlist wishlist = Wishlist();
+  Product product = Product();
 
 
 
@@ -22,6 +25,7 @@ class ProductProvider extends ChangeNotifier {
   String lastName;
   String phoneNumber;
   String adress;
+
 
 
 
@@ -60,7 +64,6 @@ class ProductProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-
   removeFromWishlist(Wishlistitem wishlistitem) {
     try {
       wishlist.wishlistitems.remove(wishlistitem);
@@ -69,7 +72,30 @@ class ProductProvider extends ChangeNotifier {
     }
     notifyListeners();
   }
+ 
+  addToSellerProducts(ProductItem productItem) {
+    try {
+      product.productitem.add(productItem);
+    } catch (e) {
+      print('catch $e');
+    }
+    notifyListeners();
+  }
 
+  removeFromSellerProducts(ProductItem productItem) {
+    try {
+      product.productitem.remove(productItem);
+    } catch (e) {
+      print('catch $e');
+    }
+    notifyListeners();
+  }
+  
+  
+  
+  
+  
+  
   getTotalPrice() {
     price = cart.cartItems.sumByDouble((c) => c.getTotalPrice());
   }

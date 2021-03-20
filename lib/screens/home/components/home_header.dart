@@ -1,4 +1,4 @@
-import 'package:sellerapplication/models/wishlist_item.dart';
+import 'package:sellerapplication/models/Wishlist/wishlist_item.dart';
 import 'package:sellerapplication/screens/wishlist/wishlist_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:sellerapplication/screens/home/components/icon_btn_with_counter.dart';

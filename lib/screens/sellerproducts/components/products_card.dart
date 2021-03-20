@@ -1,16 +1,16 @@
-import 'package:sellerapplication/models/Cart/cart_item.dart';
+import 'package:sellerapplication/models/Product/product_item.dart';
 import 'package:flutter/material.dart';
 import 'package:sellerapplication/constants.dart';
 import 'package:sellerapplication/size_config.dart';
 
 
-class CartCard extends StatelessWidget {
-  CartCard({
+class ProductCard extends StatelessWidget {
+  ProductCard({
     Key key,
-    this.cartitem,
+    this.productItem,
   }) : super(key: key);
 
-   CartItem cartitem;
+   ProductItem productItem;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class CartCard extends StatelessWidget {
                 color: Color(0xFFF5F6F9),
                 borderRadius: BorderRadius.circular(15),
               ),
-              child: Image.asset(cartitem.product.images[0]),
+              child: Image.asset(productItem.product.images[0]),
             ),
           ),
         ),
@@ -35,19 +35,19 @@ class CartCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              cartitem.product.productName,
+              productItem.product.productName,
               style: TextStyle(color: Colors.black, fontSize: 16),
               maxLines: 2,
             ),
             SizedBox(height: 10),
             Text.rich(
               TextSpan(
-                text: "\$${cartitem.product.price}",
+                text: "\$${productItem.product.price}",
                 style: TextStyle(
                     fontWeight: FontWeight.w600, color: kPrimaryColor),
                 children: [
                   TextSpan(
-                      text: " x${cartitem.quantity}",
+                      //text: " x${productItem.quantity}",
                       style: Theme.of(context).textTheme.bodyText1),
                 ],
               ),

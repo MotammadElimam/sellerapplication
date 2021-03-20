@@ -1,7 +1,7 @@
 import 'package:sellerapplication/components/product_card.dart';
 import 'package:sellerapplication/screens/details/details_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:sellerapplication/models/Product.dart';
+import 'package:sellerapplication/models/Product/Product.dart';
 import 'package:sellerapplication/size_config.dart';
 import 'package:sellerapplication/screens/home/components/section_title.dart';
 
@@ -34,8 +34,7 @@ class PopularProducts extends StatelessWidget {
                       ),
                     );
 
-                  return SizedBox
-                      .shrink(); // here by default width and height is 0
+                  return SizedBox.shrink(); // here by default width and height is 0
                 },
               ),
               SizedBox(width: getProportionateScreenWidth(20)),

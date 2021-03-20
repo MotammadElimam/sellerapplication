@@ -1,6 +1,8 @@
 import 'package:sellerapplication/components/buttons/primary_button.dart';
 import 'package:sellerapplication/controllers/ProductProvider.dart';
 import 'package:sellerapplication/controllers/databasehelper.dart';
+import 'package:sellerapplication/models/Product/Product.dart';
+import 'package:sellerapplication/models/Product/product_item.dart';
 import 'package:sellerapplication/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:sellerapplication/components/custom_surfix_icon.dart';
@@ -15,6 +17,14 @@ import 'dart:convert';
 
 
 class AddProductForm extends StatefulWidget {
+
+final Product product;
+ProductItem _productItem;
+
+ AddProductForm({Key key, @required this.product}) : super(key: key);
+
+
+
   @override
   _AddProductFormState createState() => _AddProductFormState();
 }
@@ -61,13 +71,9 @@ class _AddProductFormState extends State<AddProductForm> {
        });
   }
 
-   getImage(){
-    setState(() {
-              
-                 Provider.of<ProductProvider>(context, listen: false).getImage();
-      
-       });
-  }
+   
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -185,15 +191,11 @@ class _AddProductFormState extends State<AddProductForm> {
     );
   }
 
-  // Future getImage() async {
-  //   final imageFilePath = await picker.getImage(source: ImageSource.gallery);
-
-  //   setState(() {
-  //     if (imageFilePath != null) {
-  //       _image = File(imageFilePath.path);
-  //     } else {
-  //       print('No image selected.');
-  //     }
-  //   });
-  // }
+ getImage(){
+    setState(() {
+              
+                 Provider.of<ProductProvider>(context, listen: false).getImage();
+      
+       });
+  }
 }

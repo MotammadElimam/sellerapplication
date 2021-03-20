@@ -1,7 +1,7 @@
 //import 'package:sellerapplication/models/wishlist_item.dart';
 import 'package:flutter/material.dart';
 //import 'package:sellerapplication/models/cart_item.dart';
-import 'package:sellerapplication/models/Product.dart';
+import 'package:sellerapplication/models/Product/Product.dart';
 import 'package:provider/provider.dart';
 import 'package:sellerapplication/controllers/ProductProvider.dart';
 import 'package:sellerapplication/size_config.dart';
@@ -19,7 +19,7 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
-  // CartItem _cartItem;
+ // CartItem _cartItem;
   // int numOfItems = 1;
   // Wishlistitem _wishlistitem;
    @override
