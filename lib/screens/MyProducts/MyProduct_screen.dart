@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:sellerapplication/screens/cart/components/body.dart';
-import 'package:sellerapplication/screens/cart/components/check_out_card.dart';
+import 'package:sellerapplication/components/coustom_bottom_nav_bar.dart';
+import 'package:sellerapplication/enums.dart';
+import 'package:sellerapplication/screens/Myproducts/components/body.dart';
 
 
-class CartScreen extends StatelessWidget {
-  static String routeName = "/cart";
+class MyProductsScreen extends StatelessWidget {
+  static String routeName = "/MyProducts";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(context),
       body: Body(),
-      bottomNavigationBar: CheckoutCard(),
+      bottomNavigationBar: CustomBottomNavBar(selectedMenu: MenuState.myProducts),
     );
   }
 
@@ -19,7 +20,7 @@ class CartScreen extends StatelessWidget {
       title: Column(
         children: [
           Text(
-            "Your Cart",
+            "Your Products",
             style: TextStyle(color: Colors.black),
           ),
           /*Text(

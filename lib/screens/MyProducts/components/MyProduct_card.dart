@@ -1,16 +1,17 @@
-import 'package:sellerapplication/models/Product/product_item.dart';
+import 'package:sellerapplication/models/MyProducts/MyProductItem.dart';
 import 'package:flutter/material.dart';
 import 'package:sellerapplication/constants.dart';
 import 'package:sellerapplication/size_config.dart';
 
 
-class ProductCard extends StatelessWidget {
-  ProductCard({
+class MyProductsCard extends StatelessWidget {
+  final String serverUrl = "http://192.168.43.92:8000/";
+  MyProductsCard({
     Key key,
-    this.productItem,
+    this.myProductItem,
   }) : super(key: key);
 
-   ProductItem productItem;
+   MyProductItem myProductItem;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,7 @@ class ProductCard extends StatelessWidget {
                 color: Color(0xFFF5F6F9),
                 borderRadius: BorderRadius.circular(15),
               ),
-              child: Image.asset(productItem.product.images[0]),
+              child: Image.network(serverUrl+myProductItem.product.images[0]),
             ),
           ),
         ),
@@ -35,21 +36,16 @@ class ProductCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              productItem.product.productName,
+              myProductItem.product.productName,
               style: TextStyle(color: Colors.black, fontSize: 16),
               maxLines: 2,
             ),
             SizedBox(height: 10),
             Text.rich(
               TextSpan(
-                text: "\$${productItem.product.price}",
+                text: "\$${myProductItem.product.price}",
                 style: TextStyle(
                     fontWeight: FontWeight.w600, color: kPrimaryColor),
-                children: [
-                  TextSpan(
-                      //text: " x${productItem.quantity}",
-                      style: Theme.of(context).textTheme.bodyText1),
-                ],
               ),
             )
           ],

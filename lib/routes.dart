@@ -1,9 +1,8 @@
 import 'package:flutter/widgets.dart';
+import 'package:sellerapplication/screens/MyProducts/MyProduct_screen.dart';
 import 'package:sellerapplication/screens/addproduct/add_product_screen.dart';
-import 'package:sellerapplication/screens/balance_page/balancePage.dart';
 import 'package:sellerapplication/screens/profile/profile_screen.dart';
 import 'package:sellerapplication/screens/profile/setting.dart';
-import 'package:sellerapplication/screens/sellerproducts/product_screen.dart';
 import 'package:sellerapplication/screens/splash/splash_scrreen.dart';
 import 'package:sellerapplication/screens/sign_in/sign_in_screen.dart';
 import 'package:sellerapplication/screens/forgot_password/forgot_password_screen.dart';
@@ -12,8 +11,6 @@ import 'package:sellerapplication/screens/complete_profile/complete_profile_scre
 import 'package:sellerapplication/screens/home/home_screen.dart';
 import 'package:sellerapplication/screens/otp/otp_screen.dart';
 import 'package:sellerapplication/screens/details/details_screen.dart';
-import 'package:sellerapplication/screens/cart/cart_screen.dart';
-import 'package:sellerapplication/screens/wishlist/wishlist_screen.dart';
 
 
 // We use name route
@@ -27,11 +24,8 @@ final Map<String, WidgetBuilder> routes = {
   OtpScreen.routeName: (context) => OtpScreen(),
   HomeScreen.routeName: (context) => HomeScreen(),
   DetailsScreen.routeName: (context) => DetailsScreen(),
-  CartScreen.routeName: (context) => CartScreen(),
-  WishListScreen.routeName: (context) => WishListScreen(),
+  MyProductsScreen.routeName: (context) => MyProductsScreen(),
   ProfileScreen.routeName:(context) => ProfileScreen(),
-  BalancePage.routeName:(context) => BalancePage(),
   SettingsPage.routeName:(context)=>SettingsPage(),
   AddProductScreen.routeName:(context)=>AddProductScreen(),
-  ProductsScreen.routeName:(context)=>ProductsScreen(),
 };

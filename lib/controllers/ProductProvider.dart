@@ -1,21 +1,14 @@
-import 'dart:io';
 
-import 'package:image_picker/image_picker.dart';
-import 'package:sellerapplication/models/Product/Product.dart';
-import 'package:sellerapplication/models/Product/product_item.dart';
-import 'package:sellerapplication/models/Wishlist/Wishlist.dart';
-import 'package:sellerapplication/models/Wishlist/wishlist_item.dart';
 import 'package:flutter/material.dart';
-import 'package:sellerapplication/models/Cart/Cart.dart';
-import 'package:sellerapplication/models/Cart/cart_item.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:sellerapplication/models/MyProducts/MyProduct.dart';
+import 'package:sellerapplication/models/MyProducts/MyProductItem.dart';
 import 'package:supercharged/supercharged.dart';
+import 'dart:io';
 
 class ProductProvider extends ChangeNotifier {
   double price = 0.0;
-  Cart cart = Cart();
-  Wishlist wishlist = Wishlist();
-  Product product = Product();
-
+  Myproduct myproduct = Myproduct();
 
 
   String email;
@@ -26,82 +19,42 @@ class ProductProvider extends ChangeNotifier {
   String phoneNumber;
   String adress;
 
-
-
-
-  String productName , description;
+  String productName;
+  String description;
   File image;
-  final picker = ImagePicker();
+   final picker = ImagePicker();
 
-  
 
-  addToCart(CartItem cartItem) {
-    try {
-      cart.cartItems.add(cartItem);
-      getTotalPrice();
-    } catch (e) {
-      print('catch $e');
-    }
-    notifyListeners();
-  }
 
-  removeFromCart(CartItem cartItem) {
-    try {
-      cart.cartItems.remove(cartItem);
-      getTotalPrice();
-    } catch (e) {
-      print('catch $e');
-    }
-    notifyListeners();
-  }
 
-  addToWishlist(Wishlistitem wishlistitem) {
-    try {
-      wishlist.wishlistitems.add(wishlistitem);
-    } catch (e) {
-      print('catch $e');
-    }
-    notifyListeners();
-  }
-
-  removeFromWishlist(Wishlistitem wishlistitem) {
-    try {
-      wishlist.wishlistitems.remove(wishlistitem);
-    } catch (e) {
-      print('catch $e');
-    }
-    notifyListeners();
-  }
  
-  addToSellerProducts(ProductItem productItem) {
+
+  addToCart(MyProductItem myProductItem) {
     try {
-      product.productitem.add(productItem);
+      myproduct.myProductsItems.add(myProductItem);
+      getTotalPrice();
     } catch (e) {
       print('catch $e');
     }
     notifyListeners();
   }
 
-  removeFromSellerProducts(ProductItem productItem) {
+  removeFromCart(MyProductItem myProductItem) {
     try {
-      product.productitem.remove(productItem);
+      myproduct.myProductsItems.remove(myProductItem);
+      getTotalPrice();
     } catch (e) {
       print('catch $e');
     }
     notifyListeners();
   }
-  
-  
-  
-  
-  
-  
+
+
   getTotalPrice() {
-    price = cart.cartItems.sumByDouble((c) => c.getTotalPrice());
+    price = myproduct.myProductsItems.sumByDouble((c) => c.getTotalPrice());
   }
 
-
-Future getImage() async {
+  Future getImage() async {
     final imageFilePath = await picker.getImage(source: ImageSource.gallery);
 
     
@@ -113,7 +66,4 @@ Future getImage() async {
   }
 
 
-
 }
-
-

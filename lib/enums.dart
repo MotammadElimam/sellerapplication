@@ -1,1 +1,1 @@
-enum MenuState { home, wishlist, wallet, profile }
+enum MenuState { home, myProducts, profile, addproducts }

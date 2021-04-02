@@ -35,7 +35,7 @@ class _AddProductFormState extends State<AddProductForm> {
   File _image;
   final picker = ImagePicker();
 
-  String msgStatus = '';
+  //String msgStatus = '';
   final _formKey = GlobalKey<FormState>();
   final List<String> errors = [];
   int id;
@@ -88,7 +88,7 @@ class _AddProductFormState extends State<AddProductForm> {
           buildDescriptionFromField(),
           SizedBox(height: getProportionateScreenHeight(30)),
           PrimaryButton(
-              text: "pick Product",
+              text: "pick Image Product",
               press: () {
                 getImage();
               }),
