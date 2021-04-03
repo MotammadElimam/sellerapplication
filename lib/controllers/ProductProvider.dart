@@ -29,30 +29,29 @@ class ProductProvider extends ChangeNotifier {
 
  
 
-  addToCart(MyProductItem myProductItem) {
-    try {
-      myproduct.myProductsItems.add(myProductItem);
-      getTotalPrice();
-    } catch (e) {
-      print('catch $e');
-    }
-    notifyListeners();
-  }
+  // addToMyProducts(MyProductsItem myProductItem) {
+  //   try {
+  //     myproduct.myProductsItems.add(myProductItem);
+  //     getTotalPrice();
+  //   } catch (e) {
+  //     print('catch $e');
+  //   }
+  //   notifyListeners();
+  // }
 
-  removeFromCart(MyProductItem myProductItem) {
-    try {
-      myproduct.myProductsItems.remove(myProductItem);
-      getTotalPrice();
-    } catch (e) {
-      print('catch $e');
-    }
-    notifyListeners();
-  }
+  // removeFromMyProducts(MyProductsItem myProductItem) {
+  //   try {
+  //     myproduct.myProductsItems.remove(myProductItem);
+  //     getTotalPrice();
+  //   } catch (e) {
+  //     print('catch $e');
+  //   }
+  //   notifyListeners();
+  // }
 
-
-  getTotalPrice() {
-    price = myproduct.myProductsItems.sumByDouble((c) => c.getTotalPrice());
-  }
+  // getTotalPrice() {
+  //   price = myproduct.myProductsItems.sumByDouble((c) => c.getTotalPrice());
+  // }
 
   Future getImage() async {
     final imageFilePath = await picker.getImage(source: ImageSource.gallery);

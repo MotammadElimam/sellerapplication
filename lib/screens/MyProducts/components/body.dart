@@ -3,8 +3,8 @@ import 'package:sellerapplication/controllers/ProductProvider.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sellerapplication/models/MyProducts/MyProductsItem.dart';
 import 'package:sellerapplication/models/Product/Product.dart';
+import 'package:sellerapplication/screens/MyProducts/components/MyProducts_card.dart';
 import 'package:sellerapplication/size_config.dart';
-import 'package:sellerapplication/screens/MyProducts/components/MyProduct_card.dart';
 import 'package:provider/provider.dart';
 import 'package:sellerapplication/controllers/databasehelper.dart';
 

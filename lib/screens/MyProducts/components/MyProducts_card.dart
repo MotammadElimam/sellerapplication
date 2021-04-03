@@ -8,7 +8,7 @@ class MyProductsCard extends StatelessWidget {
   final String serverUrl = "http://192.168.43.92:8000/storage/product";
   MyProductsCard({
     Key key,
-    this.myProductItem,
+    this.myProductsItem,
   }) : super(key: key);
 
    MyProductsItem myProductsItem;

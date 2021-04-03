@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:sellerapplication/screens/home/components/icon_btn_with_counter.dart';
 import 'package:sellerapplication/screens/home/components/search_field.dart';
 import 'package:sellerapplication/size_config.dart';
-import 'package:sellerapplication/screens/MyProducts/MyProduct_screen.dart';
+import 'package:sellerapplication/screens/MyProducts/MyProducts_screen.dart';
 
 class HomeHeader extends StatelessWidget {
   const HomeHeader({

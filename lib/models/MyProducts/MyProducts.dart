@@ -1,9 +1,8 @@
-import 'package:sellerapplication/models/MyProducts/MyProductItem.dart';
-import 'package:sellerapplication/models/MyProducts/MyProductItem.dart';
+import 'package:sellerapplication/models/MyProducts/MyProductsItem.dart';
 
 class Myproduct {
  double totalPrice = 0.0;
-  List<MyProductItem> myProductsItems = <MyProductItem>[];
+  List<MyProductsItem> myProductsItems = <MyProductsItem>[];
 
   Myproduct();
 }

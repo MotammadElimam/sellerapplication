@@ -1,5 +1,5 @@
 
-import 'package:sellerapplication/screens/MyProducts/MyProduct_screen.dart';
+import 'package:sellerapplication/screens/MyProducts/MyProducts_screen.dart';
 import 'package:sellerapplication/screens/addproduct/add_product_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
