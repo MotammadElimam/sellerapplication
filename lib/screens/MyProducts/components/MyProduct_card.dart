@@ -1,17 +1,17 @@
-import 'package:sellerapplication/models/MyProducts/MyProductItem.dart';
+import 'package:sellerapplication/models/MyProducts/MyProductsItem.dart';
 import 'package:flutter/material.dart';
 import 'package:sellerapplication/constants.dart';
 import 'package:sellerapplication/size_config.dart';
 
 
 class MyProductsCard extends StatelessWidget {
-  final String serverUrl = "http://192.168.43.92:8000/";
+  final String serverUrl = "http://192.168.43.92:8000/storage/product";
   MyProductsCard({
     Key key,
     this.myProductItem,
   }) : super(key: key);
 
-   MyProductItem myProductItem;
+   MyProductsItem myProductsItem;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class MyProductsCard extends StatelessWidget {
                 color: Color(0xFFF5F6F9),
                 borderRadius: BorderRadius.circular(15),
               ),
-              child: Image.network(serverUrl+myProductItem.product.images[0]),
+              child: Image.network(serverUrl+myProductsItem.product.images[0]),
             ),
           ),
         ),
@@ -36,14 +36,14 @@ class MyProductsCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              myProductItem.product.productName,
+              myProductsItem.product.productName,
               style: TextStyle(color: Colors.black, fontSize: 16),
               maxLines: 2,
             ),
             SizedBox(height: 10),
             Text.rich(
               TextSpan(
-                text: "\$${myProductItem.product.price}",
+                text: "\$${myProductsItem.product.price}",
                 style: TextStyle(
                     fontWeight: FontWeight.w600, color: kPrimaryColor),
               ),

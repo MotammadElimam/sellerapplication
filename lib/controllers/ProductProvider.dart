@@ -1,8 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:sellerapplication/models/MyProducts/MyProduct.dart';
-import 'package:sellerapplication/models/MyProducts/MyProductItem.dart';
+import 'package:sellerapplication/models/MyProducts/MyProducts.dart';
+import 'package:sellerapplication/models/MyProducts/MyProductsItem.dart';
 import 'package:supercharged/supercharged.dart';
 import 'dart:io';
 
