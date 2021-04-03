@@ -63,6 +63,6 @@ class ProductProvider extends ChangeNotifier {
         print('No image selected.');
       }
   }
-
+//
 
 }
