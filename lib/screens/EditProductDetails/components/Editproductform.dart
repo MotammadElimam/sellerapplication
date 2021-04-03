@@ -16,12 +16,12 @@ import 'dart:io';
 import 'dart:convert';
 
 
-class AddProductForm extends StatefulWidget {
+class EditProductForm extends StatefulWidget {
 
 final Product product;
 ProductItem _productItem;
 
- AddProductForm({Key key, @required this.product}) : super(key: key);
+ EditProductForm({Key key, @required this.product}) : super(key: key);
 
 
 
@@ -29,7 +29,7 @@ ProductItem _productItem;
   _AddProductFormState createState() => _AddProductFormState();
 }
 
-class _AddProductFormState extends State<AddProductForm> {
+class _AddProductFormState extends State<EditProductForm> {
   DatabaseHelper databaseHelper = new DatabaseHelper();
 
   File _image;
@@ -95,7 +95,7 @@ class _AddProductFormState extends State<AddProductForm> {
           FormError(errors: errors),
           SizedBox(height: getProportionateScreenHeight(40)),
           PrimaryButton(
-              text: "Add Product",
+              text: "Edit Product Details",
               press: () {
                 _onpress();
               })

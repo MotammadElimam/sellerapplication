@@ -7,6 +7,7 @@ import 'package:sellerapplication/screens/home/home_screen.dart';
 import 'package:sellerapplication/screens/profile/profile_screen.dart';
 import 'package:sellerapplication/constants.dart';
 import 'package:sellerapplication/enums.dart';
+import 'package:sellerapplication/screens/requests/requests_screen.dart';
 
 class CustomBottomNavBar extends StatelessWidget {
   const CustomBottomNavBar({
@@ -55,7 +56,7 @@ class CustomBottomNavBar extends StatelessWidget {
                   "assets/icons/order.svg",
                    width: 40,
                   height: 40,
-                  color: MenuState.myProducts == selectedMenu
+                  color: MenuState.sales == selectedMenu
                       ? kPrimaryColor
                       : inActiveIconColor,
                   ),
@@ -65,28 +66,28 @@ class CustomBottomNavBar extends StatelessWidget {
               ),
               IconButton(
                 icon: SvgPicture.asset(
-                  "assets/icons/User Icon.svg",
-                  color: MenuState.profile == selectedMenu
+                  "assets/icons/sales.svg",
+                  color: MenuState.sales == selectedMenu
                       ? kPrimaryColor
                       : inActiveIconColor,
                 ),
                 onPressed: () =>
-                    Navigator.pushNamed(context, ProfileScreen.routeName),
+                    Navigator.pushNamed(context, RequestsScreen.routeName),
               ),
-              // IconButton(
-              //   icon: SvgPicture.asset(
-              //     "assets/icons/wallet1.svg",
-              //     width: 25,
-              //     height: 25,
-              //     fit: BoxFit.contain,
-              //     color: MenuState.wallet == selectedMenu
-              //         ? kPrimaryColor
-              //         : inActiveIconColor,
-              //     ),
-              //   onPressed: () {
-              //     Navigator.pushNamed(context, ProfileScreen.routeName);
-              //   },
-              // ),
+              IconButton(
+                icon: SvgPicture.asset(
+                  "assets/icons/wallet1.svg",
+                  width: 25,
+                  height: 25,
+                  fit: BoxFit.contain,
+                  color: MenuState.wallet == selectedMenu
+                      ? kPrimaryColor
+                      : inActiveIconColor,
+                  ),
+                onPressed: () {
+                  Navigator.pushNamed(context, ProfileScreen.routeName);
+                },
+              ),
               IconButton(
                 icon: SvgPicture.asset(
                   "assets/icons/User Icon.svg",

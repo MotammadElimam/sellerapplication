@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sellerapplication/constants.dart';
-import 'package:sellerapplication/screens/addproduct/components/addproductform.dart';
+import 'package:sellerapplication/screens/EditProductDetails/components/Editproductform.dart';
 import 'package:sellerapplication/size_config.dart';
 
 class Body extends StatelessWidget {
@@ -16,13 +16,13 @@ class Body extends StatelessWidget {
             child: Column(
               children: [
                 SizedBox(height: SizeConfig.screenHeight * 0.03),
-                Text("Add Product", style: headingStyle),
+                Text("Edit Product Details", style: headingStyle),
                 Text(
-                  "Add the details for your product",
+                  "Edit the details for your product",
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(height: SizeConfig.screenHeight * 0.06),
-                AddProductForm(),
+                EditProductForm(),
               ],
             ),
           ),

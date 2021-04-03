@@ -11,7 +11,7 @@ class MyProductsScreen extends StatelessWidget {
     return Scaffold(
       appBar: buildAppBar(context),
       body: Body(),
-      bottomNavigationBar: CustomBottomNavBar(selectedMenu: MenuState.myProducts),
+      bottomNavigationBar: CustomBottomNavBar(selectedMenu: MenuState.sales),
     );
   }
 

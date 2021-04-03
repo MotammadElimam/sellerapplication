@@ -5,13 +5,13 @@ import 'package:sellerapplication/screens/addproduct/components/body.dart';
 
 
 
-class AddProductScreen extends StatelessWidget {
-  static String routeName = "/Add_product";
+class EditProductScreen extends StatelessWidget {
+  static String routeName = "/Edit_product";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Add Product'),
+        title: Text('Edit Product'),
       ),
       body: Body(),
       bottomNavigationBar: CustomBottomNavBar(selectedMenu: MenuState.profile),

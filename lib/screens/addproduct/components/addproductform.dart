@@ -18,10 +18,10 @@ import 'dart:convert';
 
 class AddProductForm extends StatefulWidget {
 
-final Product product;
+ Product product;
 ProductItem _productItem;
 
- AddProductForm({Key key, @required this.product}) : super(key: key);
+ //AddProductForm({Key key, @required this.product}) : super(key: key);
 
 
 

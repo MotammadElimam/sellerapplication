@@ -1,13 +1,14 @@
 import 'package:sellerapplication/models/Product/Product.dart';
 
 
-class Wishlistitem {
+class RequestsItem {
   int id;
   Product product;
+  int quantity = 0;
 
-  Wishlistitem();
+  RequestsItem();
   
-  Wishlistitem.fromData({
+  RequestsItem.fromData({
     this.product,
   });
 }
