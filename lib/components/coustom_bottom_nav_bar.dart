@@ -4,10 +4,11 @@ import 'package:sellerapplication/screens/addproduct/add_product_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sellerapplication/screens/home/home_screen.dart';
+import 'package:sellerapplication/screens/orders/orders_screen.dart';
 import 'package:sellerapplication/screens/profile/profile_screen.dart';
 import 'package:sellerapplication/constants.dart';
 import 'package:sellerapplication/enums.dart';
-import 'package:sellerapplication/screens/requests/requests_screen.dart';
+import 'package:sellerapplication/screens/orders/orders_screen.dart';
 
 class CustomBottomNavBar extends StatelessWidget {
   const CustomBottomNavBar({
@@ -51,32 +52,32 @@ class CustomBottomNavBar extends StatelessWidget {
                 onPressed: () =>
                     Navigator.pushNamed(context, HomeScreen.routeName),
               ),
+              // IconButton(
+              //   icon: SvgPicture.asset(
+              //     "assets/icons/sales.svg",
+              //      width: 40,
+              //     height: 40,
+              //     color: MenuState.sales == selectedMenu
+              //         ? kPrimaryColor
+              //         : inActiveIconColor,
+              //     ),
+              //   onPressed: () {
+              //      Navigator.pushNamed(context, OrdersScreen.routeName);
+              //   },
+              // ),
+              // IconButton(
+              //   icon: SvgPicture.asset(
+              //     "assets/icons/orders.svg",
+              //     color: MenuState.orders == selectedMenu
+              //         ? kPrimaryColor
+              //         : inActiveIconColor,
+              //   ),
+              //   onPressed: () =>
+              //       Navigator.pushNamed(context, OrdersScreen.routeName),
+              // ),
               IconButton(
                 icon: SvgPicture.asset(
-                  "assets/icons/order.svg",
-                   width: 40,
-                  height: 40,
-                  color: MenuState.sales == selectedMenu
-                      ? kPrimaryColor
-                      : inActiveIconColor,
-                  ),
-                onPressed: () {
-                   Navigator.pushNamed(context, MyProductsScreen.routeName);
-                },
-              ),
-              IconButton(
-                icon: SvgPicture.asset(
-                  "assets/icons/sales.svg",
-                  color: MenuState.sales == selectedMenu
-                      ? kPrimaryColor
-                      : inActiveIconColor,
-                ),
-                onPressed: () =>
-                    Navigator.pushNamed(context, RequestsScreen.routeName),
-              ),
-              IconButton(
-                icon: SvgPicture.asset(
-                  "assets/icons/wallet1.svg",
+                  "assets/icons/User Icon.svg",
                   width: 25,
                   height: 25,
                   fit: BoxFit.contain,
@@ -85,7 +86,7 @@ class CustomBottomNavBar extends StatelessWidget {
                       : inActiveIconColor,
                   ),
                 onPressed: () {
-                  Navigator.pushNamed(context, ProfileScreen.routeName);
+                  Navigator.pushNamed(context, MyProductsScreen.routeName);
                 },
               ),
               IconButton(

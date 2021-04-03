@@ -5,7 +5,7 @@ class MyProductsItem {
   int id;
   Product product;
   int quantity = 0;
-  double getTotalPrice() => product.price * quantity;
+  int getTotalPrice() => product.price * quantity;
 
   MyProductsItem();
   

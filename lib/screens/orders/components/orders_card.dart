@@ -1,16 +1,17 @@
-import 'package:sellerapplication/models/Requests/Requests_item.dart';
+import 'package:sellerapplication/models/Orders/Orders_item.dart';
+import 'package:sellerapplication/models/Orders/Orders_item.dart';
 import 'package:flutter/material.dart';
 import 'package:sellerapplication/constants.dart';
 import 'package:sellerapplication/size_config.dart';
 
 
-class RequestCard extends StatelessWidget {
-  RequestCard({
+class OrdersCard extends StatelessWidget {
+  OrdersCard({
     Key key,
-    this.requestsitem
+    this.ordersItem
   }) : super(key: key);
 
-   RequestsItem requestsitem;
+   OrdersItem ordersItem;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,7 @@ class RequestCard extends StatelessWidget {
                 color: Color(0xFFF5F6F9),
                 borderRadius: BorderRadius.circular(15),
               ),
-              child: Image.asset(requestsitem.product.images[0]),
+              child: Image.network(ordersItem.product.image),
             ),
           ),
         ),
@@ -35,19 +36,19 @@ class RequestCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              requestsitem.product.productName,
+              ordersItem.product.productName,
               style: TextStyle(color: Colors.black, fontSize: 16),
               maxLines: 2,
             ),
             SizedBox(height: 10),
             Text.rich(
               TextSpan(
-                text: "\$${requestsitem.product.price}",
+                text: "\$${ordersItem.product.price}",
                 style: TextStyle(
                     fontWeight: FontWeight.w600, color: kPrimaryColor),
                 children: [
                   TextSpan(
-                      text: " x${requestsitem.quantity}",
+                      text: " x${ordersItem.quantity}",
                       style: Theme.of(context).textTheme.bodyText1),
                 ],
               ),

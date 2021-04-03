@@ -1,5 +1,4 @@
 import 'package:sellerapplication/components/product_card.dart';
-import 'package:sellerapplication/screens/details/details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:sellerapplication/models/Product/Product.dart';
 import 'package:sellerapplication/size_config.dart';

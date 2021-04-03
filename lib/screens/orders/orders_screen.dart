@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:sellerapplication/screens/requests/components/body.dart';
+import 'package:sellerapplication/screens/orders/components/body.dart';
 
 
 
-class RequestsScreen extends StatelessWidget {
-  static String routeName = "/Requests";
+class OrdersScreen extends StatelessWidget {
+  static String routeName = "/orders";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +18,7 @@ class RequestsScreen extends StatelessWidget {
       title: Column(
         children: [
           Text(
-            "Your Requests",
+            "Your orders",
             style: TextStyle(color: Colors.black),
           ),
         ],

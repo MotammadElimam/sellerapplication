@@ -40,9 +40,7 @@ class _BodyState extends State<Body> {
                           snapshot.data[index]["price"];
                       myProductsItem.product.description =
                           snapshot.data[index]["desc"];
-                      myProductsItem.product.images = <String>[];
-                      myProductsItem.product.images
-                          .add(snapshot.data[index]["image"]);
+                      myProductsItem.product.image = snapshot.data[index]["image"];
 
                       return Padding(
                         padding: EdgeInsets.symmetric(vertical: 10),

@@ -1,14 +1,14 @@
 import 'package:sellerapplication/models/Product/Product.dart';
 
 
-class RequestsItem {
+class OrdersItem {
   int id;
   Product product;
   int quantity = 0;
 
-  RequestsItem();
+  OrdersItem();
   
-  RequestsItem.fromData({
+  OrdersItem.fromData({
     this.product,
   });
 }

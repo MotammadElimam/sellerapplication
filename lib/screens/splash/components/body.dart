@@ -1,10 +1,11 @@
 import 'package:sellerapplication/components/dot_indicators.dart';
 import 'package:sellerapplication/constants.dart';
+import 'package:sellerapplication/screens/home/home_screen.dart';
 import 'package:sellerapplication/screens/sign_in/sign_in_screen.dart';
 import 'package:sellerapplication/screens/splash/components/splash_content.dart';
 import 'package:flutter/material.dart';
 import 'package:sellerapplication/components/buttons/primary_button.dart';
-
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Body extends StatefulWidget {
   @override
@@ -46,7 +47,18 @@ class _BodyState extends State<Body> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
             child: PrimaryButton(
-              press: () =>  Navigator.pushNamed(context, SignInScreen.routeName),
+              press: () async {
+                final prefs = await SharedPreferences.getInstance();
+                final key = 'token';
+                final value = prefs.get(key) ?? 0;
+                print(value);
+                prefs.setBool('splash', true);
+                if (value != '0') {
+                  Navigator.pushNamed(context, HomeScreen.routeName);
+                } else {
+                  Navigator.pushNamed(context, SignInScreen.routeName);
+                }
+              },
               text: "Get Started",
             ),
           ),

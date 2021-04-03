@@ -1,4 +1,6 @@
 import 'package:sellerapplication/constants.dart';
+import 'package:sellerapplication/controllers/databasehelper.dart';
+import 'package:sellerapplication/models/MyProducts/MyProductsItem.dart';
 import 'package:sellerapplication/models/Product/Product.dart';
 import 'package:sellerapplication/size_config.dart';
 import 'package:flutter/material.dart';
@@ -7,6 +9,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 
 class ProductCard extends StatelessWidget {
+  final String serverUrl = "http://192.168.43.92:8000/storage/product/";
   const ProductCard({
     Key key,
     this.width = 140,
@@ -38,7 +41,7 @@ class ProductCard extends StatelessWidget {
                     color: kSecondaryColor.withOpacity(0.1),
                     borderRadius: BorderRadius.circular(15),
                   ),
-                  child: Image.asset(product.images[0]),
+                  child: Image.network(serverUrl+product.image),
                 ),
               ),
               const SizedBox(height: 10),
