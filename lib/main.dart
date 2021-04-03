@@ -4,6 +4,7 @@ import 'package:sellerapplication/theme.dart';
 import 'package:sellerapplication/screens/splash/splash_scrreen.dart';
 import 'package:provider/provider.dart';
 import 'controllers/ProductProvider.dart';
+//hi
 
 void main() {
   runApp(MyApp());
