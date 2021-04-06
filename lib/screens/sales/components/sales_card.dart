@@ -6,13 +6,13 @@ import 'package:sellerapplication/models/Sales/Sales_item.dart';
 import 'package:sellerapplication/size_config.dart';
 
 
-class OrdersCard extends StatelessWidget {
-  OrdersCard({
+class SalesCard extends StatelessWidget {
+  SalesCard({
     Key key,
-    this.ordersitems
+    this.salesItem
   }) : super(key: key);
 
-   OrdersItem ordersitems;
+   SalesItem salesItem;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class OrdersCard extends StatelessWidget {
                 color: Color(0xFFF5F6F9),
                 borderRadius: BorderRadius.circular(15),
               ),
-              child: Image.network(ordersitems.product.image),
+              child: Image.network(salesItem.product.image),
             ),
           ),
         ),
@@ -37,19 +37,19 @@ class OrdersCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              ordersitems.product.productName,
+              salesItem.product.productName,
               style: TextStyle(color: Colors.black, fontSize: 16),
               maxLines: 2,
             ),
             SizedBox(height: 10),
             Text.rich(
               TextSpan(
-                text: "\$${ordersitems.product.price}",
+                text: "\$${salesItem.product.price}",
                 style: TextStyle(
                     fontWeight: FontWeight.w600, color: kPrimaryColor),
                 children: [
                   TextSpan(
-                      text: " x${ordersitems.quantity}",
+                      text: " x${salesItem.quantity}",
                       style: Theme.of(context).textTheme.bodyText1),
                 ],
               ),

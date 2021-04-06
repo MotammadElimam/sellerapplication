@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:sellerapplication/components/coustom_bottom_nav_bar.dart';
 import 'package:sellerapplication/enums.dart';
-import 'package:sellerapplication/screens/orders/components/body.dart';
+import 'package:sellerapplication/screens/sales/components/body.dart';
 
-class OrdersScreen extends StatelessWidget {
-  static String routeName = "/orders";
+class SalesScreen extends StatelessWidget {
+  static String routeName = "/sales";
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -12,7 +12,7 @@ class OrdersScreen extends StatelessWidget {
       child:   Scaffold(
       appBar: buildAppBar(context),
       body: Body(),
-      bottomNavigationBar: CustomBottomNavBar(selectedMenu: MenuState.orders),
+      bottomNavigationBar: CustomBottomNavBar(selectedMenu: MenuState.sales),
     ),
     );
    
@@ -23,7 +23,7 @@ class OrdersScreen extends StatelessWidget {
       title: Column(
         children: [
           Text(
-            "Your orders",
+            "Sales",
             style: TextStyle(color: Colors.black),
           ),
         ],
@@ -32,7 +32,15 @@ class OrdersScreen extends StatelessWidget {
        
        tabs: [
          Tab(
-           child : Text("Pending Orders",
+           child : Text("Working on it",
+         style: TextStyle(
+           color: Colors.blue,
+         ),
+         ),
+         
+         ),
+          Tab(
+           child : Text("Sold Products",
          style: TextStyle(
            color: Colors.blue,
          ),

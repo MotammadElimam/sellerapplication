@@ -2,6 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:sellerapplication/screens/EditProductDetails/Edit_product_screen.dart';
 import 'package:sellerapplication/screens/MyProducts/MyProducts_screen.dart';
 import 'package:sellerapplication/screens/addproduct/add_product_screen.dart';
+import 'package:sellerapplication/screens/balance_page/balancePage.dart';
 import 'package:sellerapplication/screens/orders/orders_screen.dart';
 import 'package:sellerapplication/screens/profile/profile_screen.dart';
 import 'package:sellerapplication/screens/profile/setting.dart';
@@ -31,5 +32,6 @@ final Map<String, WidgetBuilder> routes = {
   AddProductScreen.routeName:(context)=>AddProductScreen(),
   EditProductScreen.routeName:(context)=>EditProductScreen(),
   OrdersScreen.routeName:(context)=>OrdersScreen(),
+  BalancePage.routeName:(context)=>BalancePage(),
 };
 

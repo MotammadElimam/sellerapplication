@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sellerapplication/controllers/ProductProvider.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:sellerapplication/screens/orders/components/orders_card.dart';
+import 'package:sellerapplication/screens/sales/components/sales_card.dart';
 import 'package:sellerapplication/size_config.dart';
 import 'package:provider/provider.dart';
 
@@ -14,20 +14,20 @@ class Body extends StatefulWidget {
 class _BodyState extends State<Body> {
   @override
   Widget build(BuildContext context) {
-    return Consumer<ProductProvider>(builder: (context, ordersBody, child) {
+    return Consumer<ProductProvider>(builder: (context, salesBody, child) {
     return Padding(
       padding:
           EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
       child: Expanded(
               child: ListView.builder(
-          itemCount: ordersBody.orders.ordersitems.length,
+          itemCount: salesBody.sales.salessitems.length,
           itemBuilder: (context, index) => Padding(
             padding: EdgeInsets.symmetric(vertical: 10),
             child: Dismissible(
-              key: Key(ordersBody.orders.ordersitems[index].product.id.toString()),
+              key: Key(salesBody.sales.salessitems[index].product.id.toString()),
               direction: DismissDirection.endToStart,
               onDismissed: (direction) {
-                 // ordersBody.removeFromWishlist(ordersBody.requests.OrdersItems[index]);
+                 // salesBody.removeFromWishlist(salesBody.requests.OrdersItems[index]);
               },
               background: Container(
                 padding: EdgeInsets.symmetric(horizontal: 20),
@@ -42,7 +42,7 @@ class _BodyState extends State<Body> {
                   ],
                 ),
               ),
-              child: OrdersCard(ordersitems: ordersBody.orders.ordersitems[index]),
+              child: SalesCard(salesItem: salesBody.sales.salessitems[index]),
             ),
           ),
         ),

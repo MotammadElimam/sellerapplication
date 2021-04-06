@@ -25,7 +25,8 @@ class HomeHeader extends StatelessWidget {
           IconBtnWithCounter(
             svgSrc: "assets/icons/Bell.svg",
             numOfitem: 3,
-           // press: () => Navigator.pushNamed(context, WishListScreen.routeName),
+            press: () {}
+            //Navigator.pushNamed(context, WishListScreen.routeName),
           ),
         ],
       ),

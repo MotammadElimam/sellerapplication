@@ -4,6 +4,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:sellerapplication/models/MyProducts/MyProducts.dart';
 import 'package:sellerapplication/models/MyProducts/MyProductsItem.dart';
 import 'package:sellerapplication/models/Orders/Orders.dart';
+import 'package:sellerapplication/models/Sales/Sales.dart';
 import 'package:supercharged/supercharged.dart';
 import 'dart:io';
 
@@ -11,6 +12,7 @@ class ProductProvider extends ChangeNotifier {
   double price = 0.0;
   Myproduct myproduct = Myproduct();
   Orders orders = Orders();
+  Sales sales = Sales();
 
 
   String email;
