@@ -6,6 +6,7 @@ import 'package:sellerapplication/screens/balance_page/balancePage.dart';
 import 'package:sellerapplication/screens/orders/orders_screen.dart';
 import 'package:sellerapplication/screens/profile/profile_screen.dart';
 import 'package:sellerapplication/screens/profile/setting.dart';
+import 'package:sellerapplication/screens/sales/sales_screen.dart';
 import 'package:sellerapplication/screens/splash/splash_scrreen.dart';
 import 'package:sellerapplication/screens/sign_in/sign_in_screen.dart';
 import 'package:sellerapplication/screens/forgot_password/forgot_password_screen.dart';
@@ -32,6 +33,7 @@ final Map<String, WidgetBuilder> routes = {
   AddProductScreen.routeName:(context)=>AddProductScreen(),
   EditProductScreen.routeName:(context)=>EditProductScreen(),
   OrdersScreen.routeName:(context)=>OrdersScreen(),
+  SalesScreen.routeName:(context)=>SalesScreen(),
   BalancePage.routeName:(context)=>BalancePage(),
 };
 

@@ -4,11 +4,11 @@ import 'package:sellerapplication/enums.dart';
 import 'package:sellerapplication/screens/sales/components/body.dart';
 
 class SalesScreen extends StatelessWidget {
-  static String routeName = "/sales";
+  static String routeName = "/slaes";
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 1,
+      length: 2,
       child:   Scaffold(
       appBar: buildAppBar(context),
       body: Body(),

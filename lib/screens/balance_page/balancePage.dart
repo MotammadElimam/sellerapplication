@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:sellerapplication/components/coustom_bottom_nav_bar.dart';
+import 'package:sellerapplication/enums.dart';
 
 class BalancePage extends StatelessWidget {
   static String routeName = "/BalancePage";
@@ -12,13 +14,13 @@ class BalancePage extends StatelessWidget {
       backgroundColor: const Color(0xffffffff),
       body: Stack(
         children: <Widget>[
-          Transform.translate(
-            offset: Offset(30.5, 70.0),
-            child: SvgPicture.string(
-              _svg_7p1127,
-              allowDrawingOutsideViewBox: true,
-            ),
-          ),
+          // Transform.translate(
+          //   offset: Offset(30.5, 70.0),
+          //   child: SvgPicture.string(
+          //     _svg_7p1127,
+          //     allowDrawingOutsideViewBox: true,
+          //   ),
+          // ),
           Transform.translate(
             offset: Offset(101.0, 373.0),
             child: Text(
@@ -45,6 +47,7 @@ class BalancePage extends StatelessWidget {
           ),
         ],
       ),
+       bottomNavigationBar: CustomBottomNavBar(selectedMenu: MenuState.wallet),
     );
   }
 }
