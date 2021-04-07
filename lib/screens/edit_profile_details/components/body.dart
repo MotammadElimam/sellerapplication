@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:sellerapplication/components/social_card.dart';
 import 'package:sellerapplication/constants.dart';
-import 'package:sellerapplication/screens/EditProductDetails/components/Editproductform.dart';
 import 'package:sellerapplication/size_config.dart';
+
 
 class Body extends StatelessWidget {
   @override
@@ -15,14 +16,11 @@ class Body extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(height: SizeConfig.screenHeight * 0.03),
-                Text("Edit Product Details", style: headingStyle),
-                Text(
-                  "Edit the details for your product",
-                  textAlign: TextAlign.center,
-                ),
-                SizedBox(height: SizeConfig.screenHeight * 0.06),
-                EditProductForm(),
+                SizedBox(height: SizeConfig.screenHeight * 0.04), // 4%
+                Text("Edit Profile details", style: headingStyle),
+                SizedBox(height: SizeConfig.screenHeight * 0.08),
+                EditProfileForm(),
+                SizedBox(height: SizeConfig.screenHeight * 0.08),
               ],
             ),
           ),

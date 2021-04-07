@@ -3,6 +3,7 @@ import 'package:sellerapplication/controllers/ProductProvider.dart';
 import 'package:sellerapplication/controllers/databasehelper.dart';
 import 'package:sellerapplication/models/Product/Product.dart';
 import 'package:sellerapplication/models/Product/product_item.dart';
+import 'package:sellerapplication/screens/MyProducts/MyProducts_screen.dart';
 import 'package:sellerapplication/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:sellerapplication/components/custom_surfix_icon.dart';
@@ -98,6 +99,7 @@ class _AddProductFormState extends State<AddProductForm> {
               text: "Add Product",
               press: () {
                 _onpress();
+                  // Navigator.pushNamed(context, MyProductsScreen.routeName);
               })
         ],
       ),
