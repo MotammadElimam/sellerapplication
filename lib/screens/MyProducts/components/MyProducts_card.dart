@@ -32,7 +32,7 @@ class MyProductsCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(15),
                 ),
                 child: Image.network(serverUrl+myProductsItem.product.image,
-                fit: BoxFit.cover,
+                fit: BoxFit.fill,
                 ),
               ),
             ),

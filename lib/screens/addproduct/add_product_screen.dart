@@ -14,7 +14,7 @@ class AddProductScreen extends StatelessWidget {
         title: Text('Add Product'),
       ),
       body: Body(),
-      bottomNavigationBar: CustomBottomNavBar(selectedMenu: MenuState.profile),
+      bottomNavigationBar: CustomBottomNavBar(selectedMenu: MenuState.myproducts),
     );
   }
 }
