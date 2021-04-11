@@ -41,6 +41,9 @@ class DatabaseHelper {
       String firstName,
       String lastName,
       String phoneNumber,
+      //bool is_seller,
+
+
       String adress) async {
     Map information = {
       "email": "$email",
@@ -49,7 +52,8 @@ class DatabaseHelper {
       "first_name": "$firstName",
       "last_name": "$lastName",
       "phonenumber": "$phoneNumber",
-      "adress": "$adress"
+      "adress": "$adress",
+      "is_seller": "seller",
     };
     print(information);
     String myUrl = "$serverUrl/api/register";

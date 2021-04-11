@@ -6,7 +6,7 @@ import 'package:sellerapplication/screens/balance_page/balancePage.dart';
 import 'package:sellerapplication/screens/edit_profile_details/edit_profile_screen.dart';
 import 'package:sellerapplication/screens/orders/orders_screen.dart';
 import 'package:sellerapplication/screens/profile/profile_screen.dart';
-import 'package:sellerapplication/screens/profile/setting.dart';
+import 'package:sellerapplication/screens/profile/components/setting.dart';
 import 'package:sellerapplication/screens/sales/sales_screen.dart';
 import 'package:sellerapplication/screens/splash/splash_scrreen.dart';
 import 'package:sellerapplication/screens/sign_in/sign_in_screen.dart';

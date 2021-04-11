@@ -8,6 +8,7 @@ class SettingsPage extends StatefulWidget {
 }
 
 class _SettingsPageState extends State<SettingsPage> {
+  bool switchState = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +21,7 @@ class _SettingsPageState extends State<SettingsPage> {
           },
           icon: Icon(
             Icons.arrow_back,
-            color: Colors.green,
+            color: Colors.blue,
           ),
         ),
       ),
@@ -39,7 +40,7 @@ class _SettingsPageState extends State<SettingsPage> {
               children: [
                 Icon(
                   Icons.person,
-                  color: Colors.green,
+                  color: Colors.blue,
                 ),
                 SizedBox(
                   width: 8,
@@ -58,8 +59,6 @@ class _SettingsPageState extends State<SettingsPage> {
               height: 10,
             ),
             buildAccountOptionRow(context, "Change password"),
-            buildAccountOptionRow(context, "Content settings"),
-            buildAccountOptionRow(context, "Social"),
             buildAccountOptionRow(context, "Language"),
             buildAccountOptionRow(context, "Privacy and security"),
             SizedBox(
@@ -69,7 +68,7 @@ class _SettingsPageState extends State<SettingsPage> {
               children: [
                 Icon(
                   Icons.volume_up_outlined,
-                  color: Colors.green,
+                  color: Colors.blue,
                 ),
                 SizedBox(
                   width: 8,
@@ -87,30 +86,19 @@ class _SettingsPageState extends State<SettingsPage> {
             SizedBox(
               height: 10,
             ),
-            buildNotificationOptionRow("New for you", true),
-            buildNotificationOptionRow("Account activity", true),
-            buildNotificationOptionRow("Opportunity", false),
+            buildNotificationOptionRow("New for you"),
+            buildNotificationOptionRow("Account activity"),
+            buildNotificationOptionRow("Opportunity"),
             SizedBox(
               height: 50,
             ),
-            Center(
-              child: OutlineButton(
-                padding: EdgeInsets.symmetric(horizontal: 40),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20)),
-                onPressed: () {},
-                child: Text("SIGN OUT",
-                    style: TextStyle(
-                        fontSize: 16, letterSpacing: 2.2, color: Colors.black)),
-              ),
-            )
           ],
         ),
       ),
     );
   }
 
-  Row buildNotificationOptionRow(String title, bool isActive) {
+  Row buildNotificationOptionRow(String title) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -124,8 +112,12 @@ class _SettingsPageState extends State<SettingsPage> {
         Transform.scale(
             scale: 0.7,
             child: CupertinoSwitch(
-              value: isActive,
-              onChanged: (bool val) {},
+              value: switchState,
+              onChanged: (bool val) {
+                setState(() {
+                                  switchState = val;
+                                });
+              },
             ))
       ],
     );

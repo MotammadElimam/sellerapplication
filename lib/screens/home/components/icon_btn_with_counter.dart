@@ -22,8 +22,7 @@ class IconBtnWithCounter extends StatelessWidget {
       borderRadius: BorderRadius.circular(100),
       onTap: press,
       child: Stack(
-        overflow: Overflow.visible,
-        children: [
+        clipBehavior: Clip.none, children: [
           Container(
             padding: EdgeInsets.all(getProportionateScreenWidth(12)),
             height: getProportionateScreenWidth(46),

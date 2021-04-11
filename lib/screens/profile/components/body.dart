@@ -1,4 +1,4 @@
-import 'package:sellerapplication/screens/profile/setting.dart';
+import 'package:sellerapplication/screens/profile/components/setting.dart';
 import 'package:flutter/material.dart';
 
 import 'profile_menu.dart';
@@ -14,7 +14,7 @@ class Body extends StatelessWidget {
           ProfilePic(),
           SizedBox(height: 20),
           ProfileMenu(
-            text: "My Account",
+            text: "Edit Profile",
             icon: "assets/icons/User Icon.svg",
             press: () => {},
           ),
