@@ -30,6 +30,12 @@ final TextStyle kBodyTextStyle = TextStyle(
   height: 1.5,
 );
 
+final TextStyle kCaptionTextStyle = TextStyle(
+  color: kMainColor.withOpacity(0.64),
+  fontSize: getProportionateScreenWidth(12),
+  fontWeight: FontWeight.w600,
+);
+
 final TextStyle kH2TextStyle = TextStyle(
   fontSize: getProportionateScreenWidth(28),
   fontWeight: FontWeight.w600,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sellerapplication/components/custom_surfix_icon.dart';
-import 'package:sellerapplication/components/default_button.dart';
+import 'package:sellerapplication/components/buttons/default_button.dart';
 import 'package:sellerapplication/components/form_error.dart';
 import 'package:sellerapplication/components/no_account_text.dart';
 import 'package:sellerapplication/size_config.dart';

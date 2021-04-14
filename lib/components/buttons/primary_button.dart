@@ -25,6 +25,7 @@ class PrimaryButton extends StatelessWidget {
               onPressed: press,
               child: buildText(context),
             )
+          // ignore: deprecated_member_use
           : FlatButton(
               padding: verticalPadding,
               color: kActiveColor,
