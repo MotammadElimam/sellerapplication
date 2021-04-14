@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'components/body.dart';
 
-class OrderDetailsScreen extends StatelessWidget {
-  static String routeName = "/order_details_screen";
+class CheckoutScreen extends StatelessWidget {
+  static String routeName = "/checkout_screen";
   @override
   Widget build(BuildContext context) {
     return Scaffold(

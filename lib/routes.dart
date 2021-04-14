@@ -1,10 +1,11 @@
 import 'package:flutter/widgets.dart';
+import 'package:sellerapplication/screens/checkout/checkout_screen.dart';
 import 'package:sellerapplication/screens/edit_product_details/Edit_product_screen.dart';
 import 'package:sellerapplication/screens/MyProducts/MyProducts_screen.dart';
 import 'package:sellerapplication/screens/addproduct/add_product_screen.dart';
 import 'package:sellerapplication/screens/balance_page/balancePage.dart';
 import 'package:sellerapplication/screens/edit_profile_details/edit_profile_screen.dart';
-import 'package:sellerapplication/screens/orderDetails/order_details_screen.dart';
+
 import 'package:sellerapplication/screens/orders/orders_screen.dart';
 import 'package:sellerapplication/screens/profile/profile_screen.dart';
 import 'package:sellerapplication/screens/profile/components/setting.dart';
@@ -38,6 +39,6 @@ final Map<String, WidgetBuilder> routes = {
   SalesScreen.routeName:(context)=>SalesScreen(),
   BalancePage.routeName:(context)=>BalancePage(),
   EditProfileScreen.routeName:(context)=>EditProfileScreen(),
-  OrderDetailsScreen.routeName:(context)=>OrderDetailsScreen(),
+  CheckoutScreen.routeName:(context)=>CheckoutScreen(),
 };
 
