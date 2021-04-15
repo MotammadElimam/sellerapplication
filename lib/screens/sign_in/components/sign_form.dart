@@ -9,82 +9,73 @@ import 'package:sellerapplication/screens/forgot_password/forgot_password_screen
 import 'package:sellerapplication/size_config.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-
 class SignForm extends StatefulWidget {
   @override
   _SignFormState createState() => _SignFormState();
 }
 
 class _SignFormState extends State<SignForm> {
-
-  void _showDialog(){
+  void _showDialog() {
     showDialog(
-        context:context ,
-        builder:(BuildContext context){
+        context: context,
+        builder: (BuildContext context) {
           return AlertDialog(
             title: new Text('Failed'),
-            content:  new Text('Check your email or password'),
+            content: new Text('Check your email or password'),
             actions: <Widget>[
+              // ignore: deprecated_member_use
               new RaisedButton(
-
                 child: new Text(
                   'Close',
                 ),
-
-                onPressed: (){
+                onPressed: () {
                   Navigator.of(context).pop();
                 },
-
               ),
             ],
           );
-        }
-    );
+        });
   }
 
-
-read() async {
+  read() async {
     final prefs = await SharedPreferences.getInstance();
     final key = 'token';
-    final value = prefs.get(key ) ?? 0;
+    final value = prefs.get(key) ?? 0;
     print(value);
-    if(value != '0'){
-     Navigator.pushNamed(context, HomeScreen.routeName);
+    if (value != '0') {
+      Navigator.pushNamed(context, HomeScreen.routeName);
     }
   }
 
-@override
-void initState() {
-  super.initState();
-  read();
-}
-
- _onpress(){
-    setState(() {             
-              if (_formKey.currentState.validate()) {
-               databaseHelper.loginData(email , password).whenComplete((){
-                if(databaseHelper.status){
-                _showDialog();
-                msgStatus = 'Check email or password';
-                }else{
-                Navigator.pushNamed(context, HomeScreen.routeName);
-                   }
-        });
-      }
-       });
+  @override
+  void initState() {
+    super.initState();
+    read();
   }
 
+  _onpress() {
+    setState(() {
+      if (_formKey.currentState.validate()) {
+        databaseHelper.loginData(email, password).whenComplete(() {
+          if (databaseHelper.status) {
+            _showDialog();
+            msgStatus = 'Check email or password';
+          } else {
+            Navigator.pushNamed(context, HomeScreen.routeName);
+          }
+        });
+      }
+    });
+  }
 
-
-
-   DatabaseHelper databaseHelper = new DatabaseHelper();
+  DatabaseHelper databaseHelper = new DatabaseHelper();
   String msgStatus = '';
   final _formKey = GlobalKey<FormState>();
   String email;
   String password;
   bool remember = false;
-   bool _autoValidate = false;
-   
+  bool _autoValidate = false;
+
   final List<String> errors = [];
 
   void addError({String error}) {
@@ -136,14 +127,14 @@ void initState() {
           ),
           FormError(errors: errors),
           SizedBox(height: getProportionateScreenHeight(20)),
-                    PrimaryButton(
+          PrimaryButton(
             text: "Sign In",
             press: () {
               if (_formKey.currentState.validate()) {
                 // If all data are correct then save data to out variables
                 _formKey.currentState.save();
                 _onpress();
-              //Navigator.pushNamed(context, HomeScreen.routeName);
+                //Navigator.pushNamed(context, HomeScreen.routeName);
               } else {
                 // If all data are not valid then start auto validation.
                 setState(() {
@@ -152,7 +143,7 @@ void initState() {
               }
             },
           )
-         /* DefaultButton(
+          /* DefaultButton(
             text: "Continue",
             press: () {
               if (_formKey.currentState.validate()) {
@@ -174,7 +165,7 @@ void initState() {
       onChanged: (value) {
         if (value.isNotEmpty) {
           removeError(error: kPassNullError);
-           password = value;
+          password = value;
         } else if (value.length >= 8) {
           removeError(error: kShortPassError);
         }
@@ -235,6 +226,3 @@ void initState() {
     );
   }
 }
-
-
-

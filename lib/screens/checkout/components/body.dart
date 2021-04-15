@@ -3,7 +3,7 @@ import 'package:sellerapplication/components/buttons/primary_button.dart';
 import 'package:sellerapplication/constants.dart';
 import 'package:sellerapplication/size_config.dart';
 
-import '_card.dart';
+
 
 class Body extends StatelessWidget {
   @override

@@ -140,6 +140,7 @@ class _SettingsPageState extends State<SettingsPage> {
                   ],
                 ),
                 actions: [
+                  // ignore: deprecated_member_use
                   FlatButton(
                       onPressed: () {
                         Navigator.of(context).pop();
