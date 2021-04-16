@@ -75,7 +75,12 @@ class _CompleteOrderFormState extends State<CompleteOrderForm> {
           buildAddressFormField(),
           FormError(errors: errors),
           SizedBox(height: getProportionateScreenHeight(40)),
-          Listtile(0),
+          // Listtile(
+          //   paymentMethod.asMap().entries.map(
+          //           (MapEntry map) => _buildIcon(map.key),
+          //         )
+          //         .toList(),
+          // ),
           SizedBox(height: 280),
           PrimaryButton(
               text: "Confirm Order",
