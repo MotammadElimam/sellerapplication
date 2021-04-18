@@ -1,6 +1,4 @@
 import 'package:sellerapplication/constants.dart';
-import 'package:sellerapplication/controllers/databasehelper.dart';
-import 'package:sellerapplication/models/MyProducts/MyProductsItem.dart';
 import 'package:sellerapplication/models/Product/Product.dart';
 import 'package:sellerapplication/size_config.dart';
 import 'package:flutter/material.dart';

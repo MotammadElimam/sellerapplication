@@ -1,9 +1,7 @@
-import 'package:flutter_svg/svg.dart';
 import 'package:sellerapplication/components/buttons/primary_button.dart';
 import 'package:sellerapplication/controllers/ProductProvider.dart';
 import 'package:sellerapplication/controllers/databasehelper.dart';
 import 'package:sellerapplication/enums.dart';
-import 'package:sellerapplication/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:sellerapplication/components/custom_surfix_icon.dart';
 import 'package:sellerapplication/components/form_error.dart';
@@ -139,6 +137,7 @@ class _CompleteOrderFormState extends State<CompleteOrderForm> {
   //             ),
   // ];
 
+  // ignore: non_constant_identifier_names
   Widget Listtile(int index) {
     return Container(
       child: Column(
@@ -153,6 +152,7 @@ class _CompleteOrderFormState extends State<CompleteOrderForm> {
   }
 
 
+  // ignore: unused_element
   void _showDialog() {
     showDialog(
         context: context,

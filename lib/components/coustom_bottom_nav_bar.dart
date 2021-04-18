@@ -1,16 +1,12 @@
 import 'package:sellerapplication/screens/MyProducts/MyProducts_screen.dart';
-import 'package:sellerapplication/screens/addproduct/add_product_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sellerapplication/screens/balance_page/balancePage.dart';
-import 'package:sellerapplication/screens/checkout/checkout_screen.dart';
 import 'package:sellerapplication/screens/complete_order/complete_order_screen.dart';
 import 'package:sellerapplication/screens/home/home_screen.dart';
 import 'package:sellerapplication/screens/orders/orders_screen.dart';
-import 'package:sellerapplication/screens/profile/profile_screen.dart';
 import 'package:sellerapplication/constants.dart';
 import 'package:sellerapplication/enums.dart';
-import 'package:sellerapplication/screens/orders/orders_screen.dart';
 import 'package:sellerapplication/screens/sales/sales_screen.dart';
 
 class CustomBottomNavBar extends StatelessWidget {

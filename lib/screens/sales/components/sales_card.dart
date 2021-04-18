@@ -1,11 +1,10 @@
-import 'package:sellerapplication/models/Orders/Orders_item.dart';
-import 'package:sellerapplication/models/Orders/Orders_item.dart';
 import 'package:flutter/material.dart';
 import 'package:sellerapplication/constants.dart';
 import 'package:sellerapplication/models/Sales/Sales_item.dart';
 import 'package:sellerapplication/size_config.dart';
 
 
+// ignore: must_be_immutable
 class SalesCard extends StatelessWidget {
   SalesCard({
     Key key,

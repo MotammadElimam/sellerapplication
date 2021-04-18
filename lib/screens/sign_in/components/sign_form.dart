@@ -74,6 +74,7 @@ class _SignFormState extends State<SignForm> {
   String email;
   String password;
   bool remember = false;
+  // ignore: unused_field
   bool _autoValidate = false;
 
   final List<String> errors = [];

@@ -13,7 +13,7 @@ class DatabaseHelper {
     String logininformation = "email=" + "$email" + "&password=" + "$password";
 
     print(logininformation);
-    String myUrl = "$serverUrl/api/login?$logininformation";
+    String myUrl = "$serverUrl/seller_api/login?$logininformation";
     final response = await http.get(
       myUrl,
       headers: {'Accept': 'application/json'},
@@ -79,7 +79,7 @@ class DatabaseHelper {
     final key = 'token';
     final value = prefs.get(key ) ?? 0;
 
-    String myUrl = "$serverUrl/api/getallproducts/";
+    String myUrl = "$serverUrl/seller_api/getallproducts/";
     http.Response response = await http.get(myUrl,
         headers: {
           'Accept':'application/json',
@@ -138,7 +138,7 @@ class DatabaseHelper {
 
 
 
-    String myUrl = "$serverUrl/api/addproduct";
+    String myUrl = "$serverUrl/seller_api/addproduct";
     final response = await http.post(myUrl,
     headers: {
       'Accept': 'application/json',

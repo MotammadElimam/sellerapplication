@@ -1,6 +1,4 @@
-import 'package:sellerapplication/components/product_card.dart';
 import 'package:flutter/material.dart';
-import 'package:sellerapplication/models/Product/Product.dart';
 import 'package:sellerapplication/size_config.dart';
 import 'package:sellerapplication/screens/home/components/section_title.dart';
 

@@ -2,9 +2,6 @@ import 'package:sellerapplication/components/buttons/primary_button.dart';
 import 'package:sellerapplication/controllers/ProductProvider.dart';
 import 'package:sellerapplication/controllers/databasehelper.dart';
 import 'package:sellerapplication/models/Product/Product.dart';
-import 'package:sellerapplication/models/Product/product_item.dart';
-import 'package:sellerapplication/screens/MyProducts/MyProducts_screen.dart';
-import 'package:sellerapplication/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:sellerapplication/components/custom_surfix_icon.dart';
 import 'package:sellerapplication/components/form_error.dart';
@@ -12,15 +9,14 @@ import 'package:sellerapplication/constants.dart';
 import 'package:sellerapplication/size_config.dart';
 import 'package:provider/provider.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:http/http.dart' as http;
-import 'dart:io';
-import 'dart:convert';
 
 
+
+// ignore: must_be_immutable
 class AddProductForm extends StatefulWidget {
 
  Product product;
-ProductItem _productItem;
+//ProductItem _productItem;
 
  //AddProductForm({Key key, @required this.product}) : super(key: key);
 
@@ -33,7 +29,7 @@ ProductItem _productItem;
 class _AddProductFormState extends State<AddProductForm> {
   DatabaseHelper databaseHelper = new DatabaseHelper();
 
-  File _image;
+  //File _image;
   final picker = ImagePicker();
 
   //String msgStatus = '';

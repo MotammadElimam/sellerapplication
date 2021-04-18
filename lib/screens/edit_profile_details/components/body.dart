@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sellerapplication/components/social_card.dart';
 import 'package:sellerapplication/constants.dart';
 import 'package:sellerapplication/screens/edit_profile_details/components/edit_profile_form.dart';
 import 'package:sellerapplication/size_config.dart';

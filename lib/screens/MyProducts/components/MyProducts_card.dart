@@ -4,6 +4,7 @@ import 'package:sellerapplication/constants.dart';
 import 'package:sellerapplication/size_config.dart';
 
 
+// ignore: must_be_immutable
 class MyProductsCard extends StatelessWidget {
   final String serverUrl = "http://192.168.43.92:8000/storage/product/";
   MyProductsCard({
@@ -32,7 +33,7 @@ class MyProductsCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(15),
                 ),
                 child: Image.network(serverUrl+myProductsItem.product.image,
-                fit: BoxFit.fill,
+                fit: BoxFit.cover,
                 ),
               ),
             ),

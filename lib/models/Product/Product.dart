@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:sellerapplication/models/Product/product_item.dart';
+
 
 class Product {
   int id;

@@ -23,6 +23,7 @@ class ProfilePic extends StatelessWidget {
             child: SizedBox(
               height: 46,
               width: 46,
+              // ignore: deprecated_member_use
               child: FlatButton(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(50),
