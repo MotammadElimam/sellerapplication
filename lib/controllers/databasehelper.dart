@@ -6,7 +6,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 class DatabaseHelper {
   final String serverUrl = "http://192.168.43.92:8000";
   var status;
-
   var token;
 
   loginData(String email, String password) async {
@@ -82,7 +81,7 @@ class DatabaseHelper {
 //     final prefs = await SharedPreferences.getInstance();
 //     final key = 'token';
 //     final value = prefs.get(key ) ?? 0;
-
+//
 //     String myUrl = "$serverUrl/products/$id";
 //     http.delete(myUrl,
 //         headers: {
@@ -93,7 +92,6 @@ class DatabaseHelper {
 //       print('Response body : ${response.body}');
 //     });
 //   }*/
-
 
  String getFileBase64(File image) {
   if (image != null) {
