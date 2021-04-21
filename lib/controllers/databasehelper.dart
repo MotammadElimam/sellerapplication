@@ -73,13 +73,13 @@ class DatabaseHelper {
     }
   }
 
-  Future<List<dynamic>> getmyProducts() async{
+  Future <List<dynamic>>  getmyProducts() async{
 
     final prefs = await SharedPreferences.getInstance();
     final key = 'token';
     final value = prefs.get(key ) ?? 0;
 
-    String myUrl = "$serverUrl/seller_api/getallproducts/";
+    String myUrl = "$serverUrl/seller_api/getallSellerproducts/";
     http.Response response = await http.get(myUrl,
         headers: {
           'Accept':'application/json',
