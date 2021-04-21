@@ -23,7 +23,7 @@ class _BodyState extends State<Body> {
           padding:
               EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
           child: FutureBuilder<List<dynamic>>(
-            future: databaseHelper.getmyProducts(),
+            future: databaseHelper.getSellerProducts(),
             builder: (BuildContext context, AsyncSnapshot snapshot) {
               if (snapshot.hasData) {
                 return ListView.builder(
