@@ -93,12 +93,12 @@ class _CompleteOrderFormState extends State<CompleteOrderForm> {
   TextFormField buildAddressFormField() {
     return TextFormField(
       onSaved: (newValue) =>
-          Provider.of<ProductProvider>(context, listen: false).adress =
+          Provider.of<ProductProvider>(context, listen: false).address =
               newValue,
       onChanged: (value) {
         if (value.isNotEmpty) {
           removeError(error: kAddressNullError);
-          Provider.of<ProductProvider>(context, listen: false).adress = value;
+          Provider.of<ProductProvider>(context, listen: false).address = value;
         }
         return null;
       },

@@ -51,7 +51,7 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
                  Provider.of<ProductProvider>(context, listen: false).firstName,
                  Provider.of<ProductProvider>(context, listen: false).lastName,
                  Provider.of<ProductProvider>(context, listen: false).phoneNumber,
-                 Provider.of<ProductProvider>(context, listen: false).adress,
+                 Provider.of<ProductProvider>(context, listen: false).address,
                  ).whenComplete((){
                 if(databaseHelper.status){
                 _showDialog();
@@ -91,11 +91,11 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
 
   TextFormField buildAddressFormField() {
     return TextFormField(
-      onSaved: (newValue) => Provider.of<ProductProvider>(context, listen: false).adress=newValue,
+      onSaved: (newValue) => Provider.of<ProductProvider>(context, listen: false).address=newValue,
       onChanged: (value) {
         if (value.isNotEmpty) {
           removeError(error: kAddressNullError);
-          Provider.of<ProductProvider>(context, listen: false).adress=value;
+          Provider.of<ProductProvider>(context, listen: false).address=value;
         }
         return null;
       },

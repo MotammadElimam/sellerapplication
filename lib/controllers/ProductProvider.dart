@@ -19,7 +19,7 @@ class ProductProvider extends ChangeNotifier {
   String firstName;
   String lastName;
   String phoneNumber;
-  String adress;
+  String address;
 
   String productName;
   String description;
