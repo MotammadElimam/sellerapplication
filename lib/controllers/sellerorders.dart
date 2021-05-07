@@ -15,7 +15,7 @@ class SellerOrders extends ChangeNotifier {
       loading = true;
       notifyListeners();
 
-      var data = await producthelper.getSellerOrders();
+      var data = await producthelper.getSelleritemsOfAllOrders();
 
       loading = false;
      orders = data.map((e) => Order.fromJson(e)).toList();

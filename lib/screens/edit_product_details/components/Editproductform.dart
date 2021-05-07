@@ -20,8 +20,9 @@ class EditProductForm extends StatefulWidget {
 
 final  Product product;
 final int id ;
+final MyProductsItem myProductsItem ;
 
-  const EditProductForm({Key key, this.product, this.id}) : super(key: key);
+   EditProductForm({Key key, this.product, this.id , this.myProductsItem}) : super(key: key);
 // ignore: unused_field
 
 
@@ -33,7 +34,7 @@ final int id ;
 
 class _EditProductFormState extends State<EditProductForm> {
   DatabaseHelper databaseHelper = new DatabaseHelper();
-  MyProductsItem myProductsItem = new MyProductsItem();
+ 
 
   //File _image;
   final picker = ImagePicker();
@@ -64,7 +65,7 @@ class _EditProductFormState extends State<EditProductForm> {
   _onpress(){
     setState(() {
                databaseHelper.UpdateData(
-                widget.product.id,
+                widget.myProductsItem.id,
                  Provider.of<ProductProvider>(context, listen: false).productName,
                  Provider.of<ProductProvider>(context, listen: false).price,
                  Provider.of<ProductProvider>(context, listen: false).description,

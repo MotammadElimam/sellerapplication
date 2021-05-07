@@ -11,12 +11,13 @@ import 'package:sellerapplication/size_config.dart';
 class MyProductsCard extends StatelessWidget {
   final String serverUrl = "http://192.168.43.92:8000/storage/product/";
   final Product product;
+  final MyProductsItem myProductsItem;
   MyProductsCard({
     Key key,
-    this.myProductsItem, this.product,
+    this.myProductsItem, this.product
   }) : super(key: key);
 
-   MyProductsItem myProductsItem;
+  // MyProductsItem myProductsItem;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,7 @@ class MyProductsCard extends StatelessWidget {
       onTap: (){
        // Navigator.pushNamed(context, EditOrDeleteProductScreen.routeName);
        Navigator.push(context,
-       MaterialPageRoute(builder: (context) => EditOrDeleteProductScreen(product: product))
+       MaterialPageRoute(builder: (context) => EditOrDeleteProductScreen(myProductsItem: myProductsItem,))
        );
       },
       child: Row(

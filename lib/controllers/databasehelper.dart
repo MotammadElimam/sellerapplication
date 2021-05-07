@@ -169,7 +169,7 @@ class DatabaseHelper {
   }
 
 
-  Future <List<dynamic>>  getSellerOrders() async{
+  Future <List<dynamic>>  getSelleritemsOfAllOrders() async{
     final prefs = await SharedPreferences.getInstance();
     final key = 'token';
     final value = prefs.get(key ) ?? 0;

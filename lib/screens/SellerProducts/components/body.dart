@@ -9,6 +9,9 @@ import 'package:provider/provider.dart';
 import 'package:sellerapplication/controllers/databasehelper.dart';
 
 class Body extends StatefulWidget {
+  final MyProductsItem myProductsItem ;
+
+  const Body({Key key, this.myProductsItem}) : super(key: key);
   @override
   _BodyState createState() => _BodyState();
 }
@@ -16,6 +19,7 @@ class Body extends StatefulWidget {
 class _BodyState extends State<Body> {
   DatabaseHelper databaseHelper = DatabaseHelper();
   MyProductsItem myProductsItem = MyProductsItem();
+  
   @override
   Widget build(BuildContext context) {
     return Consumer<ProductProvider>(builder: (context, myproductbody, child) {
