@@ -1,6 +1,7 @@
 import 'package:sellerapplication/components/buttons/primary_button.dart';
 import 'package:sellerapplication/controllers/ProductProvider.dart';
 import 'package:sellerapplication/controllers/databasehelper.dart';
+import 'package:sellerapplication/models/MyProducts/MyProductsItem.dart';
 import 'package:sellerapplication/models/Product/Product.dart';
 import 'package:sellerapplication/models/Product/product_item.dart';
 import 'package:flutter/material.dart';
@@ -17,20 +18,22 @@ import 'package:image_picker/image_picker.dart';
 // ignore: must_be_immutable
 class EditProductForm extends StatefulWidget {
 
- Product product;
-// ignore: unused_field
-ProductItem _productItem;
+final  Product product;
+final int id ;
 
- //EditProductForm({Key key, @required this.product}) : super(key: key);
+  const EditProductForm({Key key, this.product, this.id}) : super(key: key);
+// ignore: unused_field
+
 
 
 
   @override
-  _AddProductFormState createState() => _AddProductFormState();
+  _EditProductFormState createState() => _EditProductFormState();
 }
 
-class _AddProductFormState extends State<EditProductForm> {
+class _EditProductFormState extends State<EditProductForm> {
   DatabaseHelper databaseHelper = new DatabaseHelper();
+  MyProductsItem myProductsItem = new MyProductsItem();
 
   //File _image;
   final picker = ImagePicker();
@@ -60,7 +63,8 @@ class _AddProductFormState extends State<EditProductForm> {
 
   _onpress(){
     setState(() {
-               databaseHelper.addData(
+               databaseHelper.UpdateData(
+                widget.product.id,
                  Provider.of<ProductProvider>(context, listen: false).productName,
                  Provider.of<ProductProvider>(context, listen: false).price,
                  Provider.of<ProductProvider>(context, listen: false).description,
@@ -77,29 +81,33 @@ class _AddProductFormState extends State<EditProductForm> {
 
   @override
   Widget build(BuildContext context) {
-    return Form(
-      key: _formKey,
-      child: Column(
-        children: [
-          buildProductNameFormField(),
-          SizedBox(height: getProportionateScreenHeight(30)),
-          buildPriceFormField(),
-          SizedBox(height: getProportionateScreenHeight(30)),
-          buildDescriptionFromField(),
-          SizedBox(height: getProportionateScreenHeight(30)),
-          PrimaryButton(
-              text: "pick Image Product",
-              press: () {
-                getImage();
-              }),
-          FormError(errors: errors),
-          SizedBox(height: getProportionateScreenHeight(40)),
-          PrimaryButton(
-              text: "Edit Product Details",
-              press: () {
-                _onpress();
-              })
-        ],
+    return Material(
+      
+      child: Form(
+        key: _formKey,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+             buildProductNameFormField(),
+             SizedBox(height: getProportionateScreenHeight(30)),
+             buildPriceFormField(),
+             SizedBox(height: getProportionateScreenHeight(30)),
+             buildDescriptionFromField(),
+            SizedBox(height: getProportionateScreenHeight(30)),
+            PrimaryButton(
+                text: "pick Image Product",
+                press: () {
+                  getImage();
+                }),
+            FormError(errors: errors),
+            SizedBox(height: getProportionateScreenHeight(40)),
+            PrimaryButton(
+                text: "Edit Product Details",
+                press: () {
+                  _onpress();
+                })
+          ],
+        ),
       ),
     );
   }

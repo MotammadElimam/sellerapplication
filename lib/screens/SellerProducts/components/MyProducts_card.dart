@@ -1,15 +1,19 @@
 import 'package:sellerapplication/models/MyProducts/MyProductsItem.dart';
 import 'package:flutter/material.dart';
 import 'package:sellerapplication/constants.dart';
+import 'package:sellerapplication/models/Product/Product.dart';
+import 'package:sellerapplication/screens/SellerProducts/components/edit_or_delete_product.dart';
+import 'package:sellerapplication/screens/edit_product_details/Edit_product_screen.dart';
 import 'package:sellerapplication/size_config.dart';
 
 
 // ignore: must_be_immutable
 class MyProductsCard extends StatelessWidget {
   final String serverUrl = "http://192.168.43.92:8000/storage/product/";
+  final Product product;
   MyProductsCard({
     Key key,
-    this.myProductsItem,
+    this.myProductsItem, this.product,
   }) : super(key: key);
 
    MyProductsItem myProductsItem;
@@ -18,7 +22,10 @@ class MyProductsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: (){
-        
+       // Navigator.pushNamed(context, EditOrDeleteProductScreen.routeName);
+       Navigator.push(context,
+       MaterialPageRoute(builder: (context) => EditOrDeleteProductScreen(product: product))
+       );
       },
       child: Row(
         children: [

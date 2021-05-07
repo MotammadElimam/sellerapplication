@@ -1,3 +1,4 @@
+import 'package:sellerapplication/controllers/sellerorders.dart';
 import 'package:sellerapplication/models/Orders/Orders_item.dart';
 import 'package:flutter/material.dart';
 import 'package:sellerapplication/constants.dart';
@@ -5,7 +6,7 @@ import 'package:sellerapplication/size_config.dart';
 
 
 // ignore: must_be_immutable
-class OrdersCard extends StatelessWidget {
+class OrdersCard extends StatefulWidget {
   OrdersCard({
     Key key,
     this.ordersitems
@@ -13,6 +14,12 @@ class OrdersCard extends StatelessWidget {
 
    OrdersItem ordersitems;
 
+  @override
+  _OrdersCardState createState() => _OrdersCardState();
+}
+
+class _OrdersCardState extends State<OrdersCard> {
+ 
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -27,7 +34,7 @@ class OrdersCard extends StatelessWidget {
                 color: Color(0xFFF5F6F9),
                 borderRadius: BorderRadius.circular(15),
               ),
-              child: Image.network(ordersitems.product.image),
+              child: Image.network(widget.ordersitems.product.image),
             ),
           ),
         ),
@@ -36,19 +43,19 @@ class OrdersCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              ordersitems.product.productName,
+              widget.ordersitems.product.productName,
               style: TextStyle(color: Colors.black, fontSize: 16),
               maxLines: 2,
             ),
             SizedBox(height: 10),
             Text.rich(
               TextSpan(
-                text: "\$${ordersitems.product.price}",
+                text: "\$${widget.ordersitems.product.price}",
                 style: TextStyle(
                     fontWeight: FontWeight.w600, color: kPrimaryColor),
                 children: [
                   TextSpan(
-                      text: " x${ordersitems.quantity}",
+                      text: " x${widget.ordersitems.quantity}",
                       style: Theme.of(context).textTheme.bodyText1),
                 ],
               ),

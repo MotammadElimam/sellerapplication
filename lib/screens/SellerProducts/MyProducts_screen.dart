@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:sellerapplication/components/coustom_bottom_nav_bar.dart';
 import 'package:sellerapplication/enums.dart';
-import 'package:sellerapplication/screens/Myproducts/components/body.dart';
+import 'package:sellerapplication/models/Product/Product.dart';
+import 'package:sellerapplication/screens/Sellerproducts/components/body.dart';
 import 'package:sellerapplication/screens/addproduct/add_product_screen.dart';
 
 
 class MyProductsScreen extends StatelessWidget {
+  final Product product;
   static String routeName = "/MyProducts";
+
+  const MyProductsScreen({Key key, this.product}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(

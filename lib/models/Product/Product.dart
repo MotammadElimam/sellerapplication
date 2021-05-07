@@ -82,5 +82,5 @@ class Product {
 //   ),
 // ];
 
-const String description =
-    "Wireless Controller for PS4™ gives you what you want in your gaming from over precision control your games to sharing …";
+//  const String description =
+//     "Wireless Controller for PS4™ gives you what you want in your gaming from over precision control your games to sharing …";

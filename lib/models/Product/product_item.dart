@@ -8,6 +8,7 @@ class ProductItem {
   ProductItem();
   
   ProductItem.fromData({
+    this.id,
     this.product,
   });
 }

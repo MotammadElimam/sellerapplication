@@ -7,6 +7,7 @@ import 'package:sellerapplication/models/Sales/Sales.dart';
 import 'dart:io';
 
 class ProductProvider extends ChangeNotifier {
+  int id; 
   double price = 0.0;
   Myproduct myproduct = Myproduct();
   Orders orders = Orders();
