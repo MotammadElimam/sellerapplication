@@ -33,21 +33,23 @@ class DatabaseHelper {
   }
 
   registerData(String email,String password,String confirmPassword,String firstName,String lastName,String phoneNumber,String adress)  async {
+    
     Map information = {
       "email": "$email",
       "password": "$password",
       "confirm_password": "$confirmPassword",
       "first_name": "$firstName",
       "last_name": "$lastName",
-      "phonenumber": "$phoneNumber",
+      "phone_number": "$phoneNumber",
       "adress": "$adress",
-      "is_seller": "seller",
     };
+
+
     print(information);
-    String myUrl = "$serverUrl/api/register";
+    String myUrl = "$serverUrl/seller_api/register";
     final response = await http.post(myUrl,
         headers: {'Accept': 'application/json'}, body: information);
-    status = response.body.contains('error');
+       status = response.body.contains('error');
 
     var data = json.decode(response.body);
     print(response.statusCode);
