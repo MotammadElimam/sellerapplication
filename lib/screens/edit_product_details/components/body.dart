@@ -10,6 +10,7 @@ class Body extends StatelessWidget {
   const Body({Key key, this.product}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    print("tessttttttttttt::""${product.id}");
     return SafeArea(
       child: SizedBox(
         width: double.infinity,
@@ -26,7 +27,7 @@ class Body extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(height: SizeConfig.screenHeight * 0.06),
-                EditProductForm(product: product,),
+                EditProductForm(product: product, ),
               ],
             ),
           ),

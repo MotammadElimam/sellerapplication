@@ -65,12 +65,11 @@ class _EditProductFormState extends State<EditProductForm> {
   _onpress(){
     setState(() {
                databaseHelper.UpdateData(
-                widget.myProductsItem.id,
+                 widget.myProductsItem.product.id,
                  Provider.of<ProductProvider>(context, listen: false).productName,
                  Provider.of<ProductProvider>(context, listen: false).price,
                  Provider.of<ProductProvider>(context, listen: false).description,
                  Provider.of<ProductProvider>(context, listen: false).image,
-                 
                  );
       
        });

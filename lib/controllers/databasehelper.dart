@@ -166,10 +166,10 @@ class DatabaseHelper {
         body: productdata
         ).then((response){
       print('Response status : ${response.statusCode}');
+      print("product id : " "${id}");
       print('Response body : ${response.body}');
     });
   }
-
 
   Future <List<dynamic>>  getSelleritemsOfAllOrders() async{
     final prefs = await SharedPreferences.getInstance();
@@ -187,15 +187,12 @@ class DatabaseHelper {
 
   }
 
-
-
-
   Future <List<dynamic>>  getAllOrders() async{
     final prefs = await SharedPreferences.getInstance();
     final key = 'token';
     final value = prefs.get(key ) ?? 0;
 
-    String myUrl = "$serverUrl/seller_api/ShowAllOrders/";
+    String myUrl = "$serverUrl/seller_api/ShowAllOrders";
     http.Response response = await http.get(myUrl,
         headers: {
           'Accept':'application/json',
@@ -204,6 +201,16 @@ class DatabaseHelper {
     return jsonDecode(response.body);
 
   }
+
+
+
+
+
+
+
+
+
+
 
 
 
