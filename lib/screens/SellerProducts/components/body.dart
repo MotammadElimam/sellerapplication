@@ -35,7 +35,7 @@ class _BodyState extends State<Body> {
                     itemCount: snapshot.data.length,
                     itemBuilder: (BuildContext context, int index) {
                       print(snapshot.data[index]);
-                      myProductsItem.id = snapshot.data[index]["id"];
+                     // myProductsItem.id = snapshot.data[index]["id"];
                       myProductsItem.product = Product();
                       myProductsItem.product.id = snapshot.data[index]["id"];
                       myProductsItem.product.productName =
