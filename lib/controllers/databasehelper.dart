@@ -13,7 +13,7 @@ class DatabaseHelper {
 
     print(logininformation);
     String myUrl = "$serverUrl/seller_api/login?$logininformation";
-    final response = await http.get(
+    final response = await http.post(
       myUrl,
       headers: {'Accept': 'application/json'},
     );
