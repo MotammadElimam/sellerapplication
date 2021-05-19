@@ -1,16 +1,16 @@
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:sellerapplication/models/MyProducts/MyProducts.dart';
-import 'package:sellerapplication/models/Orders/Orders.dart';
 import 'package:sellerapplication/models/Sales/Sales.dart';
 import 'dart:io';
+
+import 'package:sellerapplication/models/SellerProducts/SellerProducts.dart';
 
 class ProductProvider extends ChangeNotifier {
   int id; 
   double price = 0.0;
-  Myproduct myproduct = Myproduct();
-  Orders orders = Orders();
+  SellerProducts sellerProducts = SellerProducts();
+  //Orders orders = Orders();
   Sales sales = Sales();
 
 

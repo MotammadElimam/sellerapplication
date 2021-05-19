@@ -7,7 +7,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 
 class ProductCard extends StatelessWidget {
-  final String serverUrl = "http://192.168.43.92:8000/storage/product/";
+  final String serverUrl = "https://motamed.eanqod.website/storage/product/";
   const ProductCard({
     Key key,
     this.width = 140,

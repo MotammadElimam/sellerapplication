@@ -1,20 +1,20 @@
-import 'package:sellerapplication/models/MyProducts/MyProductsItem.dart';
 import 'package:flutter/material.dart';
 import 'package:sellerapplication/constants.dart';
 import 'package:sellerapplication/models/Product/Product.dart';
+import 'package:sellerapplication/models/SellerProducts/SellerProductsItem.dart';
 import 'package:sellerapplication/screens/SellerProducts/components/edit_or_delete_product.dart';
 import 'package:sellerapplication/screens/edit_product_details/Edit_product_screen.dart';
 import 'package:sellerapplication/size_config.dart';
 
 
 // ignore: must_be_immutable
-class MyProductsCard extends StatelessWidget {
-  final String serverUrl = "http://192.168.43.92:8000/storage/product/";
+class SellerProductCard extends StatelessWidget {
+  final String serverUrl = "https://motamed.eanqod.website/storage/product/";
   final Product product;
-  final MyProductsItem myProductsItem;
-  MyProductsCard({
+  final SellerProductsItem sellerProductsItem;
+  SellerProductCard({
     Key key,
-    this.myProductsItem, this.product
+    this.sellerProductsItem, this.product
   }) : super(key: key);
 
   // MyProductsItem myProductsItem;
@@ -25,7 +25,7 @@ class MyProductsCard extends StatelessWidget {
       onTap: (){
        // Navigator.pushNamed(context, EditOrDeleteProductScreen.routeName);
        Navigator.push(context,
-       MaterialPageRoute(builder: (context) => EditOrDeleteProductScreen(myProductsItem: myProductsItem,))
+       MaterialPageRoute(builder: (context) => EditOrDeleteProductScreen(sellerProductsItem: sellerProductsItem,))
        );
       },
       child: Row(
@@ -40,7 +40,7 @@ class MyProductsCard extends StatelessWidget {
                   color: Color(0xFFF5F6F9),
                   borderRadius: BorderRadius.circular(15),
                 ),
-                child: Image.network(serverUrl+myProductsItem.product.image,
+                child: Image.network(serverUrl+sellerProductsItem.product.image,
                 fit: BoxFit.cover,
                 ),
               ),
@@ -51,14 +51,14 @@ class MyProductsCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                myProductsItem.product.productName,
+                sellerProductsItem.product.productName,
                 style: TextStyle(color: Colors.black, fontSize: 16),
                 maxLines: 2,
               ),
               SizedBox(height: 10),
               Text.rich(
                 TextSpan(
-                  text: "\$${myProductsItem.product.price}",
+                  text: "\$${sellerProductsItem.product.price}",
                   style: TextStyle(
                       fontWeight: FontWeight.w600, color: kPrimaryColor),
                 ),

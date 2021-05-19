@@ -4,7 +4,7 @@ import 'dart:io';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class DatabaseHelper {
-  final String serverUrl = "http://192.168.43.92:8000";
+  final String serverUrl = "https://motamed.eanqod.website";
   var status;
   var token;
 
@@ -32,7 +32,7 @@ class DatabaseHelper {
     }
   }
 
-  registerData(String email,String password,String confirmPassword,String firstName,String lastName,String phoneNumber,String adress)  async {
+  registerData(String email,String password,String confirmPassword,String firstName,String lastName,String phoneNumber,String address)  async {
     
     Map information = {
       "email": "$email",
@@ -41,7 +41,7 @@ class DatabaseHelper {
       "first_name": "$firstName",
       "last_name": "$lastName",
       "phone_number": "$phoneNumber",
-      "adress": "$adress",
+      "address": "$address",
     };
 
 

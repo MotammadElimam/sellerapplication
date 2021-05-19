@@ -1,13 +1,13 @@
 import 'package:sellerapplication/components/buttons/primary_button.dart';
 import 'package:sellerapplication/controllers/ProductProvider.dart';
 import 'package:sellerapplication/controllers/databasehelper.dart';
-import 'package:sellerapplication/models/MyProducts/MyProductsItem.dart';
 import 'package:sellerapplication/models/Product/Product.dart';
 import 'package:sellerapplication/models/Product/product_item.dart';
 import 'package:flutter/material.dart';
 import 'package:sellerapplication/components/custom_surfix_icon.dart';
 import 'package:sellerapplication/components/form_error.dart';
 import 'package:sellerapplication/constants.dart';
+import 'package:sellerapplication/models/SellerProducts/SellerProductsItem.dart';
 import 'package:sellerapplication/size_config.dart';
 import 'package:provider/provider.dart';
 import 'package:image_picker/image_picker.dart';
@@ -20,9 +20,9 @@ class EditProductForm extends StatefulWidget {
 
 final  Product product;
 final int id ;
-final MyProductsItem myProductsItem ;
+final SellerProductsItem sellerProductsItem ;
 
-   EditProductForm({Key key, this.product, this.id , this.myProductsItem}) : super(key: key);
+   EditProductForm({Key key, this.product, this.id , this.sellerProductsItem}) : super(key: key);
 // ignore: unused_field
 
 
@@ -65,7 +65,7 @@ class _EditProductFormState extends State<EditProductForm> {
   _onpress(){
     setState(() {
                databaseHelper.UpdateData(
-                 widget.myProductsItem.product.id,
+                 widget.sellerProductsItem.product.id,
                  Provider.of<ProductProvider>(context, listen: false).productName,
                  Provider.of<ProductProvider>(context, listen: false).price,
                  Provider.of<ProductProvider>(context, listen: false).description,

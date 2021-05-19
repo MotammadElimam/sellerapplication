@@ -1,15 +1,15 @@
 import 'package:sellerapplication/models/Product/Product.dart';
 
 
-class MyProductsItem {
+class SellerProductsItem {
   int id;
   Product product;
   int quantity = 0;
   int getTotalPrice() => product.price * quantity;
 
-  MyProductsItem();
+  SellerProductsItem();
   
-  MyProductsItem.fromData({
+  SellerProductsItem.fromData({
     this.product,
     this.quantity
   });
