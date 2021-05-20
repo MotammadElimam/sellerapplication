@@ -32,8 +32,14 @@ class DatabaseHelper {
     }
   }
 
-  registerData(String email,String password,String confirmPassword,String firstName,String lastName,String phoneNumber,String address)  async {
-    
+  registerData(
+      String email,
+      String password,
+      String confirmPassword,
+      String firstName,
+      String lastName,
+      String phoneNumber,
+      String address) async {
     Map information = {
       "email": "$email",
       "password": "$password",
@@ -44,12 +50,11 @@ class DatabaseHelper {
       "address": "$address",
     };
 
-
     print(information);
     String myUrl = "$serverUrl/seller_api/register";
     final response = await http.post(myUrl,
         headers: {'Accept': 'application/json'}, body: information);
-       status = response.body.contains('error');
+    status = response.body.contains('error');
 
     var data = json.decode(response.body);
     print(response.statusCode);
@@ -63,17 +68,15 @@ class DatabaseHelper {
     }
   }
 
-  Future <List<dynamic>>  getSellerProducts() async{
-
+  Future<List<dynamic>> getSellerProducts() async {
     final prefs = await SharedPreferences.getInstance();
     final key = 'token';
-    final value = prefs.get(key ) ?? 0;
+    final value = prefs.get(key) ?? 0;
 
-    String myUrl = "$serverUrl/seller_api/getallSellerproducts/";
-    http.Response response = await http.get(myUrl,
-        headers: {
-          'Accept':'application/json',
-          'Authorization' : 'Bearer $value'
+    String myUrl = "$serverUrl/seller_api/ShowSellerProducts";
+    http.Response response = await http.get(myUrl, headers: {
+      'Accept': 'application/json',
+      'Authorization': 'Bearer $value'
     });
     print(response.body);
     return jsonDecode(response.body);
@@ -95,126 +98,103 @@ class DatabaseHelper {
 //     });
 //   }*/
 
- String getFileBase64(File image) {
-  if (image != null) {
-    List<int> bytes = image.readAsBytesSync();
-    String base64Image = base64Encode(bytes);
-    return base64Image;
+  String getFileBase64(File image) {
+    if (image != null) {
+      List<int> bytes = image.readAsBytesSync();
+      String base64Image = base64Encode(bytes);
+      return base64Image;
+    }
+    return null;
   }
-  return null;
-}
 
   void addData(String name, double price, String desc, File image) async {
     final prefs = await SharedPreferences.getInstance();
     final key = 'token';
     final value = prefs.get(key) ?? 0;
 
-
-     Map productdata = {
+    Map productdata = {
       "name": "$name",
       "price": "$price",
       "desc": "$desc",
       "image": getFileBase64(image),
-     };
-     print(productdata);
-
-
+    };
+    print(productdata);
 
     String myUrl = "$serverUrl/seller_api/addproduct";
     final response = await http.post(myUrl,
-    headers: {
-      'Accept': 'application/json',
-      'Authorization': 'Bearer $value'}, 
-      body: productdata );
+        headers: {
+          'Accept': 'application/json',
+          'Authorization': 'Bearer $value'
+        },
+        body: productdata);
 
-
-
-      print("hi ${response.statusCode}");
+    print("hi ${response.statusCode}");
 
     status = response.body.contains('error');
-      var data = json.decode(response.body);
+    var data = json.decode(response.body);
 
-      if (status) {
-        print('data : ${data["error"]}');
-      } else {
-        print('data : ${data["token"]}');
-        _save(data["token"]);
-      }
-  
+    if (status) {
+      print('data : ${data["error"]}');
+    } else {
+      print('data : ${data["token"]}');
+      _save(data["token"]);
+    }
   }
- 
-  void UpdateData(int id ,   String name, double price, String desc, File image) async {
-   // int id = 4;
+
+  void UpdateData(
+      int id, String name, double price, String desc, File image) async {
+    // int id = 4;
     final prefs = await SharedPreferences.getInstance();
     final key = 'token';
-    final value = prefs.get(key ) ?? 0;
+    final value = prefs.get(key) ?? 0;
 
-     Map productdata = {
+    var productdata = {
       "name": "$name",
       "price": "$price",
       "desc": "$desc",
       "image": getFileBase64(image),
-     };
-     print(productdata);
+    };
 
     String myUrl = "$serverUrl/seller_api/updateproduct/$id";
-    http.put(myUrl,
-        headers: {
-          'Accept':'application/json',
-          'Authorization' : 'Bearer $value'
-        },
-        body: productdata
-        ).then((response){
+    http
+        .put(myUrl,
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
+              'Authorization': 'Bearer $value'
+            },
+            body: jsonEncode(productdata))
+        .then((response) {
       print('Response status : ${response.statusCode}');
-      print("product id : " "${id}");
-      print('Response body : ${response.body}');
     });
   }
 
-  Future <List<dynamic>>  getSelleritemsOfAllOrders() async{
+  Future<List<dynamic>> getSelleritemsOfAllOrders() async {
     final prefs = await SharedPreferences.getInstance();
     final key = 'token';
-    final value = prefs.get(key ) ?? 0;
+    final value = prefs.get(key) ?? 0;
 
     String myUrl = "$serverUrl/seller_api/getallSellerorders/";
-    http.Response response = await http.get(myUrl,
-        headers: {
-          'Accept':'application/json',
-          'Authorization' : 'Bearer $value'
+    http.Response response = await http.get(myUrl, headers: {
+      'Accept': 'application/json',
+      'Authorization': 'Bearer $value'
     });
     print(response.body);
     return jsonDecode(response.body);
-
   }
 
-  Future <List<dynamic>>  getAllOrders() async{
+  Future<List<dynamic>> getAllOrders() async {
     final prefs = await SharedPreferences.getInstance();
     final key = 'token';
-    final value = prefs.get(key ) ?? 0;
+    final value = prefs.get(key) ?? 0;
 
     String myUrl = "$serverUrl/seller_api/ShowAllOrders";
-    http.Response response = await http.get(myUrl,
-        headers: {
-          'Accept':'application/json',
+    http.Response response = await http.get(myUrl, headers: {
+      'Accept': 'application/json',
     });
     print(response.body);
     return jsonDecode(response.body);
-
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   _save(String token) async {
     final prefs = await SharedPreferences.getInstance();

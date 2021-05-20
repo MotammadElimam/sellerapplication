@@ -9,16 +9,14 @@ import 'package:provider/provider.dart';
 import 'package:sellerapplication/controllers/databasehelper.dart';
 
 class Body extends StatefulWidget {
-  final SellerProductsItem sellerProductsItem ;
-
-  const Body({Key key, this.sellerProductsItem}) : super(key: key);
+  const Body({Key key}) : super(key: key);
   @override
   _BodyState createState() => _BodyState();
 }
 
 class _BodyState extends State<Body> {
   DatabaseHelper databaseHelper = DatabaseHelper();
-  
+
   @override
   Widget build(BuildContext context) {
     return Consumer<ProductProvider>(builder: (context, myproductbody, child) {
@@ -33,18 +31,19 @@ class _BodyState extends State<Body> {
                     padding: EdgeInsets.all(8),
                     itemCount: snapshot.data.length,
                     itemBuilder: (BuildContext context, int index) {
-                      print(snapshot.data[index]);
-                     // myProductsItem.id = snapshot.data[index]["id"];
-                      widget.sellerProductsItem.product = Product();
-                     widget.sellerProductsItem.product.id = snapshot.data[index]["id"];
-                      widget.sellerProductsItem.product.productName =
+                      SellerProductsItem sellerProductsItem =
+                          new SellerProductsItem();
+                      sellerProductsItem.product = Product();
+                      sellerProductsItem.product.id =
+                          snapshot.data[index]["id"];
+                      sellerProductsItem.product.productName =
                           snapshot.data[index]["name"];
-                      widget.sellerProductsItem.product.price =
+                      sellerProductsItem.product.price =
                           snapshot.data[index]["price"];
-                     widget.sellerProductsItem.product.description =
+                      sellerProductsItem.product.description =
                           snapshot.data[index]["desc"];
-                      widget.sellerProductsItem.product.image = snapshot.data[index]["image"];
-
+                      sellerProductsItem.product.image =
+                          snapshot.data[index]["image"];
                       return Padding(
                         padding: EdgeInsets.symmetric(vertical: 10),
                         child: Dismissible(
@@ -64,7 +63,9 @@ class _BodyState extends State<Body> {
                               ],
                             ),
                           ),
-                          child: SellerProductCard(sellerProductsItem: widget.sellerProductsItem),
+                          child: SellerProductCard(
+                            sellerProductsItem: sellerProductsItem,
+                          ),
                         ),
                       );
                     });

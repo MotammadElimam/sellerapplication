@@ -1,12 +1,10 @@
-
-
 class Product {
   int id;
   String productName, description;
   String image;
   double rating;
-  int price;
-  
+  var price;
+
   //bool isFavourite, isPopular;
 
   Product({

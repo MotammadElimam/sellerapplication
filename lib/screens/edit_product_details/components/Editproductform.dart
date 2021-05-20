@@ -12,29 +12,20 @@ import 'package:sellerapplication/size_config.dart';
 import 'package:provider/provider.dart';
 import 'package:image_picker/image_picker.dart';
 
-
-
-
 // ignore: must_be_immutable
 class EditProductForm extends StatefulWidget {
-
-final  Product product;
-final int id ;
-final SellerProductsItem sellerProductsItem ;
-
-   EditProductForm({Key key, this.product, this.id , this.sellerProductsItem}) : super(key: key);
-// ignore: unused_field
-
-
-
-
+  final Product product;
+  EditProductForm({Key key, this.product}) : super(key: key);
   @override
   _EditProductFormState createState() => _EditProductFormState();
 }
 
 class _EditProductFormState extends State<EditProductForm> {
   DatabaseHelper databaseHelper = new DatabaseHelper();
- 
+  @override
+  void initState() {
+    super.initState();
+  }
 
   //File _image;
   final picker = ImagePicker();
@@ -62,37 +53,32 @@ class _EditProductFormState extends State<EditProductForm> {
 
   // This funcion will helps you to pick and Image from Gallery
 
-  _onpress(){
+  _onpress() {
+    print(" kjsd ${widget.product?.id}");
     setState(() {
-               databaseHelper.UpdateData(
-                 widget.sellerProductsItem.product.id,
-                 Provider.of<ProductProvider>(context, listen: false).productName,
-                 Provider.of<ProductProvider>(context, listen: false).price,
-                 Provider.of<ProductProvider>(context, listen: false).description,
-                 Provider.of<ProductProvider>(context, listen: false).image,
-                 );
-      
-       });
+      databaseHelper.UpdateData(
+        widget.product?.id,
+        Provider.of<ProductProvider>(context, listen: false).productName,
+        Provider.of<ProductProvider>(context, listen: false).price,
+        Provider.of<ProductProvider>(context, listen: false).description,
+        Provider.of<ProductProvider>(context, listen: false).image,
+      );
+    });
   }
-
-   
-
-
 
   @override
   Widget build(BuildContext context) {
     return Material(
-      
       child: Form(
         key: _formKey,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-             buildProductNameFormField(),
-             SizedBox(height: getProportionateScreenHeight(30)),
-             buildPriceFormField(),
-             SizedBox(height: getProportionateScreenHeight(30)),
-             buildDescriptionFromField(),
+            buildProductNameFormField(),
+            SizedBox(height: getProportionateScreenHeight(30)),
+            buildPriceFormField(),
+            SizedBox(height: getProportionateScreenHeight(30)),
+            buildDescriptionFromField(),
             SizedBox(height: getProportionateScreenHeight(30)),
             PrimaryButton(
                 text: "pick Image Product",
@@ -199,11 +185,9 @@ class _EditProductFormState extends State<EditProductForm> {
     );
   }
 
- getImage(){
+  getImage() {
     setState(() {
-              
-                 Provider.of<ProductProvider>(context, listen: false).getImage();
-      
-       });
+      Provider.of<ProductProvider>(context, listen: false).getImage();
+    });
   }
 }

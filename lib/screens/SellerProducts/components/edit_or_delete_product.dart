@@ -6,37 +6,28 @@ import 'package:sellerapplication/screens/edit_product_details/Edit_product_scre
 import 'package:sellerapplication/screens/edit_product_details/components/Editproductform.dart';
 
 class EditOrDeleteProductScreen extends StatelessWidget {
-  final Product product;
   final SellerProductsItem sellerProductsItem;
-  final  int id;
   static String routeName = "/EditOrDeleteProductScreen";
 
-  const EditOrDeleteProductScreen({Key key, this.product, this.id, this.sellerProductsItem}) : super(key: key);
+  const EditOrDeleteProductScreen({Key key, this.sellerProductsItem})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("Edit_or_delete_product"),
       ),
-      body: Body(sellerProductsItem: sellerProductsItem,),
+      body: Body(
+        sellerProductsItem: sellerProductsItem,
+      ),
     );
   }
 }
 
-
-
-
-
-
-
-
-
-
 class Body extends StatelessWidget {
-  final Product product;
   final SellerProductsItem sellerProductsItem;
 
-  const Body({Key key, this.product, this.sellerProductsItem}) : super(key: key);
+  const Body({Key key, this.sellerProductsItem}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -45,14 +36,19 @@ class Body extends StatelessWidget {
         PrimaryButton(
           text: "Edit Product",
           press: () {
-        // Navigator.pushNamed(context, EditProductScreen.routeName);
-          Navigator.push(context,
-          MaterialPageRoute(builder: (context) => EditProductForm(sellerProductsItem: sellerProductsItem,))
-       );
+            // Navigator.pushNamed(context, EditProductScreen.routeName);
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) =>
+                      EditProductForm(product: sellerProductsItem.product),
+                ));
           },
         ),
-        SizedBox(height: 20,),
-        PrimaryButton(text: "Delete Product", press: (){})
+        SizedBox(
+          height: 20,
+        ),
+        PrimaryButton(text: "Delete Product", press: () {})
       ],
     );
   }

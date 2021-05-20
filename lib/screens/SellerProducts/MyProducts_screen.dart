@@ -6,24 +6,24 @@ import 'package:sellerapplication/models/SellerProducts/SellerProductsItem.dart'
 import 'package:sellerapplication/screens/Sellerproducts/components/body.dart';
 import 'package:sellerapplication/screens/addproduct/add_product_screen.dart';
 
-
 class MyProductsScreen extends StatelessWidget {
-  final Product product;
   static String routeName = "/MyProducts";
-   SellerProductsItem sellerProductsItem = SellerProductsItem();
+  SellerProductsItem sellerProductsItem = SellerProductsItem();
 
-   MyProductsScreen({Key key, this.product}) : super(key: key);
+  MyProductsScreen({Key key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(context),
-      body: Body(sellerProductsItem: sellerProductsItem),
+      body: Body(),
       floatingActionButton: FloatingActionButton(
-        onPressed: () =>  Navigator.pushNamed(context, AddProductScreen.routeName),
+        onPressed: () =>
+            Navigator.pushNamed(context, AddProductScreen.routeName),
         tooltip: 'Increment',
         child: Icon(Icons.add),
-      ), 
-      bottomNavigationBar: CustomBottomNavBar(selectedMenu: MenuState.myproducts),
+      ),
+      bottomNavigationBar:
+          CustomBottomNavBar(selectedMenu: MenuState.myproducts),
     );
   }
 

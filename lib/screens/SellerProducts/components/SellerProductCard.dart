@@ -6,27 +6,28 @@ import 'package:sellerapplication/screens/SellerProducts/components/edit_or_dele
 import 'package:sellerapplication/screens/edit_product_details/Edit_product_screen.dart';
 import 'package:sellerapplication/size_config.dart';
 
-
 // ignore: must_be_immutable
 class SellerProductCard extends StatelessWidget {
   final String serverUrl = "https://motamed.eanqod.website/storage/product/";
-  final Product product;
   final SellerProductsItem sellerProductsItem;
-  SellerProductCard({
-    Key key,
-    this.sellerProductsItem, this.product
-  }) : super(key: key);
+  SellerProductCard({Key key, this.sellerProductsItem}) : super(key: key);
 
   // MyProductsItem myProductsItem;
 
   @override
   Widget build(BuildContext context) {
+    print("im : ${sellerProductsItem.id}");
     return InkWell(
-      onTap: (){
-       // Navigator.pushNamed(context, EditOrDeleteProductScreen.routeName);
-       Navigator.push(context,
-       MaterialPageRoute(builder: (context) => EditOrDeleteProductScreen(sellerProductsItem: sellerProductsItem,))
-       );
+      onTap: () {
+        // Navigator.pushNamed(context, EditOrDeleteProductScreen.routeName);
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => EditOrDeleteProductScreen(
+              sellerProductsItem: sellerProductsItem,
+            ),
+          ),
+        );
       },
       child: Row(
         children: [
@@ -40,8 +41,9 @@ class SellerProductCard extends StatelessWidget {
                   color: Color(0xFFF5F6F9),
                   borderRadius: BorderRadius.circular(15),
                 ),
-                child: Image.network(serverUrl+sellerProductsItem.product.image,
-                fit: BoxFit.cover,
+                child: Image.network(
+                  serverUrl + sellerProductsItem.product.image,
+                  fit: BoxFit.cover,
                 ),
               ),
             ),
