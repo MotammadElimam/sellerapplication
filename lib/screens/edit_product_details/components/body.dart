@@ -5,12 +5,12 @@ import 'package:sellerapplication/screens/edit_product_details/components/Editpr
 import 'package:sellerapplication/size_config.dart';
 
 class Body extends StatelessWidget {
- final Product product;
+  final Product product;
 
   const Body({Key key, this.product}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    print("tessttttttttttt::""${product.id}");
+    print("tessttttttttttt::" "${product.id}");
     return SafeArea(
       child: SizedBox(
         width: double.infinity,
@@ -20,14 +20,14 @@ class Body extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(height: SizeConfig.screenHeight * 0.03),
                 Text("Edit Product Details", style: headingStyle),
                 Text(
                   "Edit the details for your product",
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(height: SizeConfig.screenHeight * 0.06),
-                EditProductForm(product: product, ),
+                EditProductForm(
+                  product: product,
+                ),
               ],
             ),
           ),

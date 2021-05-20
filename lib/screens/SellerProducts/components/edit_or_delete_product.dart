@@ -31,30 +31,33 @@ class Body extends StatelessWidget {
   const Body({Key key, this.sellerProductsItem}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        PrimaryButton(
-          text: "Edit Product",
-          press: () {
-            // Navigator.pushNamed(context, EditProductScreen.routeName);
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) =>
-                      EditProductForm(product: sellerProductsItem.product),
-                ));
-          },
-        ),
-        SizedBox(
-          height: 20,
-        ),
-        PrimaryButton(
-            text: "Delete Product",
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          PrimaryButton(
+            text: "Edit Product",
             press: () {
-              DatabaseHelper().deleteData(sellerProductsItem.product.id);
-            })
-      ],
+              // Navigator.pushNamed(context, EditProductScreen.routeName);
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        EditProductScreen(product: sellerProductsItem.product),
+                  ));
+            },
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          PrimaryButton(
+              text: "Delete Product",
+              press: () {
+                DatabaseHelper().deleteData(sellerProductsItem.product.id);
+              })
+        ],
+      ),
     );
   }
 }

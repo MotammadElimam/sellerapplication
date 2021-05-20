@@ -54,7 +54,6 @@ class _EditProductFormState extends State<EditProductForm> {
   // This funcion will helps you to pick and Image from Gallery
 
   _onpress() {
-    print(" kjsd ${widget.product?.id}");
     setState(() {
       databaseHelper.UpdateData(
         widget.product?.id,
