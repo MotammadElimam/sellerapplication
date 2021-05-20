@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sellerapplication/controllers/databasehelper.dart';
 import 'package:sellerapplication/models/Orders.dart';
-import 'package:sellerapplication/models/Product/Product.dart';
 
 class SellerOrders extends ChangeNotifier {
   bool loading = false;

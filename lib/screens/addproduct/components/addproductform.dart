@@ -85,14 +85,14 @@ class _AddProductFormState extends State<AddProductForm> {
           buildDescriptionFromField(),
           SizedBox(height: getProportionateScreenHeight(30)),
           PrimaryButton(
-              text: "pick Image Product",
+              text: "اختيار صورة المنتج",
               press: () {
                 getImage();
               }),
           FormError(errors: errors),
           SizedBox(height: getProportionateScreenHeight(40)),
           PrimaryButton(
-              text: "Add Product",
+              text: "إضافة منتج",
               press: () {
                 _onpress();
                   // Navigator.pushNamed(context, MyProductsScreen.routeName);
@@ -123,8 +123,8 @@ class _AddProductFormState extends State<AddProductForm> {
         return null;
       },
       decoration: InputDecoration(
-        labelText: "description",
-        hintText: "Enter the description of product",
+        labelText: "وصف المنتج",
+        hintText: "ادخل وصف المنتج",
         // If  you are using latest version of flutter then lable text and hint text shown like this
         // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,
@@ -148,8 +148,8 @@ class _AddProductFormState extends State<AddProductForm> {
         return null;
       },
       decoration: InputDecoration(
-        labelText: "price",
-        hintText: "Enter your product price",
+        labelText: "السعر",
+        hintText: "ادخل سعر المنتج",
         // If  you are using latest version of flutter then lable text and hint text shown like this
         // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,
@@ -179,8 +179,8 @@ class _AddProductFormState extends State<AddProductForm> {
         return null;
       },
       decoration: InputDecoration(
-        labelText: "product Name",
-        hintText: "Enter your product name",
+        labelText: "اسم المنتج",
+        hintText: "ادخل اسم المنتج",
         // If  you are using latest version of flutter then lable text and hint text shown like this
         // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,

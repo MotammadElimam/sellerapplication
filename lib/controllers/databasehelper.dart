@@ -140,6 +140,7 @@ class DatabaseHelper {
     }
   }
 
+  // ignore: non_constant_identifier_names
   void UpdateData(
       int id, String name, double price, String desc, File image) async {
     // int id = 4;

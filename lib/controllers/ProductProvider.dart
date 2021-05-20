@@ -63,7 +63,7 @@ class ProductProvider extends ChangeNotifier {
       if (imageFilePath != null) {
         image = File(imageFilePath.path);
       } else {
-        print('No image selected.');
+        print('لم يتم اختيار اي صورة');
       }
   }
 

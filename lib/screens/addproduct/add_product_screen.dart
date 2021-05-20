@@ -6,7 +6,7 @@ import 'package:sellerapplication/screens/addproduct/components/body.dart';
 
 
 class AddProductScreen extends StatelessWidget {
-  static String routeName = "/Add_product";
+  static String routeName = "/صفحة اضافة المنتجات";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
