@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sellerapplication/components/buttons/primary_button.dart';
+import 'package:sellerapplication/controllers/databasehelper.dart';
 import 'package:sellerapplication/models/Product/Product.dart';
 import 'package:sellerapplication/models/SellerProducts/SellerProductsItem.dart';
 import 'package:sellerapplication/screens/edit_product_details/Edit_product_screen.dart';
@@ -48,7 +49,11 @@ class Body extends StatelessWidget {
         SizedBox(
           height: 20,
         ),
-        PrimaryButton(text: "Delete Product", press: () {})
+        PrimaryButton(
+            text: "Delete Product",
+            press: () {
+              DatabaseHelper().deleteData(sellerProductsItem.product.id);
+            })
       ],
     );
   }

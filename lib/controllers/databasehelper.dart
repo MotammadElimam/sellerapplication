@@ -82,21 +82,20 @@ class DatabaseHelper {
     return jsonDecode(response.body);
   }
 
-//   void deleteData(int id) async {
-//     final prefs = await SharedPreferences.getInstance();
-//     final key = 'token';
-//     final value = prefs.get(key ) ?? 0;
-//
-//     String myUrl = "$serverUrl/products/$id";
-//     http.delete(myUrl,
-//         headers: {
-//           'Accept':'application/json',
-//           'Authorization' : 'Bearer $value'
-//     } ).then((response){
-//       print('Response status : ${response.statusCode}');
-//       print('Response body : ${response.body}');
-//     });
-//   }*/
+  void deleteData(int id) async {
+    final prefs = await SharedPreferences.getInstance();
+    final key = 'token';
+    final value = prefs.get(key) ?? 0;
+
+    String myUrl = "$serverUrl/products/$id";
+    http.delete(myUrl, headers: {
+      'Accept': 'application/json',
+      'Authorization': 'Bearer $value'
+    }).then((response) {
+      print('Response status : ${response.statusCode}');
+      print('Response body : ${response.body}');
+    });
+  }
 
   String getFileBase64(File image) {
     if (image != null) {
