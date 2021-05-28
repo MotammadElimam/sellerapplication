@@ -8,6 +8,8 @@ import 'package:sellerapplication/components/custom_surfix_icon.dart';
 import 'package:sellerapplication/components/form_error.dart';
 import 'package:sellerapplication/constants.dart';
 import 'package:sellerapplication/models/SellerProducts/SellerProductsItem.dart';
+import 'package:sellerapplication/screens/SellerProducts/SellerProducts_screen.dart';
+import 'package:sellerapplication/screens/home/home_screen.dart';
 import 'package:sellerapplication/size_config.dart';
 import 'package:provider/provider.dart';
 import 'package:image_picker/image_picker.dart';
@@ -55,13 +57,17 @@ class _EditProductFormState extends State<EditProductForm> {
 
   _onpress() {
     setState(() {
-      databaseHelper.UpdateData(
+      databaseHelper
+          .updateData(
         widget.product?.id,
         Provider.of<ProductProvider>(context, listen: false).productName,
         Provider.of<ProductProvider>(context, listen: false).price,
         Provider.of<ProductProvider>(context, listen: false).description,
         Provider.of<ProductProvider>(context, listen: false).image,
-      );
+      )
+          .whenComplete(() {
+        Navigator.pushNamed(context, MyProductsScreen.routeName);
+      });
     });
   }
 
@@ -73,6 +79,7 @@ class _EditProductFormState extends State<EditProductForm> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            SizedBox(height: getProportionateScreenHeight(30)),
             buildProductNameFormField(),
             SizedBox(height: getProportionateScreenHeight(30)),
             buildPriceFormField(),

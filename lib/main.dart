@@ -7,7 +7,7 @@ import 'package:sellerapplication/screens/splash/splash_scrreen.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'controllers/ProductProvider.dart';
-//hi
+
 
 void main() {
   runApp(MyApp());

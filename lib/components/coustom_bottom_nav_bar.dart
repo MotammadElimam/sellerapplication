@@ -1,4 +1,5 @@
-import 'package:sellerapplication/screens/SellerProducts/MyProducts_screen.dart';
+import 'package:sellerapplication/screens/Customer_Orders/Customer_Orders_Screen.dart';
+import 'package:sellerapplication/screens/SellerProducts/SellerProducts_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sellerapplication/screens/wallet/balancePage.dart';
@@ -6,7 +7,6 @@ import 'package:sellerapplication/screens/home/home_screen.dart';
 import 'package:sellerapplication/constants.dart';
 import 'package:sellerapplication/enums.dart';
 import 'package:sellerapplication/screens/profile/profile_screen.dart';
-import 'package:sellerapplication/screens/sales/sales_screen.dart';
 
 class CustomBottomNavBar extends StatelessWidget {
   const CustomBottomNavBar({
@@ -52,19 +52,6 @@ class CustomBottomNavBar extends StatelessWidget {
               ),
               IconButton(
                 icon: SvgPicture.asset(
-                  "assets/icons/sales.svg",
-                  width: 25,
-                  height: 25,
-                  color: MenuState.sales == selectedMenu
-                      ? kPrimaryColor
-                      : inActiveIconColor,
-                  ),
-                onPressed: () {
-                   Navigator.pushNamed(context, SalesScreen.routeName);
-                },
-              ),
-              IconButton(
-                icon: SvgPicture.asset(
                   "assets/icons/orders.svg",
                   width: 40,
                   height: 40,
@@ -73,7 +60,7 @@ class CustomBottomNavBar extends StatelessWidget {
                       : inActiveIconColor,
                 ),
                 onPressed: () =>
-                    Navigator.pushNamed(context, BalancePage.routeName),
+                    Navigator.pushNamed(context, CustomersOrdersScreen.routeName),
               ),
               IconButton(
                 icon: SvgPicture.asset(

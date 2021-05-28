@@ -25,10 +25,17 @@ class EditOrDeleteProductScreen extends StatelessWidget {
   }
 }
 
-class Body extends StatelessWidget {
+class Body extends StatefulWidget {
   final SellerProductsItem sellerProductsItem;
 
   const Body({Key key, this.sellerProductsItem}) : super(key: key);
+
+  @override
+  _BodyState createState() => _BodyState();
+}
+
+class _BodyState extends State<Body> {
+  DatabaseHelper databaseHelper = DatabaseHelper();
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -44,7 +51,7 @@ class Body extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) =>
-                        EditProductScreen(product: sellerProductsItem.product),
+                        EditProductScreen(product: widget.sellerProductsItem.product),
                   ));
             },
           ),
@@ -54,7 +61,7 @@ class Body extends StatelessWidget {
           PrimaryButton(
               text: "Delete Product",
               press: () {
-                DatabaseHelper().deleteData(sellerProductsItem.product.id);
+                databaseHelper.deleteData(widget.sellerProductsItem.product.id);
               })
         ],
       ),

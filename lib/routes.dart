@@ -1,13 +1,13 @@
 import 'package:flutter/widgets.dart';
+import 'package:sellerapplication/screens/Customer_Orders/Customer_Orders_Screen.dart';
 import 'package:sellerapplication/screens/SellerProducts/components/edit_or_delete_product.dart';
 import 'package:sellerapplication/screens/edit_product_details/Edit_product_screen.dart';
-import 'package:sellerapplication/screens/SellerProducts/MyProducts_screen.dart';
+import 'package:sellerapplication/screens/SellerProducts/SellerProducts_screen.dart';
 import 'package:sellerapplication/screens/addproduct/add_product_screen.dart';
 import 'package:sellerapplication/screens/wallet/balancePage.dart';
 import 'package:sellerapplication/screens/edit_profile_details/edit_profile_screen.dart';
 import 'package:sellerapplication/screens/profile/profile_screen.dart';
 import 'package:sellerapplication/screens/profile/components/setting.dart';
-import 'package:sellerapplication/screens/sales/sales_screen.dart';
 import 'package:sellerapplication/screens/splash/splash_scrreen.dart';
 import 'package:sellerapplication/screens/sign_in/sign_in_screen.dart';
 import 'package:sellerapplication/screens/forgot_password/forgot_password_screen.dart';
@@ -33,9 +33,10 @@ final Map<String, WidgetBuilder> routes = {
   SettingsPage.routeName:(context)=>SettingsPage(),
   AddProductScreen.routeName:(context)=>AddProductScreen(),
   EditProductScreen.routeName:(context)=>EditProductScreen(),
-  SalesScreen.routeName:(context)=>SalesScreen(),
   BalancePage.routeName:(context)=>BalancePage(),
   EditProfileScreen.routeName:(context)=>EditProfileScreen(),
-  EditOrDeleteProductScreen.routeName:(context)=>EditOrDeleteProductScreen()
+  EditOrDeleteProductScreen.routeName:(context)=>EditOrDeleteProductScreen(),
+  CustomersOrdersScreen.routeName:(context)=>CustomersOrdersScreen(),
+
 };
 

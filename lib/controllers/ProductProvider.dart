@@ -25,7 +25,7 @@ class ProductProvider extends ChangeNotifier {
   String productName;
   String description;
   File image;
-   final picker = ImagePicker();
+  final picker = ImagePicker();
 
 
 

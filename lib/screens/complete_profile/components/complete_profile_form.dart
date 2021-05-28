@@ -17,7 +17,7 @@ class CompleteProfileForm extends StatefulWidget {
 }
 
 class _CompleteProfileFormState extends State<CompleteProfileForm> {
-  DatabaseHelper databaseHelper = new DatabaseHelper();
+  DatabaseHelper databaseHelper = DatabaseHelper();
   String msgStatus = '';
   final _formKey = GlobalKey<FormState>();
   final List<String> errors = [];

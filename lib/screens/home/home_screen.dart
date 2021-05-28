@@ -11,29 +11,14 @@ class HomeScreen extends StatelessWidget {
   
   
   
-  _save(String token) async {
-    final prefs = await SharedPreferences.getInstance();
-    final key = 'token';
-    final value = token;
-    prefs.setString(key, value);
-  }
+  
  
  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
      appBar: AppBar(
-          title:  Text('HomePage'),
-          actions: <Widget>[
-            IconButton(
-              icon: Icon(Icons.cancel),
-              onPressed: (){
-                _save('0');
-              Navigator.pushNamed(context, SignInScreen.routeName);
-              },
-            )
-          ],
-        ),
+          title:  Text('HomePage')),
       body: Body(),
        bottomNavigationBar: CustomBottomNavBar(selectedMenu: MenuState.home),
     );

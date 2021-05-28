@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:sellerapplication/components/coustom_bottom_nav_bar.dart';
 import 'package:sellerapplication/enums.dart';
-import 'package:sellerapplication/models/Product/Product.dart';
 import 'package:sellerapplication/models/SellerProducts/SellerProductsItem.dart';
 import 'package:sellerapplication/screens/Sellerproducts/components/body.dart';
 import 'package:sellerapplication/screens/addproduct/add_product_screen.dart';
 
+// ignore: must_be_immutable
 class MyProductsScreen extends StatelessWidget {
   static String routeName = "/MyProducts";
   SellerProductsItem sellerProductsItem = SellerProductsItem();

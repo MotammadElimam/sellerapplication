@@ -1,4 +1,5 @@
 import 'package:http/http.dart' as http;
+import 'package:sellerapplication/models/CustomersOrders/CustomersOrders.dart';
 import 'dart:convert';
 import 'dart:io';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -32,14 +33,7 @@ class DatabaseHelper {
     }
   }
 
-  registerData(
-      String email,
-      String password,
-      String confirmPassword,
-      String firstName,
-      String lastName,
-      String phoneNumber,
-      String address) async {
+  registerData(String email,String password,String confirmPassword,String firstName,String lastName,String phoneNumber,String address) async {
     Map information = {
       "email": "$email",
       "password": "$password",
@@ -68,7 +62,7 @@ class DatabaseHelper {
     }
   }
 
-  Future<List<dynamic>> getSellerProducts() async {
+  Future<List<dynamic>> showSellerProducts() async {
     final prefs = await SharedPreferences.getInstance();
     final key = 'token';
     final value = prefs.get(key) ?? 0;
@@ -87,7 +81,7 @@ class DatabaseHelper {
     final key = 'token';
     final value = prefs.get(key) ?? 0;
 
-    String myUrl = "$serverUrl/products/$id";
+    String myUrl = "$serverUrl/seller_api/deleteproduct/$id";
     http.delete(myUrl, headers: {
       'Accept': 'application/json',
       'Authorization': 'Bearer $value'
@@ -141,9 +135,8 @@ class DatabaseHelper {
   }
 
   // ignore: non_constant_identifier_names
-  void UpdateData(
-      int id, String name, double price, String desc, File image) async {
-    // int id = 4;
+ updateData(int id, String name, double price, String desc, File image) async {
+
     final prefs = await SharedPreferences.getInstance();
     final key = 'token';
     final value = prefs.get(key) ?? 0;
@@ -169,21 +162,42 @@ class DatabaseHelper {
     });
   }
 
-  Future<List<dynamic>> getSelleritemsOfAllOrders() async {
+  Future<List<CustomersOrders>>  showSellerOrders() async {
     final prefs = await SharedPreferences.getInstance();
     final key = 'token';
     final value = prefs.get(key) ?? 0;
 
-    String myUrl = "$serverUrl/seller_api/getallSellerorders/";
+    String myUrl = "$serverUrl/seller_api/ShowSellerOrders/";
     http.Response response = await http.get(myUrl, headers: {
       'Accept': 'application/json',
       'Authorization': 'Bearer $value'
     });
+
+
+
+    List<CustomersOrders> customersOrders = [];
+    
+    var jsonData = json.decode(response.body);
+    
+    
+      for(var u in jsonData){
+     
+     
+      //  CustomersOrders customersOrders = CustomersOrders(u["id"], u["productId"]);
+       
+      //  customerorders.add(CustomersOrders.fromJson(customerorderJson));
+        
+      //   return customersOrders;
+      
+      
+      
+      
+      }
     print(response.body);
     return jsonDecode(response.body);
   }
 
-  Future<List<dynamic>> getAllOrders() async {
+  Future<List<dynamic>> showAllOrders() async {
     final prefs = await SharedPreferences.getInstance();
     final key = 'token';
     final value = prefs.get(key) ?? 0;
