@@ -35,7 +35,7 @@ DatabaseHelper databaseHelper = new DatabaseHelper();
                   itemCount: snapshot.data.length,
                   itemBuilder: (BuildContext context, int index) {
                     return ListTile(
-                      title: Text("Order Number:"+ snapshot.data[index].id),
+                      title: Text("Product Name:"+ snapshot.data[index].id),
                       subtitle: Text("Product ID:"+snapshot.data[index].productId),
                       onTap: (){
 

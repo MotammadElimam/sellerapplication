@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:sellerapplication/components/custom_surfix_icon.dart';
 import 'package:sellerapplication/components/form_error.dart';
 import 'package:sellerapplication/constants.dart';
+import 'package:sellerapplication/screens/SellerProducts/SellerProducts_screen.dart';
 import 'package:sellerapplication/size_config.dart';
 import 'package:provider/provider.dart';
 import 'package:image_picker/image_picker.dart';
@@ -63,7 +64,9 @@ class _AddProductFormState extends State<AddProductForm> {
                  Provider.of<ProductProvider>(context, listen: false).description,
                  Provider.of<ProductProvider>(context, listen: false).image,
                  
-                 );
+                 ).whenComplete(() {
+        Navigator.pushNamed(context, SellerProductScreen.routeName);
+      });
       
        });
   }
@@ -95,7 +98,6 @@ class _AddProductFormState extends State<AddProductForm> {
               text: "إضافة منتج",
               press: () {
                 _onpress();
-                  // Navigator.pushNamed(context, MyProductsScreen.routeName);
               })
         ],
       ),

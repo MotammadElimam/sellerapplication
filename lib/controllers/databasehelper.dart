@@ -107,7 +107,7 @@ class DatabaseHelper {
     return null;
   }
 
-  void addData(String name, double price, String desc, File image) async {
+  addData(String name, double price, String desc, File image) async {
     final prefs = await SharedPreferences.getInstance();
     final key = 'token';
     final value = prefs.get(key) ?? 0;
