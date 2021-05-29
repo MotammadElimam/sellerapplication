@@ -33,7 +33,14 @@ class DatabaseHelper {
     }
   }
 
-  registerData(String email,String password,String confirmPassword,String firstName,String lastName,String phoneNumber,String address) async {
+  registerData(
+      String email,
+      String password,
+      String confirmPassword,
+      String firstName,
+      String lastName,
+      String phoneNumber,
+      String address) async {
     Map information = {
       "email": "$email",
       "password": "$password",
@@ -76,7 +83,7 @@ class DatabaseHelper {
     return jsonDecode(response.body);
   }
 
-  void deleteData(int id) async {
+  deleteData(int id) async {
     final prefs = await SharedPreferences.getInstance();
     final key = 'token';
     final value = prefs.get(key) ?? 0;
@@ -135,8 +142,7 @@ class DatabaseHelper {
   }
 
   // ignore: non_constant_identifier_names
- updateData(int id, String name, double price, String desc, File image) async {
-
+  updateData(int id, String name, double price, String desc, File image) async {
     final prefs = await SharedPreferences.getInstance();
     final key = 'token';
     final value = prefs.get(key) ?? 0;
@@ -162,7 +168,7 @@ class DatabaseHelper {
     });
   }
 
-  Future<List<CustomersOrders>>  showSellerOrders() async {
+  Future<List<CustomersOrders>> showSellerOrders() async {
     final prefs = await SharedPreferences.getInstance();
     final key = 'token';
     final value = prefs.get(key) ?? 0;
@@ -174,27 +180,21 @@ class DatabaseHelper {
     });
 
 
+   List<CustomersOrders> customersOrders = [];
 
-    List<CustomersOrders> customersOrders = [];
-    
-    var jsonData = json.decode(response.body);
-    
-    
-      for(var u in jsonData){
-     
-     
-      //  CustomersOrders customersOrders = CustomersOrders(u["id"], u["productId"]);
-       
-      //  customerorders.add(CustomersOrders.fromJson(customerorderJson));
-        
-      //   return customersOrders;
-      
-      
-      
-      
-      }
+
+ var jsonData = json.decode(response.body); 
+  for(var u in jsonData){
+
+      CustomersOrders customersOrder = CustomersOrders.fromJson(u);
+
+      customersOrders.add(customersOrder);
+
+    }
+
+
     print(response.body);
-    return jsonDecode(response.body);
+    return customersOrders; 
   }
 
   Future<List<dynamic>> showAllOrders() async {

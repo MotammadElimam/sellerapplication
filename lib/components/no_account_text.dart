@@ -14,19 +14,20 @@ class NoAccountText extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(
-          "Don’t have an account? ",
-          style: TextStyle(fontSize: getProportionateScreenWidth(16)),
-        ),
         GestureDetector(
           onTap: () => Navigator.pushNamed(context, SignUpScreen.routeName),
           child: Text(
-            "Sign Up",
+            "سجل الآن",
             style: TextStyle(
                 fontSize: getProportionateScreenWidth(16),
                 color: kPrimaryColor),
           ),
         ),
+        Text(
+          "  ليس لديك حساب؟",
+          style: TextStyle(fontSize: getProportionateScreenWidth(15)),
+        ),
+        
       ],
     );
   }

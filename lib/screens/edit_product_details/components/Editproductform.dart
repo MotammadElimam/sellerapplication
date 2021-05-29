@@ -66,7 +66,7 @@ class _EditProductFormState extends State<EditProductForm> {
         Provider.of<ProductProvider>(context, listen: false).image,
       )
           .whenComplete(() {
-        Navigator.pushNamed(context, MyProductsScreen.routeName);
+        Navigator.pushNamed(context, SellerProductScreen.routeName);
       });
     });
   }

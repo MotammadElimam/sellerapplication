@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:sellerapplication/screens/home/components/home_header.dart';
 import 'package:sellerapplication/size_config.dart';
 import 'package:sellerapplication/screens/home/components/categories.dart';
-import 'package:sellerapplication/screens/home/components/special_offers.dart';
 
 
 class Body extends StatelessWidget {
@@ -23,7 +22,6 @@ class Body extends StatelessWidget {
               child: BigCardImageSlide(images: demoBigImages),
             ),
             Categories(),
-            SpecialOffers(),
             SizedBox(height: getProportionateScreenWidth(30)),
             PopularProducts(),
             SizedBox(height: getProportionateScreenWidth(30)),

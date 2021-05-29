@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:sellerapplication/components/buttons/primary_button.dart';
 import 'package:sellerapplication/controllers/databasehelper.dart';
-import 'package:sellerapplication/models/Product/Product.dart';
 import 'package:sellerapplication/models/SellerProducts/SellerProductsItem.dart';
+import 'package:sellerapplication/screens/SellerProducts/SellerProducts_screen.dart';
 import 'package:sellerapplication/screens/edit_product_details/Edit_product_screen.dart';
-import 'package:sellerapplication/screens/edit_product_details/components/Editproductform.dart';
+
 
 class EditOrDeleteProductScreen extends StatelessWidget {
   final SellerProductsItem sellerProductsItem;
@@ -61,7 +61,9 @@ class _BodyState extends State<Body> {
           PrimaryButton(
               text: "Delete Product",
               press: () {
-                databaseHelper.deleteData(widget.sellerProductsItem.product.id);
+                databaseHelper.deleteData(widget.sellerProductsItem.product.id).whenComplete((){
+                  Navigator.pushNamed(context, SellerProductScreen.routeName);
+                });
               })
         ],
       ),
