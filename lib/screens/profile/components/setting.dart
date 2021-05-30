@@ -30,7 +30,7 @@ class _SettingsPageState extends State<SettingsPage> {
         child: ListView(
           children: [
             Text(
-              "Settings",
+              "الاعدادات",
               style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
             ),
             SizedBox(
@@ -46,7 +46,7 @@ class _SettingsPageState extends State<SettingsPage> {
                   width: 8,
                 ),
                 Text(
-                  "Account",
+                  "الحساب",
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
               ],
@@ -58,39 +58,11 @@ class _SettingsPageState extends State<SettingsPage> {
             SizedBox(
               height: 10,
             ),
-            buildAccountOptionRow(context, "Change password"),
-            buildAccountOptionRow(context, "Language"),
-            buildAccountOptionRow(context, "Privacy and security"),
+            buildAccountOptionRow(context, "تغيير الرقم السري"),
+            buildAccountOptionRow(context, "اللغة"),
+            buildAccountOptionRow(context, "الخصوصية والحماية"),
             SizedBox(
               height: 40,
-            ),
-            Row(
-              children: [
-                Icon(
-                  Icons.volume_up_outlined,
-                  color: Colors.blue,
-                ),
-                SizedBox(
-                  width: 8,
-                ),
-                Text(
-                  "Notifications",
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                ),
-              ],
-            ),
-            Divider(
-              height: 15,
-              thickness: 2,
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            buildNotificationOptionRow("New for you"),
-            buildNotificationOptionRow("Account activity"),
-            buildNotificationOptionRow("Opportunity"),
-            SizedBox(
-              height: 50,
             ),
           ],
         ),
@@ -134,9 +106,9 @@ class _SettingsPageState extends State<SettingsPage> {
                 content: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text("Option 1"),
-                    Text("Option 2"),
-                    Text("Option 3"),
+                    Text("الخيار الاول"),
+                    Text("الخيار الثاني"),
+                    Text("الخيار الثالث"),
                   ],
                 ),
                 actions: [
@@ -145,7 +117,7 @@ class _SettingsPageState extends State<SettingsPage> {
                       onPressed: () {
                         Navigator.of(context).pop();
                       },
-                      child: Text("Close")),
+                      child: Text("إغلاق")),
                 ],
               );
             });

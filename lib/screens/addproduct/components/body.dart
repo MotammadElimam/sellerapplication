@@ -16,9 +16,9 @@ class Body extends StatelessWidget {
             child: Column(
               children: [
                 SizedBox(height: SizeConfig.screenHeight * 0.03),
-                Text("Add Product", style: headingStyle),
+                Text("إضافة منتج", style: headingStyle),
                 Text(
-                  "Add the details for your product",
+                  "ادخل تفاصيل المنتج الخاص بك",
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(height: SizeConfig.screenHeight * 0.06),

@@ -8,7 +8,7 @@ import 'package:sellerapplication/screens/Customer_Orders/components/Body.dart';
 
 // ignore: must_be_immutable
 class CustomersOrdersScreen extends StatelessWidget {
-  static String routeName = "/طلبات العملاء";
+  static String routeName = "/cutomerorders";
   SellerProductsItem sellerProductsItem = SellerProductsItem();
 
   CustomersOrdersScreen({Key key}) : super(key: key);
@@ -28,7 +28,7 @@ class CustomersOrdersScreen extends StatelessWidget {
         children: [
           Text(
             "طلبات العملاء",
-            style: TextStyle(color: Colors.black),
+            style: TextStyle(color: Colors.black,fontFamily: 'Tajawal'),
           ),
         ],
       ),

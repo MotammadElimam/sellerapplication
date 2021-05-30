@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:sellerapplication/components/coustom_bottom_nav_bar.dart';
 import 'package:sellerapplication/enums.dart';
@@ -11,7 +13,7 @@ class AddProductScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Add Product'),
+        title: Text('إضافة منتج',style: TextStyle(fontFamily: 'Tajawal'),),
       ),
       body: Body(),
       bottomNavigationBar: CustomBottomNavBar(selectedMenu: MenuState.myproducts),

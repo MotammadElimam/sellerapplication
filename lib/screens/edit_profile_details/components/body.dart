@@ -17,7 +17,7 @@ class Body extends StatelessWidget {
             child: Column(
               children: [
                 SizedBox(height: SizeConfig.screenHeight * 0.04), // 4%
-                Text("Edit Profile details", style: headingStyle),
+                Text("تعديل البيانات الشخصية", style: headingStyle),
                 SizedBox(height: SizeConfig.screenHeight * 0.08),
                 EditProfileForm(),
                 SizedBox(height: SizeConfig.screenHeight * 0.08),

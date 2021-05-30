@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:sellerapplication/components/coustom_bottom_nav_bar.dart';
 import 'package:sellerapplication/enums.dart';
 
-class BalancePage extends StatelessWidget {
+class WalletPageScreen extends StatelessWidget {
   static String routeName = "/BalancePage";
-  BalancePage({
+  WalletPageScreen({
     Key key,
   }) : super(key: key);
   @override
@@ -23,9 +23,9 @@ class BalancePage extends StatelessWidget {
           Transform.translate(
             offset: Offset(101.0, 373.0),
             child: Text(
-              '0.0 SDG',
+              '0.0 جنيه',
               style: TextStyle(
-                fontFamily: 'Segoe UI',
+                fontFamily: 'Tajawal',
                 fontSize: 50,
                 color: const Color(0xff707070),
               ),
@@ -35,9 +35,9 @@ class BalancePage extends StatelessWidget {
           Transform.translate(
             offset: Offset(103.0, 265.0),
             child: Text(
-              'Balance',
+              'رصيدك',
               style: TextStyle(
-                fontFamily: 'Segoe UI',
+                fontFamily: 'Tajawal',
                 fontSize: 50,
                 color: const Color(0xff707070),
               ),

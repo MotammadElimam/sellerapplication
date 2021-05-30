@@ -10,7 +10,6 @@ class Body extends StatelessWidget {
   const Body({Key key, this.product}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    print("tessttttttttttt::" "${product.id}");
     return SafeArea(
       child: SizedBox(
         width: double.infinity,
@@ -20,11 +19,11 @@ class Body extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                Text("Edit Product Details", style: headingStyle),
-                Text(
-                  "Edit the details for your product",
-                  textAlign: TextAlign.center,
-                ),
+                Text("تعديل بيانات المنتج", style: headingStyle),
+                // Text(
+                //   "ادخل تفاصيل المنتج الخاص بك",
+                //   textAlign: TextAlign.center,
+                // ),
                 EditProductForm(
                   product: product,
                 ),

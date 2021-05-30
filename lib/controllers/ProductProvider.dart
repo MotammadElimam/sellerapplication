@@ -1,18 +1,13 @@
-
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:sellerapplication/models/Sales/Sales.dart';
 import 'dart:io';
-
 import 'package:sellerapplication/models/SellerProducts/SellerProducts.dart';
 
 class ProductProvider extends ChangeNotifier {
-  int id; 
+  int id;
   double price = 0.0;
   SellerProducts sellerProducts = SellerProducts();
   //Orders orders = Orders();
-  Sales sales = Sales();
-
 
   String email;
   String password;
@@ -26,11 +21,6 @@ class ProductProvider extends ChangeNotifier {
   String description;
   File image;
   final picker = ImagePicker();
-
-
-
-
- 
 
   // addToMyProducts(MyProductsItem myProductItem) {
   //   try {
@@ -59,13 +49,10 @@ class ProductProvider extends ChangeNotifier {
   Future getImage() async {
     final imageFilePath = await picker.getImage(source: ImageSource.gallery);
 
-    
-      if (imageFilePath != null) {
-        image = File(imageFilePath.path);
-      } else {
-        print('لم يتم اختيار اي صورة');
-      }
+    if (imageFilePath != null) {
+      image = File(imageFilePath.path);
+    } else {
+      print('لم يتم اختيار اي صورة');
+    }
   }
-
-
 }

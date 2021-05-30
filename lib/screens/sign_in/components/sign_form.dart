@@ -15,20 +15,21 @@ class SignForm extends StatefulWidget {
 }
 
 class _SignFormState extends State<SignForm> {
-  
-  
   void _showDialog() {
     showDialog(
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            title: new Text('Failed'),
-            content: new Text('Check your email or password'),
+            title: new Text('فشل', style: TextStyle(fontFamily: 'Tajawal')),
+            content: new Text(
+              'الرجاء التحقق من صحة البريد الالكتروني او الرقم السري',
+              style: TextStyle(fontFamily: 'Tajawal'),
+            ),
             actions: <Widget>[
               // ignore: deprecated_member_use
               new RaisedButton(
                 child: new Text(
-                  'Close',
+                  'إغلاق',
                 ),
                 onPressed: () {
                   Navigator.of(context).pop();
@@ -61,7 +62,7 @@ class _SignFormState extends State<SignForm> {
         databaseHelper.loginData(email, password).whenComplete(() {
           if (databaseHelper.status) {
             _showDialog();
-            msgStatus = 'Check email or password';
+            msgStatus = 'تحقق من صحة البريد الالكتروني او الرقم السري';
           } else {
             Navigator.pushNamed(context, HomeScreen.routeName);
           }
@@ -116,13 +117,13 @@ class _SignFormState extends State<SignForm> {
                   });
                 },
               ),
-              Text("Remember me"),
+              Text("تذكرني"),
               Spacer(),
               GestureDetector(
                 onTap: () => Navigator.pushNamed(
                     context, ForgotPasswordScreen.routeName),
                 child: Text(
-                  "Forgot Password",
+                  "نسيت الرقم السري",
                   style: TextStyle(decoration: TextDecoration.underline),
                 ),
               )
@@ -131,7 +132,7 @@ class _SignFormState extends State<SignForm> {
           FormError(errors: errors),
           SizedBox(height: getProportionateScreenHeight(20)),
           PrimaryButton(
-            text: "Sign In",
+            text: "تسجيل الدخول",
             press: () {
               if (_formKey.currentState.validate()) {
                 // If all data are correct then save data to out variables
@@ -146,16 +147,6 @@ class _SignFormState extends State<SignForm> {
               }
             },
           )
-          /* DefaultButton(
-            text: "Continue",
-            press: () {
-              if (_formKey.currentState.validate()) {
-                _formKey.currentState.save();
-                // if all are valid then go to success screen
-                Navigator.pushNamed(context, LoginSuccessScreen.routeName);
-              }
-            },
-          ),*/
         ],
       ),
     );
@@ -185,8 +176,8 @@ class _SignFormState extends State<SignForm> {
         return null;
       },
       decoration: InputDecoration(
-        labelText: "Password",
-        hintText: "Enter your password",
+        labelText: "الرقم السري",
+        hintText: "ادخل الرقم السري",
         // If  you are using latest version of flutter then lable text and hint text shown like this
         // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,
@@ -219,8 +210,8 @@ class _SignFormState extends State<SignForm> {
         return null;
       },
       decoration: InputDecoration(
-        labelText: "Email",
-        hintText: "Enter your email",
+        labelText: "البريد الالكتروني",
+        hintText: "ادخل البريد الالكتروني",
         // If  you are using latest version of flutter then lable text and hint text shown like this
         // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,

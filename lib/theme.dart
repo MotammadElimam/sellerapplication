@@ -4,7 +4,7 @@ import 'package:sellerapplication/constants.dart';
 ThemeData theme() {
   return ThemeData(
     scaffoldBackgroundColor: Colors.white,
-    fontFamily: "Muli",
+    fontFamily: "Tajawal",
     appBarTheme: appBarTheme(),
     textTheme: textTheme(),
     inputDecorationTheme: inputDecorationTheme(),

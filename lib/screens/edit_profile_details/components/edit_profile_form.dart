@@ -8,14 +8,12 @@ import 'package:sellerapplication/components/form_error.dart';
 import 'package:sellerapplication/screens/complete_profile/complete_profile_screen.dart';
 import 'package:provider/provider.dart';
 
-
-
 class EditProfileForm extends StatefulWidget {
   @override
-  _EditProfileFormState createState() => _EditProfileFormState();
+  EditProfileFormState createState() => EditProfileFormState();
 }
 
-class _EditProfileFormState extends State<EditProfileForm> {
+class EditProfileFormState extends State<EditProfileForm> {
   final _formKey = GlobalKey<FormState>();
   String email;
   String password;
@@ -49,7 +47,7 @@ class _EditProfileFormState extends State<EditProfileForm> {
           SizedBox(height: getProportionateScreenHeight(30)),
           buildConformPassFormField(),
           SizedBox(height: getProportionateScreenHeight(40)),
-           buildFirstNameFormField(),
+          buildFirstNameFormField(),
           SizedBox(height: getProportionateScreenHeight(30)),
           buildLastNameFormField(),
           SizedBox(height: getProportionateScreenHeight(30)),
@@ -58,7 +56,7 @@ class _EditProfileFormState extends State<EditProfileForm> {
           buildAddressFormField(),
           FormError(errors: errors),
           PrimaryButton(
-            text: "Continue",
+            text: "التالي",
             press: () {
               if (_formKey.currentState.validate()) {
                 _formKey.currentState.save();
@@ -74,11 +72,13 @@ class _EditProfileFormState extends State<EditProfileForm> {
 
   TextFormField buildAddressFormField() {
     return TextFormField(
-      onSaved: (newValue) => Provider.of<ProductProvider>(context, listen: false).address=newValue,
+      onSaved: (newValue) =>
+          Provider.of<ProductProvider>(context, listen: false).address =
+              newValue,
       onChanged: (value) {
         if (value.isNotEmpty) {
           removeError(error: kAddressNullError);
-          Provider.of<ProductProvider>(context, listen: false).address=value;
+          Provider.of<ProductProvider>(context, listen: false).address = value;
         }
         return null;
       },
@@ -91,8 +91,8 @@ class _EditProfileFormState extends State<EditProfileForm> {
         return null;
       },
       decoration: InputDecoration(
-        labelText: "Address",
-        hintText: "Enter your address",
+        labelText: "العنوان",
+        hintText: "ادخل العنوان",
         // If  you are using latest version of flutter then lable text and hint text shown like this
         // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,
@@ -101,15 +101,18 @@ class _EditProfileFormState extends State<EditProfileForm> {
       ),
     );
   }
-  
+
   TextFormField buildPhoneNumberFormField() {
     return TextFormField(
       keyboardType: TextInputType.phone,
-      onSaved: (newValue) =>Provider.of<ProductProvider>(context, listen: false).phoneNumber=newValue,
+      onSaved: (newValue) =>
+          Provider.of<ProductProvider>(context, listen: false).phoneNumber =
+              newValue,
       onChanged: (value) {
         if (value.isNotEmpty) {
           removeError(error: kPhoneNumberNullError);
-          Provider.of<ProductProvider>(context, listen: false).phoneNumber=value;
+          Provider.of<ProductProvider>(context, listen: false).phoneNumber =
+              value;
         }
         return null;
       },
@@ -121,8 +124,8 @@ class _EditProfileFormState extends State<EditProfileForm> {
         return null;
       },
       decoration: InputDecoration(
-        labelText: "Phone Number",
-        hintText: "Enter your phone number",
+        labelText: "رقم الهاتف",
+        hintText: "ادخل رقم الهاتف",
         // If  you are using latest version of flutter then lable text and hint text shown like this
         // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,
@@ -131,20 +134,21 @@ class _EditProfileFormState extends State<EditProfileForm> {
     );
   }
 
-
-   TextFormField buildLastNameFormField() {
+  TextFormField buildLastNameFormField() {
     return TextFormField(
-      onSaved: (newValue) => Provider.of<ProductProvider>(context, listen: false).lastName=newValue,
+      onSaved: (newValue) =>
+          Provider.of<ProductProvider>(context, listen: false).lastName =
+              newValue,
       onChanged: (value) {
         if (value.isNotEmpty) {
           removeError(error: kNamelNullError);
-           Provider.of<ProductProvider>(context, listen: false).lastName=value;
+          Provider.of<ProductProvider>(context, listen: false).lastName = value;
         }
         return null;
       },
       decoration: InputDecoration(
-        labelText: "Last Name",
-        hintText: "Enter your last name",
+        labelText: "اسم العائلة",
+        hintText: "ادخل اسم العائلة",
         // If  you are using latest version of flutter then lable text and hint text shown like this
         // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,
@@ -153,13 +157,16 @@ class _EditProfileFormState extends State<EditProfileForm> {
     );
   }
 
-   TextFormField buildFirstNameFormField() {
+  TextFormField buildFirstNameFormField() {
     return TextFormField(
-    onSaved: (newValue) => Provider.of<ProductProvider>(context, listen: false).firstName=newValue,
+      onSaved: (newValue) =>
+          Provider.of<ProductProvider>(context, listen: false).firstName =
+              newValue,
       onChanged: (value) {
         if (value.isNotEmpty) {
           removeError(error: kNamelNullError);
-           Provider.of<ProductProvider>(context, listen: false).firstName=value;
+          Provider.of<ProductProvider>(context, listen: false).firstName =
+              value;
         }
         return null;
       },
@@ -171,8 +178,8 @@ class _EditProfileFormState extends State<EditProfileForm> {
         return null;
       },
       decoration: InputDecoration(
-        labelText: "First Name",
-        hintText: "Enter your first name",
+        labelText: "الاسم الأول",
+        hintText: "ادخل الاسم الاول",
         // If  you are using latest version of flutter then lable text and hint text shown like this
         // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,
@@ -184,11 +191,14 @@ class _EditProfileFormState extends State<EditProfileForm> {
   TextFormField buildConformPassFormField() {
     return TextFormField(
       obscureText: true,
-      onSaved: (newValue) => Provider.of<ProductProvider>(context, listen: false).confirmPassword=newValue,
+      onSaved: (newValue) =>
+          Provider.of<ProductProvider>(context, listen: false).confirmPassword =
+              newValue,
       onChanged: (value) {
         if (value.isNotEmpty) {
           removeError(error: kPassNullError);
-          Provider.of<ProductProvider>(context, listen: false).confirmPassword=value;
+          Provider.of<ProductProvider>(context, listen: false).confirmPassword =
+              value;
         } else if (value.isNotEmpty && password == confirmPassword) {
           removeError(error: kMatchPassError);
         }
@@ -205,8 +215,8 @@ class _EditProfileFormState extends State<EditProfileForm> {
         return null;
       },
       decoration: InputDecoration(
-        labelText: "Confirm Password",
-        hintText: "Re-enter your password",
+        labelText: "تأكيد الرقم السري",
+        hintText: "أعد إدخال الرقم السري",
         // If  you are using latest version of flutter then lable text and hint text shown like this
         // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,
@@ -218,11 +228,13 @@ class _EditProfileFormState extends State<EditProfileForm> {
   TextFormField buildPasswordFormField() {
     return TextFormField(
       obscureText: true,
-      onSaved: (newValue) =>Provider.of<ProductProvider>(context, listen: false).password=newValue,
+      onSaved: (newValue) =>
+          Provider.of<ProductProvider>(context, listen: false).password =
+              newValue,
       onChanged: (value) {
         if (value.isNotEmpty) {
           removeError(error: kPassNullError);
-          Provider.of<ProductProvider>(context, listen: false).password=value;
+          Provider.of<ProductProvider>(context, listen: false).password = value;
         } else if (value.length >= 8) {
           removeError(error: kShortPassError);
         }
@@ -239,8 +251,8 @@ class _EditProfileFormState extends State<EditProfileForm> {
         return null;
       },
       decoration: InputDecoration(
-        labelText: "Password",
-        hintText: "Enter your password",
+        labelText: "الرقم السري",
+        hintText: "ادخل الرقم السري",
         // If  you are using latest version of flutter then lable text and hint text shown like this
         // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,
@@ -252,11 +264,12 @@ class _EditProfileFormState extends State<EditProfileForm> {
   TextFormField buildEmailFormField() {
     return TextFormField(
       keyboardType: TextInputType.emailAddress,
-      onSaved: (newValue) => Provider.of<ProductProvider>(context, listen: false).email=newValue,
+      onSaved: (newValue) =>
+          Provider.of<ProductProvider>(context, listen: false).email = newValue,
       onChanged: (value) {
         if (value.isNotEmpty) {
           removeError(error: kEmailNullError);
-           Provider.of<ProductProvider>(context, listen: false).email=value;
+          Provider.of<ProductProvider>(context, listen: false).email = value;
         } else if (emailValidatorRegExp.hasMatch(value)) {
           removeError(error: kInvalidEmailError);
         }
@@ -273,8 +286,8 @@ class _EditProfileFormState extends State<EditProfileForm> {
         return null;
       },
       decoration: InputDecoration(
-        labelText: "Email",
-        hintText: "Enter your email",
+        labelText: "البريد الالكتروني",
+        hintText: "ادخل البريد الالكتروني",
         // If  you are using latest version of flutter then lable text and hint text shown like this
         // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,

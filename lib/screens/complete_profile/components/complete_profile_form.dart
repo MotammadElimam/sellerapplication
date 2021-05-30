@@ -9,8 +9,6 @@ import 'package:sellerapplication/constants.dart';
 import 'package:sellerapplication/size_config.dart';
 import 'package:provider/provider.dart';
 
-
-
 class CompleteProfileForm extends StatefulWidget {
   @override
   _CompleteProfileFormState createState() => _CompleteProfileFormState();
@@ -41,27 +39,29 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
       });
   }
 
-  _onpress(){
-    setState(() {             
-              if (_formKey.currentState.validate()) {
-               databaseHelper.registerData(
-                 Provider.of<ProductProvider>(context, listen: false).email,
-                 Provider.of<ProductProvider>(context, listen: false).password,
-                 Provider.of<ProductProvider>(context, listen: false).confirmPassword,
-                 Provider.of<ProductProvider>(context, listen: false).firstName,
-                 Provider.of<ProductProvider>(context, listen: false).lastName,
-                 Provider.of<ProductProvider>(context, listen: false).phoneNumber,
-                 Provider.of<ProductProvider>(context, listen: false).address,
-                 ).whenComplete((){
-                if(databaseHelper.status){
-                _showDialog();
-                msgStatus = 'Check email or password';
-                }else{
-                Navigator.pushNamed(context, HomeScreen.routeName);
-                   }
+  _onpress() {
+    setState(() {
+      if (_formKey.currentState.validate()) {
+        databaseHelper
+            .registerData(
+          Provider.of<ProductProvider>(context, listen: false).email,
+          Provider.of<ProductProvider>(context, listen: false).password,
+          Provider.of<ProductProvider>(context, listen: false).confirmPassword,
+          Provider.of<ProductProvider>(context, listen: false).firstName,
+          Provider.of<ProductProvider>(context, listen: false).lastName,
+          Provider.of<ProductProvider>(context, listen: false).phoneNumber,
+          Provider.of<ProductProvider>(context, listen: false).address,
+        )
+            .whenComplete(() {
+          if (databaseHelper.status) {
+            _showDialog();
+            msgStatus = 'الرجاء التحقق من صحة البريد الالكتروني او الرقم السري';
+          } else {
+            Navigator.pushNamed(context, HomeScreen.routeName);
+          }
         });
       }
-       });
+    });
   }
 
   @override
@@ -80,22 +80,24 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
           FormError(errors: errors),
           SizedBox(height: getProportionateScreenHeight(40)),
           PrimaryButton(
-            text: "continue",
-                  press: () {
-              _onpress();
-            }
-          )],
+              text: "تأكيد التسجيل",
+              press: () {
+                _onpress();
+              })
+        ],
       ),
     );
   }
 
   TextFormField buildAddressFormField() {
     return TextFormField(
-      onSaved: (newValue) => Provider.of<ProductProvider>(context, listen: false).address=newValue,
+      onSaved: (newValue) =>
+          Provider.of<ProductProvider>(context, listen: false).address =
+              newValue,
       onChanged: (value) {
         if (value.isNotEmpty) {
           removeError(error: kAddressNullError);
-          Provider.of<ProductProvider>(context, listen: false).address=value;
+          Provider.of<ProductProvider>(context, listen: false).address = value;
         }
         return null;
       },
@@ -108,8 +110,8 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
         return null;
       },
       decoration: InputDecoration(
-        labelText: "Address",
-        hintText: "Enter your address",
+        labelText: "العنوان",
+        hintText: "ادخل العنوان",
         // If  you are using latest version of flutter then lable text and hint text shown like this
         // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,
@@ -122,11 +124,14 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
   TextFormField buildPhoneNumberFormField() {
     return TextFormField(
       keyboardType: TextInputType.phone,
-      onSaved: (newValue) =>Provider.of<ProductProvider>(context, listen: false).phoneNumber=newValue,
+      onSaved: (newValue) =>
+          Provider.of<ProductProvider>(context, listen: false).phoneNumber =
+              newValue,
       onChanged: (value) {
         if (value.isNotEmpty) {
           removeError(error: kPhoneNumberNullError);
-          Provider.of<ProductProvider>(context, listen: false).phoneNumber=value;
+          Provider.of<ProductProvider>(context, listen: false).phoneNumber =
+              value;
         }
         return null;
       },
@@ -138,8 +143,8 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
         return null;
       },
       decoration: InputDecoration(
-        labelText: "Phone Number",
-        hintText: "Enter your phone number",
+        labelText: "رقم الهاتف",
+        hintText: "ادخل رقم الهاتف",
         // If  you are using latest version of flutter then lable text and hint text shown like this
         // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,
@@ -150,17 +155,19 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
 
   TextFormField buildLastNameFormField() {
     return TextFormField(
-      onSaved: (newValue) => Provider.of<ProductProvider>(context, listen: false).lastName=newValue,
+      onSaved: (newValue) =>
+          Provider.of<ProductProvider>(context, listen: false).lastName =
+              newValue,
       onChanged: (value) {
         if (value.isNotEmpty) {
           removeError(error: kNamelNullError);
-           Provider.of<ProductProvider>(context, listen: false).lastName=value;
+          Provider.of<ProductProvider>(context, listen: false).lastName = value;
         }
         return null;
       },
       decoration: InputDecoration(
-        labelText: "Last Name",
-        hintText: "Enter your last name",
+        labelText: "اسم العائلة",
+        hintText: "ادخل اسم العائلة",
         // If  you are using latest version of flutter then lable text and hint text shown like this
         // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,
@@ -171,11 +178,14 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
 
   TextFormField buildFirstNameFormField() {
     return TextFormField(
-    onSaved: (newValue) => Provider.of<ProductProvider>(context, listen: false).firstName=newValue,
+      onSaved: (newValue) =>
+          Provider.of<ProductProvider>(context, listen: false).firstName =
+              newValue,
       onChanged: (value) {
         if (value.isNotEmpty) {
           removeError(error: kNamelNullError);
-           Provider.of<ProductProvider>(context, listen: false).firstName=value;
+          Provider.of<ProductProvider>(context, listen: false).firstName =
+              value;
         }
         return null;
       },
@@ -187,8 +197,8 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
         return null;
       },
       decoration: InputDecoration(
-        labelText: "First Name",
-        hintText: "Enter your first name",
+        labelText: "الاسم الاول",
+        hintText: "ادخل الاسم الاول",
         // If  you are using latest version of flutter then lable text and hint text shown like this
         // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,
@@ -197,32 +207,25 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
     );
   }
 
-
-  void _showDialog(){
+  void _showDialog() {
     showDialog(
-        context:context ,
-        builder:(BuildContext context){
+        context: context,
+        builder: (BuildContext context) {
           return AlertDialog(
-            title: new Text('Failed'),
-            content:  new Text('Check your email or password'),
+            title: new Text('فشل التحقق'),
+            content: new Text("تحقق من صحة البريد الالكتروني او الرقم السري"),
             actions: <Widget>[
               // ignore: deprecated_member_use
               new RaisedButton(
-
                 child: new Text(
-                  'Close',
+                  'إغلاق',
                 ),
-
-                onPressed: (){
+                onPressed: () {
                   Navigator.of(context).pop();
                 },
-
               ),
             ],
           );
-        }
-    );
+        });
   }
 }
-
- 

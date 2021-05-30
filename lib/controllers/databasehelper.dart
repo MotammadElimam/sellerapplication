@@ -141,7 +141,6 @@ class DatabaseHelper {
     }
   }
 
-  // ignore: non_constant_identifier_names
   updateData(int id, String name, double price, String desc, File image) async {
     final prefs = await SharedPreferences.getInstance();
     final key = 'token';
@@ -179,22 +178,17 @@ class DatabaseHelper {
       'Authorization': 'Bearer $value'
     });
 
+    List<CustomersOrders> customersOrders = [];
 
-   List<CustomersOrders> customersOrders = [];
-
-
- var jsonData = json.decode(response.body); 
-  for(var u in jsonData){
-
+    var jsonData = json.decode(response.body);
+    for (var u in jsonData) {
       CustomersOrders customersOrder = CustomersOrders.fromJson(u);
 
       customersOrders.add(customersOrder);
-
     }
 
-
     print(response.body);
-    return customersOrders; 
+    return customersOrders;
   }
 
   Future<List<dynamic>> showAllOrders() async {

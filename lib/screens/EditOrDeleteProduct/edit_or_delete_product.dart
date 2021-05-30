@@ -16,7 +16,7 @@ class EditOrDeleteProductScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Edit_or_delete_product"),
+        title: Text("تعديل أو حذف المنتج",style: TextStyle(fontFamily: 'Tajawal'),),
       ),
       body: Body(
         sellerProductsItem: sellerProductsItem,
@@ -44,7 +44,7 @@ class _BodyState extends State<Body> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           PrimaryButton(
-            text: "Edit Product",
+            text: "تعديل بيانات المنتج",
             press: () {
               // Navigator.pushNamed(context, EditProductScreen.routeName);
               Navigator.push(
@@ -59,7 +59,7 @@ class _BodyState extends State<Body> {
             height: 20,
           ),
           PrimaryButton(
-              text: "Delete Product",
+              text: "حذف المنتج",
               press: () {
                 databaseHelper.deleteData(widget.sellerProductsItem.product.id).whenComplete((){
                   Navigator.pushNamed(context, SellerProductScreen.routeName);

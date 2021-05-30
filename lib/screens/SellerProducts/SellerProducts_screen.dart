@@ -7,7 +7,7 @@ import 'package:sellerapplication/screens/addproduct/add_product_screen.dart';
 
 // ignore: must_be_immutable
 class SellerProductScreen extends StatelessWidget {
-  static String routeName = "/MyProducts";
+  static String routeName = "/SellerProducts";
   SellerProductsItem sellerProductsItem = SellerProductsItem();
 
   SellerProductScreen({Key key}) : super(key: key);
@@ -32,8 +32,8 @@ class SellerProductScreen extends StatelessWidget {
       title: Column(
         children: [
           Text(
-            "Your Products",
-            style: TextStyle(color: Colors.black),
+            "المنتجات الخاصة بك",
+            style: TextStyle(color: Colors.black,fontFamily: 'Tajawal'),
           ),
           /*Text(
             "${demoCarts.length} items",

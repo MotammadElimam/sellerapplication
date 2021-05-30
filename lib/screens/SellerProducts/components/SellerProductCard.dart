@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sellerapplication/constants.dart';
-import 'package:sellerapplication/models/Product/Product.dart';
 import 'package:sellerapplication/models/SellerProducts/SellerProductsItem.dart';
-import 'package:sellerapplication/screens/SellerProducts/components/edit_or_delete_product.dart';
-import 'package:sellerapplication/screens/edit_product_details/Edit_product_screen.dart';
+import 'package:sellerapplication/screens/EditOrDeleteProduct/edit_or_delete_product.dart';
 import 'package:sellerapplication/size_config.dart';
 
 // ignore: must_be_immutable

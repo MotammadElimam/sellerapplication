@@ -25,29 +25,29 @@ class Body extends StatelessWidget {
           ProfilePic(),
           SizedBox(height: 20),
           ProfileMenu(
-            text: "Edit Profile",
+            text: "بياناتك الشخصية",
             icon: "assets/icons/User Icon.svg",
             press: () => {},
           ),
           ProfileMenu(
-            text: "Notifications",
+            text: "الاشعارات",
             icon: "assets/icons/Bell.svg",
             press: () {},
           ),
           ProfileMenu(
-            text: "Settings",
+            text: "الاعدادات",
             icon: "assets/icons/Settings.svg",
             press: () {
               Navigator.pushNamed(context, SettingsPage.routeName);
             },
           ),
           ProfileMenu(
-            text: "Contact us",
+            text: "اتصل بنا",
             icon: "assets/icons/Question mark.svg",
             press: () {},
           ),
           ProfileMenu(
-            text: "Log Out",
+            text: "تسجيل الخروج",
             icon: "assets/icons/Log out.svg",
             press: () {
                _save('0');

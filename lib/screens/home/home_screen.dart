@@ -10,7 +10,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('HomePage')),
+     // appBar: AppBar(title: Text('الصفحة الرئيسية',style: TextStyle(fontFamily: 'Tajawal'),)),
       body: Body(),
       bottomNavigationBar: CustomBottomNavBar(selectedMenu: MenuState.home),
     );

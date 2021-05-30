@@ -16,7 +16,7 @@ class EditProductScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Edit Product'),
+        title: Text('تعديل بيانات المنتج',style: TextStyle(fontFamily:'Tajawal'),),
       ),
       body: Body(product: product,),
       bottomNavigationBar: CustomBottomNavBar(selectedMenu: MenuState.profile),

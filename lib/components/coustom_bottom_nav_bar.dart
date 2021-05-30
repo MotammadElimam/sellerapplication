@@ -2,7 +2,7 @@ import 'package:sellerapplication/screens/Customer_Orders/Customer_Orders_Screen
 import 'package:sellerapplication/screens/SellerProducts/SellerProducts_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:sellerapplication/screens/wallet/balancePage.dart';
+import 'package:sellerapplication/screens/wallet/WalletPageScreen.dart';
 import 'package:sellerapplication/screens/home/home_screen.dart';
 import 'package:sellerapplication/constants.dart';
 import 'package:sellerapplication/enums.dart';
@@ -59,8 +59,8 @@ class CustomBottomNavBar extends StatelessWidget {
                       ? kPrimaryColor
                       : inActiveIconColor,
                 ),
-                onPressed: () =>
-                    Navigator.pushNamed(context, CustomersOrdersScreen.routeName),
+                onPressed: () => Navigator.pushNamed(
+                    context, CustomersOrdersScreen.routeName),
               ),
               IconButton(
                 icon: SvgPicture.asset(
@@ -71,12 +71,12 @@ class CustomBottomNavBar extends StatelessWidget {
                   color: MenuState.myproducts == selectedMenu
                       ? kPrimaryColor
                       : inActiveIconColor,
-                  ),
+                ),
                 onPressed: () {
                   Navigator.pushNamed(context, SellerProductScreen.routeName);
                 },
               ),
-               IconButton(
+              IconButton(
                 icon: SvgPicture.asset(
                   "assets/icons/wallet.svg",
                   width: 25,
@@ -85,9 +85,9 @@ class CustomBottomNavBar extends StatelessWidget {
                   color: MenuState.wallet == selectedMenu
                       ? kPrimaryColor
                       : inActiveIconColor,
-                  ),
+                ),
                 onPressed: () {
-                  Navigator.pushNamed(context, BalancePage.routeName);
+                  Navigator.pushNamed(context, WalletPageScreen.routeName);
                 },
               ),
               IconButton(
@@ -100,7 +100,6 @@ class CustomBottomNavBar extends StatelessWidget {
                 onPressed: () =>
                     Navigator.pushNamed(context, ProfileScreen.routeName),
               ),
-              
             ],
           )),
     );

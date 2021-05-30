@@ -11,17 +11,12 @@ import 'package:sellerapplication/size_config.dart';
 import 'package:provider/provider.dart';
 import 'package:image_picker/image_picker.dart';
 
-
-
 // ignore: must_be_immutable
 class AddProductForm extends StatefulWidget {
-
- Product product;
+  Product product;
 //ProductItem _productItem;
 
- //AddProductForm({Key key, @required this.product}) : super(key: key);
-
-
+  //AddProductForm({Key key, @required this.product}) : super(key: key);
 
   @override
   _AddProductFormState createState() => _AddProductFormState();
@@ -32,7 +27,6 @@ class _AddProductFormState extends State<AddProductForm> {
 
   //File _image;
   final picker = ImagePicker();
-
   //String msgStatus = '';
   final _formKey = GlobalKey<FormState>();
   final List<String> errors = [];
@@ -56,24 +50,20 @@ class _AddProductFormState extends State<AddProductForm> {
 
   // This funcion will helps you to pick and Image from Gallery
 
-  _onpress(){
+  _onpress() {
     setState(() {
-               databaseHelper.addData(
-                 Provider.of<ProductProvider>(context, listen: false).productName,
-                 Provider.of<ProductProvider>(context, listen: false).price,
-                 Provider.of<ProductProvider>(context, listen: false).description,
-                 Provider.of<ProductProvider>(context, listen: false).image,
-                 
-                 ).whenComplete(() {
+      databaseHelper
+          .addData(
+        Provider.of<ProductProvider>(context, listen: false).productName,
+        Provider.of<ProductProvider>(context, listen: false).price,
+        Provider.of<ProductProvider>(context, listen: false).description,
+        Provider.of<ProductProvider>(context, listen: false).image,
+      )
+          .whenComplete(() {
         Navigator.pushNamed(context, SellerProductScreen.routeName);
       });
-      
-       });
+    });
   }
-
-   
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -191,11 +181,9 @@ class _AddProductFormState extends State<AddProductForm> {
     );
   }
 
- getImage(){
+  getImage() {
     setState(() {
-              
-                 Provider.of<ProductProvider>(context, listen: false).getImage();
-      
-       });
+      Provider.of<ProductProvider>(context, listen: false).getImage();
+    });
   }
 }
