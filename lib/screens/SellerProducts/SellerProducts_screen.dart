@@ -23,7 +23,7 @@ class SellerProductScreen extends StatelessWidget {
         child: Icon(Icons.add),
       ),
       bottomNavigationBar:
-          CustomBottomNavBar(selectedMenu: MenuState.myproducts),
+          CustomBottomNavBar(selectedMenu: MenuState.sellerproducts),
     );
   }
 

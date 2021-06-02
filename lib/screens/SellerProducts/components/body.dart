@@ -31,8 +31,7 @@ class _BodyState extends State<Body> {
                     padding: EdgeInsets.all(8),
                     itemCount: snapshot.data.length,
                     itemBuilder: (BuildContext context, int index) {
-                      SellerProductsItem sellerProductsItem =
-                          new SellerProductsItem();
+                      SellerProductsItem sellerProductsItem = SellerProductsItem();
                       sellerProductsItem.product = Product();
                       sellerProductsItem.product.id =
                           snapshot.data[index]["id"];

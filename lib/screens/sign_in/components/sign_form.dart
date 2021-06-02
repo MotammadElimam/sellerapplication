@@ -71,7 +71,7 @@ class _SignFormState extends State<SignForm> {
     });
   }
 
-  DatabaseHelper databaseHelper = new DatabaseHelper();
+  DatabaseHelper databaseHelper = DatabaseHelper();
   String msgStatus = '';
   final _formKey = GlobalKey<FormState>();
   String email;

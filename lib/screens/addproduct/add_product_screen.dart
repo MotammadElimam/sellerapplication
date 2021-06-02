@@ -16,7 +16,7 @@ class AddProductScreen extends StatelessWidget {
         title: Text('إضافة منتج',style: TextStyle(fontFamily: 'Tajawal'),),
       ),
       body: Body(),
-      bottomNavigationBar: CustomBottomNavBar(selectedMenu: MenuState.myproducts),
+      bottomNavigationBar: CustomBottomNavBar(selectedMenu: MenuState.sellerproducts),
     );
   }
 }

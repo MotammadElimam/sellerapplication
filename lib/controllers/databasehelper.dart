@@ -41,6 +41,7 @@ class DatabaseHelper {
       String lastName,
       String phoneNumber,
       String address) async {
+
     Map information = {
       "email": "$email",
       "password": "$password",

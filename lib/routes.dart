@@ -4,7 +4,7 @@ import 'package:sellerapplication/screens/EditOrDeleteProduct/edit_or_delete_pro
 import 'package:sellerapplication/screens/edit_product_details/Edit_product_screen.dart';
 import 'package:sellerapplication/screens/SellerProducts/SellerProducts_screen.dart';
 import 'package:sellerapplication/screens/addproduct/add_product_screen.dart';
-import 'package:sellerapplication/screens/wallet/WalletPageScreen.dart';
+import 'package:sellerapplication/screens/wallet/Wallet_Screen.dart';
 import 'package:sellerapplication/screens/edit_profile_details/edit_profile_screen.dart';
 import 'package:sellerapplication/screens/profile/profile_screen.dart';
 import 'package:sellerapplication/screens/profile/components/setting.dart';
@@ -33,7 +33,7 @@ final Map<String, WidgetBuilder> routes = {
   SettingsPage.routeName:(context)=>SettingsPage(),
   AddProductScreen.routeName:(context)=>AddProductScreen(),
   EditProductScreen.routeName:(context)=>EditProductScreen(),
-  WalletPageScreen.routeName:(context)=>WalletPageScreen(),
+  WalletScreen.routeName:(context)=>WalletScreen(),
   EditProfileScreen.routeName:(context)=>EditProfileScreen(),
   EditOrDeleteProductScreen.routeName:(context)=>EditOrDeleteProductScreen(),
   CustomersOrdersScreen.routeName:(context)=>CustomersOrdersScreen(),

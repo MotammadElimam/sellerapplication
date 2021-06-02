@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:sellerapplication/components/dot_indicators.dart';
 import 'package:sellerapplication/constants.dart';
 import 'package:sellerapplication/screens/home/home_screen.dart';
@@ -76,9 +74,7 @@ List<Map<String, dynamic>> demoData = [
   {
     "illustration": "assets/Illustrations/Illustrations_1.svg",
     "title": "كل ماتتمناه في تطبيق واحد",
-    "text": Text("اطلب من افضل البائعين المحليين في المدينة" , style: TextStyle(
-      fontFamily: 'Tajawal'
-    ),),
+    "text": "اطلب من افضل البائعين المحليين في المدينة" 
   },
   {
     "illustration": "assets/Illustrations/Illustrations_2.svg",

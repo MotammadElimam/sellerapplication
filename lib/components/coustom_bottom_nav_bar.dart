@@ -2,11 +2,11 @@ import 'package:sellerapplication/screens/Customer_Orders/Customer_Orders_Screen
 import 'package:sellerapplication/screens/SellerProducts/SellerProducts_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:sellerapplication/screens/wallet/WalletPageScreen.dart';
 import 'package:sellerapplication/screens/home/home_screen.dart';
 import 'package:sellerapplication/constants.dart';
 import 'package:sellerapplication/enums.dart';
 import 'package:sellerapplication/screens/profile/profile_screen.dart';
+import 'package:sellerapplication/screens/wallet/Wallet_Screen.dart';
 
 class CustomBottomNavBar extends StatelessWidget {
   const CustomBottomNavBar({
@@ -68,7 +68,7 @@ class CustomBottomNavBar extends StatelessWidget {
                   width: 25,
                   height: 25,
                   fit: BoxFit.contain,
-                  color: MenuState.myproducts == selectedMenu
+                  color: MenuState.sellerproducts == selectedMenu
                       ? kPrimaryColor
                       : inActiveIconColor,
                 ),
@@ -87,7 +87,7 @@ class CustomBottomNavBar extends StatelessWidget {
                       : inActiveIconColor,
                 ),
                 onPressed: () {
-                  Navigator.pushNamed(context, WalletPageScreen.routeName);
+                  Navigator.pushNamed(context, WalletScreen.routeName);
                 },
               ),
               IconButton(

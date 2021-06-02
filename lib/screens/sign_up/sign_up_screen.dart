@@ -7,9 +7,10 @@ class SignUpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("تسجيل حساب جديد",style: TextStyle(
-          fontFamily: "Tajawal"
-        ),),
+        title: Text(
+          "تسجيل حساب جديد",
+          style: TextStyle(fontFamily: "Tajawal"),
+        ),
       ),
       body: Body(),
     );

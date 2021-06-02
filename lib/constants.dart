@@ -70,7 +70,7 @@ final TextStyle kSubHeadTextStyle = TextStyle(
 // Form Error
 final RegExp emailValidatorRegExp =
 RegExp(r"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
-const String kEmailNullError = "ادخل البريد الالكتروني";
+const String kEmailNullError = "الرجاء ادخال البريد الالكتروني";
 const String kInvalidEmailError = "ادخل صيغة البريد الالكتروني بشكل صحيح ";
 const String kPassNullError = "ادخل الرقم السري";
 const String kShortPassError = "الرقم السري اقصر من المطلوب";

@@ -14,7 +14,6 @@ class SellerProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print("im : ${sellerProductsItem.id}");
     return InkWell(
       onTap: () {
         // Navigator.pushNamed(context, EditOrDeleteProductScreen.routeName);
