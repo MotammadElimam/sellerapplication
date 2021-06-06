@@ -16,6 +16,22 @@ class _BodyState extends State<Body> {
   int currentPage = 0;
 
   @override
+  void initState()  {
+    check();
+    super.initState();
+  }
+
+
+  check() async{
+    final prefs = await SharedPreferences.getInstance();
+    final key = 'onboarding';
+    final value = prefs.get(key) ?? false;
+    if(value){
+      Navigator.pushNamed(context, HomeScreen.routeName);
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Column(
@@ -53,13 +69,14 @@ class _BodyState extends State<Body> {
                 final value = prefs.get(key) ?? 0;
                 print(value);
                 prefs.setBool('splash', true);
+                prefs.setBool('onboarding', true);
                 if (value != '0') {
                   Navigator.pushNamed(context, HomeScreen.routeName);
                 } else {
                   Navigator.pushNamed(context, SignInScreen.routeName);
                 }
               },
-              text: "ابدأ الان" ,
+              text: "ابدأ الان",
             ),
           ),
           Spacer(),
@@ -74,7 +91,7 @@ List<Map<String, dynamic>> demoData = [
   {
     "illustration": "assets/Illustrations/Illustrations_1.svg",
     "title": "كل ماتتمناه في تطبيق واحد",
-    "text": "اطلب من افضل البائعين المحليين في المدينة" 
+    "text": "اطلب من افضل البائعين المحليين في المدينة"
   },
   {
     "illustration": "assets/Illustrations/Illustrations_2.svg",
@@ -85,7 +102,6 @@ List<Map<String, dynamic>> demoData = [
   {
     "illustration": "assets/Illustrations/Illustrations_3.svg",
     "title": "اطلب منتجاتك المفضلة",
-    "text":
-        "اطلب بسهولة منتجاتك المفضلة\nوسيتم التوصيل لك ف اقرب وقت",
+    "text": "اطلب بسهولة منتجاتك المفضلة\nوسيتم التوصيل لك ف اقرب وقت",
   },
 ];

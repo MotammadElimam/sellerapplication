@@ -138,7 +138,7 @@ class DatabaseHelper {
       print('data : ${data["error"]}');
     } else {
       print('data : ${data["token"]}');
-      _save(data["token"]);
+    //  _save(data["token"]);
     }
   }
 
@@ -168,7 +168,7 @@ class DatabaseHelper {
     });
   }
 
-  Future<List<CustomersOrders>> showSellerOrders() async {
+  Future<List<Customerorders>> showSellerOrders() async {
     final prefs = await SharedPreferences.getInstance();
     final key = 'token';
     final value = prefs.get(key) ?? 0;
@@ -179,11 +179,14 @@ class DatabaseHelper {
       'Authorization': 'Bearer $value'
     });
 
-    List<CustomersOrders> customersOrders = [];
+    List<Customerorders> customersOrders = [];
 
     var jsonData = json.decode(response.body);
+    print("its"+response.body);
+    
     for (var u in jsonData) {
-      CustomersOrders customersOrder = CustomersOrders.fromJson(u);
+       print("U "+u.toString());
+      Customerorders customersOrder = Customerorders.fromJson(u);
 
       customersOrders.add(customersOrder);
     }
