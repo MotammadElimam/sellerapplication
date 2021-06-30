@@ -22,24 +22,32 @@ class _BodyState extends State<Body> {
           builder: (BuildContext context, AsyncSnapshot snapshot) {
             print("hiiiiiiiiiiii" + snapshot.data.toString());
             if (snapshot.data == null) {
-              return Container(child: Center(child: CircularProgressIndicator()));
-            }else if(snapshot.data.length == 0){
-               return Container(child:  Center(child: Text("ليس هناك أي طلبات")));
+              return Container(
+                  child: Center(child: CircularProgressIndicator()));
+            } else if (snapshot.data.length == 0) {
+              return Container(child: Center(child: Text("ليس هناك أي طلبات")));
             } else {
               return ListView.builder(
                 itemCount: snapshot.data.length,
                 itemBuilder: (BuildContext context, int index) {
                   return ListTile(
-                    title: Text("اسم العميل" + snapshot.data[index].order.user.firstName+" "+snapshot.data[index].order.user.lastName),
-                    subtitle:
-                        Column(
-                          children: [
-                            Text(snapshot.data[index].productId+ "رقم العميل : " ),
-                            Text(snapshot.data[index].productId+"موقع العميل : "),
-                            Text("اسم المنتج" + snapshot.data[index].productId),
-                            Text("كمية المنتح" + snapshot.data[index].productId),
-                          ],
-                        ),
+                    title: Text("اسم العميل" +
+                        snapshot.data[index].order.user.firstName +
+                        " " +
+                        snapshot.data[index].order.user.lastName),
+                    subtitle: Column(
+                      children: [
+                        // Text(snapshot.data[index].productId+ "رقم العميل : " ),
+                        // Text(snapshot.data[index].productId+"موقع العميل : "),
+                        // Text("اسم المنتج" + snapshot.data[index].productId),
+                        // Text("كمية المنتح" + snapshot.data[index].productId),
+                        Text("رقم العميل :002499019334282 "),
+                        Text("موقع العميل :الشجرة مربع  منزل رقم 65 "),
+                        Text(" اسم المنتج :شنطة لورا  "),
+                        Text("كمية المنتج :5 "),
+                         Text("سعر المنتج :20 USD " ),
+                      ],
+                    ),
                     onTap: () {},
                   );
                 },

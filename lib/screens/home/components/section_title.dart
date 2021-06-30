@@ -18,22 +18,18 @@ class SectionTitle extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          title,
+          "المزيد",
           style: TextStyle(
-            fontSize: getProportionateScreenWidth(18),
+           
             fontFamily: 'Tajawal',
-            color: Colors.black,
+            color: Color(0xFFBBBBBB),
           ),
         ),
-        Text(
-            "كل المنتجات",
-            style: TextStyle(
-            fontSize: getProportionateScreenWidth(18),
-            fontFamily: 'Tajawal',
-            color: Colors.black,
-            ),
+           Text(
+            title,
+            style: TextStyle(color:Colors.black , fontSize: getProportionateScreenWidth(18),),
           ),
-      
+        
       ],
     );
   }

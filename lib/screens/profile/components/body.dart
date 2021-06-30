@@ -24,23 +24,23 @@ class Body extends StatelessWidget {
         children: [
           ProfilePic(),
           SizedBox(height: 20),
-          ProfileMenu(
-            text: "بياناتك الشخصية",
-            icon: "assets/icons/User Icon.svg",
-            press: () => {},
-          ),
-          ProfileMenu(
-            text: "الاشعارات",
-            icon: "assets/icons/Bell.svg",
-            press: () {},
-          ),
-          ProfileMenu(
-            text: "الاعدادات",
-            icon: "assets/icons/Settings.svg",
-            press: () {
-              Navigator.pushNamed(context, SettingsPage.routeName);
-            },
-          ),
+          // ProfileMenu(
+          //   text: "بياناتك الشخصية",
+          //   icon: "assets/icons/User Icon.svg",
+          //   press: () => {},
+          // ),
+          // ProfileMenu(
+          //   text: "الاشعارات",
+          //   icon: "assets/icons/Bell.svg",
+          //   press: () {},
+          // ),
+          // ProfileMenu(
+          //   text: "الاعدادات",
+          //   icon: "assets/icons/Settings.svg",
+          //   press: () {
+          //     Navigator.pushNamed(context, SettingsPage.routeName);
+          //   },
+          // ),
           ProfileMenu(
             text: "اتصل بنا",
             icon: "assets/icons/Question mark.svg",

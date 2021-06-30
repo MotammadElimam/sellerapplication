@@ -35,11 +35,11 @@ class _BodyState extends State<Body> {
                       sellerProductsItem.product = Product();
                       sellerProductsItem.product.id =
                           snapshot.data[index]["id"];
-                      sellerProductsItem.product.productName =
+                      sellerProductsItem.product.name =
                           snapshot.data[index]["name"];
                       sellerProductsItem.product.price =
                           snapshot.data[index]["price"];
-                      sellerProductsItem.product.description =
+                      sellerProductsItem.product.desc =
                           snapshot.data[index]["desc"];
                       sellerProductsItem.product.image =
                           snapshot.data[index]["image"];

@@ -50,7 +50,7 @@ class SellerProductCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                sellerProductsItem.product.productName,
+                sellerProductsItem.product.name,
                 style: TextStyle(color: Colors.black, fontSize: 16),
                 maxLines: 2,
               ),

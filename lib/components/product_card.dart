@@ -1,10 +1,8 @@
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:sellerapplication/constants.dart';
 import 'package:sellerapplication/models/Product/Product.dart';
 import 'package:sellerapplication/size_config.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-
-
 
 class ProductCard extends StatelessWidget {
   final String serverUrl = "https://motamed.eanqod.website/storage/product/";
@@ -25,8 +23,8 @@ class ProductCard extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(left: getProportionateScreenWidth(20)),
       child: GestureDetector(
-        onTap: press,
-              child: SizedBox(
+        onTap: () {},
+        child: SizedBox(
           width: getProportionateScreenWidth(width),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -34,17 +32,20 @@ class ProductCard extends StatelessWidget {
               AspectRatio(
                 aspectRatio: 1.02,
                 child: Container(
-                  padding: EdgeInsets.all(getProportionateScreenWidth(20)),
+                  padding: EdgeInsets.all(getProportionateScreenWidth(10)),
                   decoration: BoxDecoration(
                     color: kSecondaryColor.withOpacity(0.1),
-                    borderRadius: BorderRadius.circular(15),
+                    borderRadius: BorderRadius.circular(18),
                   ),
-                  child: Image.network(serverUrl+product.image),
+                  child: Image.network(
+                    serverUrl + product.image,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
               const SizedBox(height: 10),
               Text(
-                product.productName,
+                product.name,
                 style: TextStyle(color: Colors.black),
                 maxLines: 2,
               ),
@@ -52,13 +53,29 @@ class ProductCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "\$${product.price}",
+                    "${product.price+" SDG"}",
                     style: TextStyle(
                       fontSize: getProportionateScreenWidth(18),
                       fontWeight: FontWeight.w600,
                       color: kPrimaryColor,
                     ),
                   ),
+              RatingBarIndicator(
+                                    rating: product.ratingsAvgRate == null
+                                        ? 0.0
+                                        : product.ratingsAvgRate,
+                                    itemBuilder: (context, index) => Icon(
+                                      Icons.star,
+                                      size: 35,
+                                      color: Colors.amberAccent,
+                                    ),
+                                    unratedColor: Colors.white,
+                                    itemCount: 5,
+                                    itemSize: 16.0,
+                                    direction: Axis.horizontal,
+                                  ),
+
+
                   InkWell(
                     borderRadius: BorderRadius.circular(50),
                     onTap: () {},
@@ -66,18 +83,6 @@ class ProductCard extends StatelessWidget {
                       padding: EdgeInsets.all(getProportionateScreenWidth(8)),
                       height: getProportionateScreenWidth(28),
                       width: getProportionateScreenWidth(28),
-                      decoration: BoxDecoration(
-                        // color: product.isFavourite
-                        //     ? kPrimaryColor.withOpacity(0.15)
-                        //     : kSecondaryColor.withOpacity(0.1),
-                        shape: BoxShape.circle,
-                      ),
-                      child: SvgPicture.asset(
-                        "assets/icons/Heart Icon_2.svg",
-                        // color: product.isFavourite
-                        //     ? Color(0xFFFF4848)
-                        //     : Color(0xFFDBDEE4),
-                      ),
                     ),
                   ),
                 ],

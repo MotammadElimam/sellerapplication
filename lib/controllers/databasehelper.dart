@@ -168,6 +168,15 @@ class DatabaseHelper {
     });
   }
 
+   Future<List<dynamic>> showAllProducts() async {
+    String myUrl = "$serverUrl/seller_api/showAllProducts/";
+    http.Response response = await http.get(myUrl, headers: {
+      'Accept': 'application/json',
+    });
+    print(response.body);
+    return jsonDecode(response.body);
+  }
+
   Future<List<Customerorders>> showSellerOrders() async {
     final prefs = await SharedPreferences.getInstance();
     final key = 'token';
@@ -208,6 +217,17 @@ class DatabaseHelper {
     return jsonDecode(response.body);
   }
 
+
+
+
+Future<List<dynamic>> topProductsRating() async {
+    String myUrl = "$serverUrl/api/TopProductsRating";
+    http.Response response = await http.get(myUrl, headers: {
+      'Accept': 'application/json',
+    });
+    print(response.body);
+    return jsonDecode(response.body);
+  }
   _save(String token) async {
     final prefs = await SharedPreferences.getInstance();
     final key = 'token';
