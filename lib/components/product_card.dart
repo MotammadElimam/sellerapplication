@@ -26,68 +26,70 @@ class ProductCard extends StatelessWidget {
         onTap: () {},
         child: SizedBox(
           width: getProportionateScreenWidth(width),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              AspectRatio(
-                aspectRatio: 1.02,
-                child: Container(
-                  padding: EdgeInsets.all(getProportionateScreenWidth(10)),
-                  decoration: BoxDecoration(
-                    color: kSecondaryColor.withOpacity(0.1),
-                    borderRadius: BorderRadius.circular(18),
-                  ),
-                  child: Image.network(
-                    serverUrl + product.image,
-                    fit: BoxFit.cover,
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                AspectRatio(
+                  aspectRatio: 1.02,
+                  child: Container(
+                    padding: EdgeInsets.all(getProportionateScreenWidth(10)),
+                    decoration: BoxDecoration(
+                      color: kSecondaryColor.withOpacity(0.1),
+                      borderRadius: BorderRadius.circular(18),
+                    ),
+                    child: Image.network(
+                      serverUrl + product.image,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
-              ),
-              const SizedBox(height: 10),
-              Text(
-                product.name,
-                style: TextStyle(color: Colors.black),
-                maxLines: 2,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "${product.price+" SDG"}",
-                    style: TextStyle(
-                      fontSize: getProportionateScreenWidth(18),
-                      fontWeight: FontWeight.w600,
-                      color: kPrimaryColor,
+                const SizedBox(height: 10),
+                Text(
+                  product.name,
+                  style: TextStyle(color: Colors.black),
+                  maxLines: 2,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "${product.price} SDG",
+                      style: TextStyle(
+                        fontSize: getProportionateScreenWidth(18),
+                        fontWeight: FontWeight.w600,
+                        color: kPrimaryColor,
+                      ),
                     ),
-                  ),
-              RatingBarIndicator(
-                                    rating: product.ratingsAvgRate == null
-                                        ? 0.0
-                                        : product.ratingsAvgRate,
-                                    itemBuilder: (context, index) => Icon(
-                                      Icons.star,
-                                      size: 35,
-                                      color: Colors.amberAccent,
+          
+          
+                    InkWell(
+                      borderRadius: BorderRadius.circular(50),
+                      onTap: () {},
+                      child: Container(
+                        padding: EdgeInsets.all(getProportionateScreenWidth(8)),
+                        height: getProportionateScreenWidth(28),
+                        width: getProportionateScreenWidth(28),
+                      ),
+                    ),
+                  ],
+                ),
+                       RatingBarIndicator(
+                                      rating: product.ratingsAvgRate == null
+                                          ? 0.0
+                                          : product.ratingsAvgRate,
+                                      itemBuilder: (context, index) => Icon(
+                                        Icons.star,
+                                        size: 35,
+                                        color: Colors.blue,
+                                      ),
+                                      unratedColor: Colors.white,
+                                      itemCount: 5,
+                                      itemSize: 16.0,
+                                      direction: Axis.horizontal,
                                     ),
-                                    unratedColor: Colors.white,
-                                    itemCount: 5,
-                                    itemSize: 16.0,
-                                    direction: Axis.horizontal,
-                                  ),
-
-
-                  InkWell(
-                    borderRadius: BorderRadius.circular(50),
-                    onTap: () {},
-                    child: Container(
-                      padding: EdgeInsets.all(getProportionateScreenWidth(8)),
-                      height: getProportionateScreenWidth(28),
-                      width: getProportionateScreenWidth(28),
-                    ),
-                  ),
-                ],
-              )
-            ],
+              ],
+            ),
           ),
         ),
       ),

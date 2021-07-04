@@ -1,11 +1,11 @@
 import 'package:sellerapplication/components/big_card_image_slide.dart';
 import 'package:sellerapplication/demoData.dart';
 import 'package:sellerapplication/screens/home/components/TopProductsRatings.dart';
-import 'package:sellerapplication/screens/home/components/popular_product.dart';
 import 'package:flutter/material.dart';
 import 'package:sellerapplication/screens/home/components/home_header.dart';
+import 'package:sellerapplication/screens/home/components/popular_product.dart';
 import 'package:sellerapplication/size_config.dart';
-import 'package:sellerapplication/screens/home/components/categories.dart';
+
 
 
 class Body extends StatelessWidget {
@@ -26,7 +26,8 @@ class Body extends StatelessWidget {
             SizedBox(height: getProportionateScreenWidth(30)),
             TopProductsRatings(),
             SizedBox(height: getProportionateScreenWidth(30)),
-            PopularProducts(),
+            HomeProduct(),
+            //TopProductsRatings(),
           ],
         ),
       ),

@@ -57,7 +57,7 @@ class SellerProductCard extends StatelessWidget {
               SizedBox(height: 10),
               Text.rich(
                 TextSpan(
-                  text: "\$${sellerProductsItem.product.price}",
+                  text: "${sellerProductsItem.product.price} SDG",
                   style: TextStyle(
                       fontWeight: FontWeight.w600, color: kPrimaryColor),
                 ),

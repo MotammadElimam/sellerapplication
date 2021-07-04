@@ -1,31 +1,32 @@
 import 'package:sellerapplication/components/product_card.dart';
-import 'package:sellerapplication/controllers/HomeProductProvider.dart';
 import 'package:flutter/material.dart';
+import 'package:sellerapplication/controllers/HomeProductProvider.dart';
 import 'package:sellerapplication/size_config.dart';
 import 'package:sellerapplication/screens/home/components/section_title.dart';
 import 'package:provider/provider.dart';
 
-class PopularProducts extends StatefulWidget {
+class HomeProduct extends StatefulWidget {
   @override
-  _PopularProductsState createState() => _PopularProductsState();
+  _HomeProductState createState() => _HomeProductState();
 }
 
-class _PopularProductsState extends State<PopularProducts> {
-  HomeProductProvider homeProduct = HomeProductProvider();
+class _HomeProductState extends State<HomeProduct> {
+  HomeProductsProvider homeProductProvider = HomeProductsProvider();
   @override
   void initState() {
     super.initState();
-    homeProduct.loadData();
-    homeProduct.addListener(() {
-      print("is loading ${homeProduct.loading}");
-      print("is error ${homeProduct.error}");
-      print("is data ${homeProduct.products}");
+    homeProductProvider.loadData();
+    homeProductProvider.addListener(() {
+      print("is loading ${homeProductProvider.loading}");
+      print("is error ${homeProductProvider.error}");
+      print("is data ${homeProductProvider.products}");
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
           padding:
@@ -33,13 +34,13 @@ class _PopularProductsState extends State<PopularProducts> {
           child: SectionTitle(
               title: "كل المنتجات",
               press: () {
-                homeProduct.loadData();
+                homeProductProvider.loadData();
               }),
         ),
         SizedBox(height: getProportionateScreenWidth(20)),
-        ChangeNotifierProvider<HomeProductProvider>(
-          create: (context) => homeProduct,
-          child: Consumer<HomeProductProvider>(
+        ChangeNotifierProvider<HomeProductsProvider>(
+          create: (context) => homeProductProvider,
+          child: Consumer<HomeProductsProvider>(
             builder: (context, data, child) {
               print("Data : ${data.products}");
               if (data.loading)
@@ -50,7 +51,7 @@ class _PopularProductsState extends State<PopularProducts> {
                 return Text("Error");
               else if (data.products != null)
                 return Container(
-                  height: 200,
+                 height: 220,
                   child: ListView.builder(
                     itemBuilder: (context, index) {
                       return ProductCard(

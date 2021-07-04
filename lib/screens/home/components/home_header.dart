@@ -16,13 +16,13 @@ class HomeHeader extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          SearchField(),
-          IconBtnWithCounter(
-            svgSrc: "assets/icons/Bell.svg",
-            numOfitem: 3,
-            press: () {}
-            //Navigator.pushNamed(context, WishListScreen.routeName),
-          ),
+         // SearchField(),
+          // IconBtnWithCounter(
+          //   svgSrc: "assets/icons/Bell.svg",
+          //   numOfitem: 3,
+          //   press: () {}
+          //   //Navigator.pushNamed(context, WishListScreen.routeName),
+          // ),
         ],
       ),
     );

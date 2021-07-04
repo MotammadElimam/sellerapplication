@@ -31,22 +31,25 @@ class _BodyState extends State<Body> {
                 itemCount: snapshot.data.length,
                 itemBuilder: (BuildContext context, int index) {
                   return ListTile(
-                    title: Text("اسم العميل" +
+                    title: Text("  اسم العميل" +
                         snapshot.data[index].order.user.firstName +
                         " " +
                         snapshot.data[index].order.user.lastName),
-                    subtitle: Column(
-                      children: [
-                        // Text(snapshot.data[index].productId+ "رقم العميل : " ),
-                        // Text(snapshot.data[index].productId+"موقع العميل : "),
-                        // Text("اسم المنتج" + snapshot.data[index].productId),
-                        // Text("كمية المنتح" + snapshot.data[index].productId),
-                        Text("رقم العميل :002499019334282 "),
-                        Text("موقع العميل :الشجرة مربع  منزل رقم 65 "),
-                        Text(" اسم المنتج :شنطة لورا  "),
-                        Text("كمية المنتج :5 "),
-                         Text("سعر المنتج :20 USD " ),
-                      ],
+                    subtitle: Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          // Text(snapshot.data[index].productId+ "رقم العميل : " ),
+                          // Text(snapshot.data[index].productId+"موقع العميل : "),
+                          // Text("اسم المنتج" + snapshot.data[index].productId),
+                          // Text("كمية المنتح" + snapshot.data[index].productId),
+                          Text(snapshot.data[index].order.user.phoneNumber+"      رقم العميل"),
+                          Text(snapshot.data[index].order.address+"               موقع العميل    "),
+                          Text(snapshot.data[index].product.name+"               اسم المنتج :"),
+                          Text("كمية المنتج :5 "),
+                           Text("سعر المنتج :20 USD " ),
+                        ],
+                      ),
                     ),
                     onTap: () {},
                   );

@@ -213,8 +213,8 @@ class DatabaseHelper {
     http.Response response = await http.get(myUrl, headers: {
       'Accept': 'application/json',
     });
-    print(response.body);
-    return jsonDecode(response.body);
+    //print(response.body);
+   // return jsonDecode(response.body);
   }
 
 
