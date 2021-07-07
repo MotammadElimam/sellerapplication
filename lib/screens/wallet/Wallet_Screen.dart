@@ -23,7 +23,7 @@ class WalletScreen extends StatelessWidget {
           Transform.translate(
             offset: Offset(101.0, 373.0),
             child: Text(
-              '0.0 SDG',
+              '${0.0} SDG',
               style: TextStyle(
                 fontFamily: 'Tajawal',
                 fontSize: 50,

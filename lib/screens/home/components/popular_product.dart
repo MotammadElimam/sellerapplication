@@ -42,7 +42,7 @@ class _HomeProductState extends State<HomeProduct> {
           create: (context) => homeProductProvider,
           child: Consumer<HomeProductsProvider>(
             builder: (context, data, child) {
-              print("Data : ${data.products}");
+              print("################################################Data : ${data.products}");
               if (data.loading)
                 return Center(
                   child: CircularProgressIndicator(),

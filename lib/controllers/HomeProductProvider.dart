@@ -17,12 +17,13 @@ class HomeProductsProvider extends ChangeNotifier {
       notifyListeners();
 
       var data = await producthelper.showAllProducts();
-
+      print("_______________________$data");
       loading = false;
       products = data.map((e) => Product.fromMap(e)).toList();
+      print("*************************${products.length}");
       notifyListeners();
-    } catch (err) {
-      print(err);
+    } on  Error catch (err) {
+      print(err.stackTrace);
       error = true;
       notifyListeners();
     }

@@ -93,7 +93,7 @@ class Product {
         sellerId: json["seller_id"],
         createdAt: DateTime.parse(json["created_at"]),
         updatedAt: DateTime.parse(json["updated_at"]),
-        ratingsAvgRate: double.parse(json["ratings_avg_rate"])  == null ? null : double.parse(json["ratings_avg_rate"]),
+        ratingsAvgRate: json["ratings_avg_rate"]  == null ? 0.0 : double.parse(json["ratings_avg_rate"]),
     );
 
     Map<String, dynamic> toMap() => {

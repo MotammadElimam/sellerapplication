@@ -83,7 +83,7 @@ class ProductCard extends StatelessWidget {
                                         size: 35,
                                         color: Colors.blue,
                                       ),
-                                      unratedColor: Colors.white,
+                                      unratedColor: Colors.blue.withOpacity(0.3),
                                       itemCount: 5,
                                       itemSize: 16.0,
                                       direction: Axis.horizontal,
