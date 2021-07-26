@@ -3,11 +3,11 @@ import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 import 'package:sellerapplication/models/SellerProducts/SellerProducts.dart';
 
-class ProductProvider extends ChangeNotifier {
+class SellerProductProvider extends ChangeNotifier {
   int id;
   double price = 0.0;
   SellerProducts sellerProducts = SellerProducts();
-  //Orders orders = Orders();
+ 
 
   String email;
   String password;
@@ -22,29 +22,6 @@ class ProductProvider extends ChangeNotifier {
   File image;
   final picker = ImagePicker();
 
-  // addToMyProducts(MyProductsItem myProductItem) {
-  //   try {
-  //     myproduct.myProductsItems.add(myProductItem);
-  //     getTotalPrice();
-  //   } catch (e) {
-  //     print('catch $e');
-  //   }
-  //   notifyListeners();
-  // }
-
-  // removeFromMyProducts(MyProductsItem myProductItem) {
-  //   try {
-  //     myproduct.myProductsItems.remove(myProductItem);
-  //     getTotalPrice();
-  //   } catch (e) {
-  //     print('catch $e');
-  //   }
-  //   notifyListeners();
-  // }
-
-  // getTotalPrice() {
-  //   price = myproduct.myProductsItems.sumByDouble((c) => c.getTotalPrice());
-  // }
 
   Future getImage() async {
     final imageFilePath = await picker.getImage(source: ImageSource.gallery);

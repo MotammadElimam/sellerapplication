@@ -87,7 +87,7 @@ class CustomBottomNavBar extends StatelessWidget {
                       : inActiveIconColor,
                 ),
                 onPressed: () {
-                  Navigator.pushNamed(context, WalletScreen.routeName);
+                  Navigator.pushNamed(context, WalleteScreen.routeName);
                 },
               ),
               IconButton(

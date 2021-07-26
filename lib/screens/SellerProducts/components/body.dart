@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sellerapplication/controllers/ProductProvider.dart';
+import 'package:sellerapplication/controllers/SellerProductProvider.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sellerapplication/models/Product/Product.dart';
 import 'package:sellerapplication/models/SellerProducts/SellerProductsItem.dart';
@@ -19,7 +19,7 @@ class _BodyState extends State<Body> {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<ProductProvider>(builder: (context, myproductbody, child) {
+    return Consumer<SellerProductProvider>(builder: (context, myproductbody, child) {
       return Padding(
           padding:
               EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),

@@ -6,8 +6,6 @@ import 'package:sellerapplication/screens/home/components/home_header.dart';
 import 'package:sellerapplication/screens/home/components/popular_product.dart';
 import 'package:sellerapplication/size_config.dart';
 
-
-
 class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -26,8 +24,8 @@ class Body extends StatelessWidget {
             SizedBox(height: getProportionateScreenWidth(30)),
             TopProductsRatings(),
             SizedBox(height: getProportionateScreenWidth(30)),
-           HomeProduct(),
-           // TopProductsRatings(),
+            HomeProduct(),
+            // TopProductsRatings(),
           ],
         ),
       ),

@@ -41,7 +41,6 @@ class DatabaseHelper {
       String lastName,
       String phoneNumber,
       String address) async {
-
     Map information = {
       "email": "$email",
       "password": "$password",
@@ -138,7 +137,7 @@ class DatabaseHelper {
       print('data : ${data["error"]}');
     } else {
       print('data : ${data["token"]}');
-    //  _save(data["token"]);
+      //  _save(data["token"]);
     }
   }
 
@@ -168,7 +167,7 @@ class DatabaseHelper {
     });
   }
 
-   Future<List<dynamic>> showAllProducts() async {
+  Future<List<dynamic>> showAllProducts() async {
     String myUrl = "$serverUrl/seller_api/showAllProducts/";
     http.Response response = await http.get(myUrl, headers: {
       'Accept': 'application/json',
@@ -191,10 +190,10 @@ class DatabaseHelper {
     List<Customerorders> customersOrders = [];
 
     var jsonData = json.decode(response.body);
-    print("its"+response.body);
-    
+    print("its" + response.body);
+
     for (var u in jsonData) {
-       print("U "+u.toString());
+      print("U " + u.toString());
       Customerorders customersOrder = Customerorders.fromJson(u);
 
       customersOrders.add(customersOrder);
@@ -214,13 +213,10 @@ class DatabaseHelper {
       'Accept': 'application/json',
     });
     //print(response.body);
-   // return jsonDecode(response.body);
+    // return jsonDecode(response.body);
   }
 
-
-
-
-Future<List<dynamic>> topProductsRating() async {
+  Future<List<dynamic>> topProductsRating() async {
     String myUrl = "$serverUrl/api/TopProductsRating";
     http.Response response = await http.get(myUrl, headers: {
       'Accept': 'application/json',
@@ -228,6 +224,24 @@ Future<List<dynamic>> topProductsRating() async {
     print(response.body);
     return jsonDecode(response.body);
   }
+
+
+  showUserByID(int id) async {
+      final prefs = await SharedPreferences.getInstance();
+      final key = 'token';
+      final value = prefs.get(key) ?? 0;
+
+        String myUrl = "$serverUrl/api/details/$id";
+        
+
+        http.Response response = await http.get(myUrl, headers: {
+      'Accept': 'application/json',
+    });
+
+    print(response.body);
+
+  }
+
   _save(String token) async {
     final prefs = await SharedPreferences.getInstance();
     final key = 'token';

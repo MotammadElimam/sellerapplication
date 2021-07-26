@@ -1,5 +1,5 @@
 import 'package:sellerapplication/components/buttons/primary_button.dart';
-import 'package:sellerapplication/controllers/ProductProvider.dart';
+import 'package:sellerapplication/controllers/SellerProductProvider.dart';
 import 'package:sellerapplication/controllers/databasehelper.dart';
 import 'package:sellerapplication/models/Product/Product.dart';
 import 'package:flutter/material.dart';
@@ -57,10 +57,10 @@ class _EditProductFormState extends State<EditProductForm> {
       databaseHelper
           .updateData(
         widget.product?.id,
-        Provider.of<ProductProvider>(context, listen: false).productName,
-        Provider.of<ProductProvider>(context, listen: false).price,
-        Provider.of<ProductProvider>(context, listen: false).description,
-        Provider.of<ProductProvider>(context, listen: false).image,
+        Provider.of<SellerProductProvider>(context, listen: false).productName,
+        Provider.of<SellerProductProvider>(context, listen: false).price,
+        Provider.of<SellerProductProvider>(context, listen: false).description,
+        Provider.of<SellerProductProvider>(context, listen: false).image,
       )
           .whenComplete(() {
         Navigator.pushNamed(context, SellerProductScreen.routeName);
@@ -104,12 +104,12 @@ class _EditProductFormState extends State<EditProductForm> {
   TextFormField buildDescriptionFromField() {
     return TextFormField(
       onSaved: (newValue) =>
-          Provider.of<ProductProvider>(context, listen: false).description =
+          Provider.of<SellerProductProvider>(context, listen: false).description =
               newValue,
       onChanged: (value) {
         if (value.isNotEmpty) {
           //  removeError(error: kPhoneNumberNullError);
-          Provider.of<ProductProvider>(context, listen: false).description =
+          Provider.of<SellerProductProvider>(context, listen: false).description =
               value;
         }
         return null;
@@ -136,12 +136,12 @@ class _EditProductFormState extends State<EditProductForm> {
     return TextFormField(
       keyboardType: TextInputType.phone,
       onSaved: (newValue) =>
-          Provider.of<ProductProvider>(context, listen: false).price =
+          Provider.of<SellerProductProvider>(context, listen: false).price =
               double.parse(newValue),
       onChanged: (value) {
         if (value.isNotEmpty) {
           //removeError(error: kNamelNullError);
-          Provider.of<ProductProvider>(context, listen: false).price =
+          Provider.of<SellerProductProvider>(context, listen: false).price =
               double.parse(value);
         }
         return null;
@@ -160,12 +160,12 @@ class _EditProductFormState extends State<EditProductForm> {
   TextFormField buildProductNameFormField() {
     return TextFormField(
       onSaved: (newValue) =>
-          Provider.of<ProductProvider>(context, listen: false).productName =
+          Provider.of<SellerProductProvider>(context, listen: false).productName =
               newValue,
       onChanged: (value) {
         if (value.isNotEmpty) {
           removeError(error: kNamelNullError);
-          Provider.of<ProductProvider>(context, listen: false).productName =
+          Provider.of<SellerProductProvider>(context, listen: false).productName =
               value;
         }
         return null;
@@ -190,7 +190,7 @@ class _EditProductFormState extends State<EditProductForm> {
 
   getImage() {
     setState(() {
-      Provider.of<ProductProvider>(context, listen: false).getImage();
+      Provider.of<SellerProductProvider>(context, listen: false).getImage();
     });
   }
 }

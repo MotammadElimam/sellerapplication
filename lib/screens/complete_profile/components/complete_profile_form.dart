@@ -1,5 +1,5 @@
 import 'package:sellerapplication/components/buttons/primary_button.dart';
-import 'package:sellerapplication/controllers/ProductProvider.dart';
+import 'package:sellerapplication/controllers/SellerProductProvider.dart';
 import 'package:sellerapplication/controllers/databasehelper.dart';
 import 'package:sellerapplication/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
@@ -44,13 +44,13 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
       if (_formKey.currentState.validate()) {
         databaseHelper
             .registerData(
-          Provider.of<ProductProvider>(context, listen: false).email,
-          Provider.of<ProductProvider>(context, listen: false).password,
-          Provider.of<ProductProvider>(context, listen: false).confirmPassword,
-          Provider.of<ProductProvider>(context, listen: false).firstName,
-          Provider.of<ProductProvider>(context, listen: false).lastName,
-          Provider.of<ProductProvider>(context, listen: false).phoneNumber,
-          Provider.of<ProductProvider>(context, listen: false).address,
+          Provider.of<SellerProductProvider>(context, listen: false).email,
+          Provider.of<SellerProductProvider>(context, listen: false).password,
+          Provider.of<SellerProductProvider>(context, listen: false).confirmPassword,
+          Provider.of<SellerProductProvider>(context, listen: false).firstName,
+          Provider.of<SellerProductProvider>(context, listen: false).lastName,
+          Provider.of<SellerProductProvider>(context, listen: false).phoneNumber,
+          Provider.of<SellerProductProvider>(context, listen: false).address,
         )
             .whenComplete(() {
           if (databaseHelper.status) {
@@ -92,12 +92,12 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
   TextFormField buildAddressFormField() {
     return TextFormField(
       onSaved: (newValue) =>
-          Provider.of<ProductProvider>(context, listen: false).address =
+          Provider.of<SellerProductProvider>(context, listen: false).address =
               newValue,
       onChanged: (value) {
         if (value.isNotEmpty) {
           removeError(error: kAddressNullError);
-          Provider.of<ProductProvider>(context, listen: false).address = value;
+          Provider.of<SellerProductProvider>(context, listen: false).address = value;
         }
         return null;
       },
@@ -125,12 +125,12 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
     return TextFormField(
       keyboardType: TextInputType.phone,
       onSaved: (newValue) =>
-          Provider.of<ProductProvider>(context, listen: false).phoneNumber =
+          Provider.of<SellerProductProvider>(context, listen: false).phoneNumber =
               newValue,
       onChanged: (value) {
         if (value.isNotEmpty) {
           removeError(error: kPhoneNumberNullError);
-          Provider.of<ProductProvider>(context, listen: false).phoneNumber =
+          Provider.of<SellerProductProvider>(context, listen: false).phoneNumber =
               value;
         }
         return null;
@@ -156,12 +156,12 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
   TextFormField buildLastNameFormField() {
     return TextFormField(
       onSaved: (newValue) =>
-          Provider.of<ProductProvider>(context, listen: false).lastName =
+          Provider.of<SellerProductProvider>(context, listen: false).lastName =
               newValue,
       onChanged: (value) {
         if (value.isNotEmpty) {
           removeError(error: kNamelNullError);
-          Provider.of<ProductProvider>(context, listen: false).lastName = value;
+          Provider.of<SellerProductProvider>(context, listen: false).lastName = value;
         }
         return null;
       },
@@ -179,12 +179,12 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
   TextFormField buildFirstNameFormField() {
     return TextFormField(
       onSaved: (newValue) =>
-          Provider.of<ProductProvider>(context, listen: false).firstName =
+          Provider.of<SellerProductProvider>(context, listen: false).firstName =
               newValue,
       onChanged: (value) {
         if (value.isNotEmpty) {
           removeError(error: kNamelNullError);
-          Provider.of<ProductProvider>(context, listen: false).firstName =
+          Provider.of<SellerProductProvider>(context, listen: false).firstName =
               value;
         }
         return null;

@@ -20,7 +20,7 @@ class HomeProductsProvider extends ChangeNotifier {
       print("_______________________$data");
       loading = false;
       products = data.map((e) => Product.fromMap(e)).toList();
-      print("*************************${products.length}");
+      print("{products.length}");
       notifyListeners();
     } on  Error catch (err) {
       print(err.stackTrace);

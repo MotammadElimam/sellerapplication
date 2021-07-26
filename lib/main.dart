@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sellerapplication/controllers/SellerProductProvider.dart';
 import 'package:sellerapplication/routes.dart';
 import 'package:sellerapplication/screens/home/home_screen.dart';
 import 'package:sellerapplication/screens/sign_in/sign_in_screen.dart';
@@ -6,7 +7,7 @@ import 'package:sellerapplication/theme.dart';
 import 'package:sellerapplication/screens/splash/splash_scrreen.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'controllers/ProductProvider.dart';
+
 
 
 void main() {
@@ -47,8 +48,8 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider<ProductProvider>(
-          create: (context) => ProductProvider(),
+        ChangeNotifierProvider<SellerProductProvider>(
+          create: (context) => SellerProductProvider(),
         ),
       ],
       child: MaterialApp(
