@@ -226,21 +226,22 @@ class DatabaseHelper {
   }
 
 
-  showUserByID(int id) async {
-      final prefs = await SharedPreferences.getInstance();
-      final key = 'token';
-      final value = prefs.get(key) ?? 0;
+  // showUserByID(int id) async {
+  //     final prefs = await SharedPreferences.getInstance();
+  //     final key = 'token';
+  //     final value = prefs.get(key) ?? 0;
 
-        String myUrl = "$serverUrl/api/details/$id";
+  //       String myUrl = "$serverUrl/api/details/$id";
         
 
-        http.Response response = await http.get(myUrl, headers: {
-      'Accept': 'application/json',
-    });
+  //       http.Response response = await http.get(myUrl, headers: {
+  //     'Accept': 'application/json',
+  //   });
 
-    print(response.body);
+  //   print("SARA"+response.body);
+  //   return response.body;
 
-  }
+  // }
 
   _save(String token) async {
     final prefs = await SharedPreferences.getInstance();

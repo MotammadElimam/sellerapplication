@@ -18,11 +18,11 @@ class WalleteScreen extends StatefulWidget {
 }
 
 class _WalleteScreenState extends State<WalleteScreen> {
- DatabaseHelper databasehelper  = DatabaseHelper();
+ DatabaseHelper u  = DatabaseHelper();
   User user  = User();
     loadUserBalance() async{
-    user = databasehelper.showUserByID(1);
-    print(user);
+    //user = databasehelper.showUserByID(1);
+    print("YYYYYYYYYYYYY"+user.balance);
     return ;
   }
    

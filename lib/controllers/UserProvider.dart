@@ -1,24 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:sellerapplication/controllers/databasehelper.dart';
-import 'package:sellerapplication/models/User/User.dart';
+import 'package:sellerapplication/models/Product/Product.dart';
 
-class UserProvider extends ChangeNotifier{
+
+
+class TopProductsRatingProvider extends ChangeNotifier {
   bool loading = false;
- List <User> user;
+  List<Product> products;
   bool error = false;
-  var userhelper = DatabaseHelper();
-
-
-
+  var producthelper = DatabaseHelper();
+  
+  
   loadData() async {
     try {
       loading = true;
       notifyListeners();
 
-      var data = await userhelper.showUserByID(1)();
+      var data = await producthelper.topProductsRating();
 
       loading = false;
-      user = data.map((e) => User.fromMap(e));
+      products = data.map((e) => Product.fromMap(e)).toList();
       notifyListeners();
     } catch (err) {
       print(err);
@@ -26,7 +27,4 @@ class UserProvider extends ChangeNotifier{
       notifyListeners();
     }
   }
-
-
-
 }

@@ -130,9 +130,13 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
       onChanged: (value) {
         if (value.isNotEmpty) {
           removeError(error: kPhoneNumberNullError);
+        }
+        else if(value.length >= 8) {
+          removeError(error: kShortPassError);
+        }
           Provider.of<SellerProductProvider>(context, listen: false).phoneNumber =
               value;
-        }
+        
         return null;
       },
       validator: (value) {
