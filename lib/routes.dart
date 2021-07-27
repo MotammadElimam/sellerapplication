@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:sellerapplication/screens/Customer_Orders/Customer_Orders_Screen.dart';
 import 'package:sellerapplication/screens/EditOrDeleteProduct/edit_or_delete_product.dart';
+import 'package:sellerapplication/screens/contact%20us/Contact_Us.dart';
 import 'package:sellerapplication/screens/edit_product_details/Edit_product_screen.dart';
 import 'package:sellerapplication/screens/SellerProducts/SellerProducts_screen.dart';
 import 'package:sellerapplication/screens/addproduct/add_product_screen.dart';
@@ -37,6 +38,7 @@ final Map<String, WidgetBuilder> routes = {
   EditProfileScreen.routeName:(context)=>EditProfileScreen(),
   EditOrDeleteProductScreen.routeName:(context)=>EditOrDeleteProductScreen(),
   CustomersOrdersScreen.routeName:(context)=>CustomersOrdersScreen(),
+  Contact_Us.routeName:(context)=>Contact_Us()
 
 };
 

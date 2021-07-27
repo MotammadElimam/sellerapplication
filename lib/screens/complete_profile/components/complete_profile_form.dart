@@ -131,9 +131,6 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
         if (value.isNotEmpty) {
           removeError(error: kPhoneNumberNullError);
         }
-        else if(value.length >= 8) {
-          removeError(error: kShortPassError);
-        }
           Provider.of<SellerProductProvider>(context, listen: false).phoneNumber =
               value;
         
@@ -142,6 +139,14 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
       validator: (value) {
         if (value.isEmpty) {
           addError(error: kPhoneNumberNullError);
+          return "";
+        }
+        else if (value.length < 10 && value.length > 10) {
+          addError(error: kNumbError);
+          return "";
+        }
+         else if (value.length == 10 ) {
+          removeError(error: kNumbError);
           return "";
         }
         return null;
@@ -216,8 +221,8 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            title: new Text('فشل التحقق'),
-            content: new Text("تحقق من صحة البريد الالكتروني او الرقم السري"),
+            title: new Text('لم يتم التسجيل'),
+            content: new Text("تأكد من صحة البيانات , البريد الالكتروني الذي ادخلته موجود مسبقا "),
             actions: <Widget>[
               // ignore: deprecated_member_use
               new RaisedButton(

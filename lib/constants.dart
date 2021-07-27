@@ -74,6 +74,7 @@ const String kEmailNullError = "الرجاء ادخال البريد الالك�
 const String kInvalidEmailError = "ادخل صيغة البريد الالكتروني بشكل صحيح ";
 const String kPassNullError = "ادخل الرقم السري";
 const String kShortPassError = "الرقم السري اقصر من المطلوب";
+const String kNumbError = "رقم الهاتف لابد ان يكون 10 ارقام";
 const String kMatchPassError = "الرقم السري لايتطابق مع تأكيد الرقم السري";
 const String kNamelNullError = "الرجاء التأكد من تعبئة الاسم";
 const String kPhoneNumberNullError = "ادخل رقم الجوال";

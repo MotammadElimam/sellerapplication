@@ -1,3 +1,4 @@
+import 'package:sellerapplication/screens/contact%20us/Contact_Us.dart';
 import 'package:sellerapplication/screens/profile/components/setting.dart';
 import 'package:flutter/material.dart';
 import 'package:sellerapplication/screens/sign_in/sign_in_screen.dart';
@@ -24,27 +25,12 @@ class Body extends StatelessWidget {
         children: [
           ProfilePic(),
           SizedBox(height: 20),
-          // ProfileMenu(
-          //   text: "بياناتك الشخصية",
-          //   icon: "assets/icons/User Icon.svg",
-          //   press: () => {},
-          // ),
-          // ProfileMenu(
-          //   text: "الاشعارات",
-          //   icon: "assets/icons/Bell.svg",
-          //   press: () {},
-          // ),
-          // ProfileMenu(
-          //   text: "الاعدادات",
-          //   icon: "assets/icons/Settings.svg",
-          //   press: () {
-          //     Navigator.pushNamed(context, SettingsPage.routeName);
-          //   },
-          // ),
           ProfileMenu(
             text: "اتصل بنا",
             icon: "assets/icons/Question mark.svg",
-            press: () {},
+            press: () {
+               Navigator.pushNamed(context, Contact_Us.routeName);
+            },
           ),
           ProfileMenu(
             text: "تسجيل الخروج",
